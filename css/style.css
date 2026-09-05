@@ -1,0 +1,1225 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ==================================================
+   FLORTEK DESIGN SYSTEM VARIABLES
+   ================================================== */
+:root {
+  --flortek-green: #2E8B57;
+  --flortek-green-hover: #246e45;
+  --flortek-green-dark: #1b5233;
+  --flortek-green-light: #eaf5ef;
+  --flortek-yellow: #F4B400;
+  --flortek-yellow-hover: #d9a000;
+  --flortek-yellow-light: #fff9e6;
+
+  --color-dark: #111827;
+  --color-dark-sub: #1f2937;
+  --color-gray-dark: #374151;
+  --color-gray-medium: #6b7280;
+  --color-gray-light: #f8fafc;
+  --color-gray-border: #e5e7eb;
+  --color-gray-bg: #f3f4f6;
+  --color-white: #ffffff;
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.12);
+
+  --transition: all 0.25s ease-in-out;
+  --max-width: 1240px;
+}
+
+/* ==================================================
+   GLOBAL BASE STYLES
+   ================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-gray-dark);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ==================================================
+   HEADER & NAVBAR
+   ================================================== */
+.top-header {
+  background-color: var(--flortek-yellow);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 8px;
+}
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo-img {
+  height: 42px;
+  width: auto;
+}
+
+/* Pill Navigation */
+.nav-pill-wrapper {
+  background-color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 8px 18px;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-dark);
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  letter-spacing: 0.2px;
+}
+
+.nav-link:hover {
+  color: var(--flortek-green);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-link.active {
+  background-color: var(--flortek-green);
+  color: var(--color-white);
+}
+
+.nav-link.active:hover {
+  background-color: var(--flortek-green-hover);
+  color: var(--color-white);
+}
+
+/* Header Quote CTA Button */
+.btn-header-quote {
+  background-color: var(--flortek-green);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(46, 139, 87, 0.3);
+}
+
+.btn-header-quote:hover {
+  background-color: var(--flortek-green-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(46, 139, 87, 0.4);
+}
+
+/* Pure CSS Mobile Navigation Toggler */
+.nav-toggle-checkbox {
+  display: none;
+}
+
+.nav-hamburger {
+  display: none;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-hamburger span {
+  display: block;
+  height: 3.5px;
+  width: 100%;
+  background-color: var(--color-dark);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ==================================================
+   BUTTONS & COMMON UI
+   ================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.btn-green {
+  background-color: var(--flortek-green);
+  color: var(--color-white);
+  border-color: var(--flortek-green);
+}
+
+.btn-green:hover {
+  background-color: var(--flortek-green-hover);
+  border-color: var(--flortek-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 139, 87, 0.35);
+}
+
+.btn-yellow {
+  background-color: var(--flortek-yellow);
+  color: var(--color-dark);
+  border-color: var(--flortek-yellow);
+}
+
+.btn-yellow:hover {
+  background-color: var(--flortek-yellow-hover);
+  border-color: var(--flortek-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 180, 0, 0.35);
+}
+
+.btn-outline {
+  background-color: var(--color-white);
+  color: var(--color-dark-sub);
+  border-color: var(--color-gray-border);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-gray-light);
+  border-color: var(--color-gray-dark);
+  transform: translateY(-2px);
+}
+
+.badge-hot {
+  background-color: var(--flortek-yellow);
+  color: var(--color-dark);
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.6px;
+  display: inline-block;
+}
+
+.section-tag {
+  color: var(--flortek-green);
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* ==================================================
+   HERO SECTION
+   ================================================== */
+.hero-section {
+  padding: 70px 0 80px;
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 580px;
+}
+
+.hero-title {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero-title .title-black {
+  color: var(--color-dark);
+  display: block;
+}
+
+.hero-title .title-green-light {
+  color: #3b9e67;
+  display: inline-block;
+}
+
+.hero-title .title-green-dark {
+  color: var(--flortek-green);
+  display: inline-block;
+}
+
+.hero-desc {
+  font-size: 15.5px;
+  color: var(--color-gray-dark);
+  line-height: 1.65;
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.hero-graphic-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-cluster-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.07));
+}
+
+/* ==================================================
+   PRODUCT GALLERY SECTION
+   ================================================== */
+.gallery-section {
+  padding: 85px 0 90px;
+  background-color: #fcfdfe;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;
+}
+
+.section-main-title {
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: var(--color-gray-medium);
+  line-height: 1.6;
+}
+
+.product-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 44px;
+}
+
+.product-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: #cbd5e1;
+}
+
+.product-card-img-wrap {
+  background-color: var(--color-gray-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  margin-bottom: 20px;
+  border: 1px solid #f1f5f9;
+}
+
+.product-card-img {
+  max-height: 180px;
+  width: auto;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-card-img {
+  transform: scale(1.04);
+}
+
+.product-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.product-card-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-dark);
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.product-card-desc {
+  font-size: 13.5px;
+  color: var(--color-gray-medium);
+  line-height: 1.55;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.product-card .btn-green {
+  width: 100%;
+  font-size: 13.5px;
+  padding: 11px 16px;
+}
+
+.gallery-bottom-cta {
+  text-align: center;
+}
+
+/* ==================================================
+   PRODUCT RANGE (LOAD RATINGS) SECTION
+   ================================================== */
+.range-section {
+  padding: 85px 0 90px;
+  background-color: var(--color-white);
+}
+
+.range-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.range-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.range-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--flortek-green);
+}
+
+.range-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--flortek-green-light);
+  color: var(--flortek-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.range-icon-box svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--flortek-green);
+}
+
+.range-card-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.range-card-desc {
+  font-size: 13.5px;
+  color: var(--color-gray-medium);
+  line-height: 1.55;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.range-card-link {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--flortek-green);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.range-card:hover .range-card-link {
+  color: var(--flortek-green-hover);
+  text-decoration: underline;
+}
+
+/* ==================================================
+   WHY CHOOSE FLORTEK (MATERIAL SUPERIORITY)
+   ================================================== */
+.superiority-section {
+  padding: 90px 0;
+  background-color: #f1f5f9;
+}
+
+.superiority-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.superiority-title {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.superiority-title .text-green {
+  color: var(--flortek-green);
+}
+
+.superiority-desc {
+  font-size: 15.5px;
+  color: var(--color-gray-dark);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.features-2x2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.feature-check-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--flortek-green);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.feature-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+.feature-desc {
+  font-size: 13px;
+  color: var(--color-gray-medium);
+  line-height: 1.55;
+  padding-left: 38px;
+}
+
+/* ==================================================
+   GOOGLE REVIEWS SECTION
+   ================================================== */
+.reviews-section {
+  padding: 85px 0 90px;
+  background-color: var(--color-white);
+}
+
+.reviews-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 45px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--color-gray-border);
+}
+
+.reviews-header-left {
+  max-width: 620px;
+}
+
+.google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-pill);
+  padding: 5px 14px;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-dark);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.google-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.reviews-title {
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  margin-bottom: 8px;
+}
+
+.reviews-subtitle {
+  font-size: 14.5px;
+  color: var(--color-gray-medium);
+}
+
+.reviews-header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.rating-score-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.score-num {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--color-dark);
+  line-height: 1;
+}
+
+.stars-container {
+  display: flex;
+  gap: 2px;
+  color: var(--flortek-yellow);
+  font-size: 18px;
+}
+
+.reviews-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.reviewer-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--flortek-green);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviewer-name {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--color-dark);
+  text-transform: uppercase;
+}
+
+.reviewer-role {
+  font-size: 12px;
+  color: var(--color-gray-medium);
+}
+
+.review-stars {
+  color: var(--flortek-yellow);
+  font-size: 15px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.review-text {
+  font-size: 13.5px;
+  color: var(--color-gray-dark);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.review-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--flortek-green);
+  font-weight: 700;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+}
+
+.review-date {
+  color: var(--color-gray-medium);
+  font-weight: 500;
+}
+
+/* ==================================================
+   CALL TO ACTION (READY TO UPGRADE) BANNER
+   ================================================== */
+.cta-banner-section {
+  background-color: var(--flortek-green);
+  padding: 60px 0;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.cta-banner-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 34px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.cta-subtitle {
+  font-size: 15.5px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.btn-cta-white {
+  background-color: var(--color-white);
+  color: var(--flortek-green);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 13px 30px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-cta-white:hover {
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+.site-footer {
+  background-color: var(--flortek-yellow);
+  padding: 70px 0 25px;
+  color: var(--color-dark);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-brand-logo {
+  height: 48px;
+  width: auto;
+  margin-bottom: 16px;
+}
+
+.footer-bio {
+  font-size: 13.5px;
+  color: #262626;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: var(--flortek-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  font-size: 14px;
+}
+
+.social-icon-btn:hover {
+  background-color: var(--flortek-green);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.footer-col-title {
+  font-size: 14.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link-item a {
+  font-size: 13.5px;
+  color: #262626;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-link-item a:hover {
+  color: var(--flortek-green-dark);
+  padding-left: 4px;
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #262626;
+  font-weight: 600;
+}
+
+.footer-contact-icon {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  fill: var(--color-dark);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-bottom-links a:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================
+   IMAGE UPLOAD COMPONENT (HTML5 + CSS3 ONLY)
+   ================================================== */
+.upload-container {
+  width: 100%;
+  margin: 10px 0 20px;
+}
+
+.file-input-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.upload-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #94a3b8;
+  border-radius: var(--radius-lg);
+  background-color: #f8fafc;
+  padding: 36px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.upload-dropzone:hover {
+  border-color: var(--flortek-green);
+  background-color: var(--flortek-green-light);
+  transform: translateY(-2px);
+}
+
+.file-input-hidden:focus + .upload-dropzone {
+  border-color: var(--flortek-green);
+  outline: 3px solid rgba(46, 139, 87, 0.3);
+}
+
+.upload-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+
+.upload-arrow-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  color: var(--flortek-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.upload-dropzone:hover .upload-arrow-icon {
+  background-color: var(--flortek-green);
+  color: var(--color-white);
+  border-color: var(--flortek-green);
+  transform: translateY(-3px);
+}
+
+.upload-main-text {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--flortek-green);
+  margin-bottom: 4px;
+}
+
+.upload-subtext {
+  font-size: 12px;
+  color: var(--color-gray-medium);
+}
+
+/* ==================================================
+   FORM STYLES (PURE HTML5 + CSS3)
+   ================================================== */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--flortek-green);
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.2);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.custom-option-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-gray-dark);
+  cursor: pointer;
+}
+
+/* ==================================================
+   INNER PAGES BANNER & UTILITY
+   ================================================== */
+.page-hero-banner {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: 55px 0;
+  color: var(--color-white);
+  border-bottom: 4px solid var(--flortek-yellow);
+}
+
+.page-hero-title {
+  font-size: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.page-breadcrumb {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.page-breadcrumb a {
+  color: var(--flortek-yellow);
+}
+
+.page-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Data Tables */
+.spec-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-md);
+  margin: 24px 0;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.spec-table th {
+  background-color: #1e293b;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  padding: 14px 18px;
+  text-transform: uppercase;
+  font-size: 12.5px;
+  letter-spacing: 0.5px;
+}
+
+.spec-table td {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--color-gray-border);
+  color: var(--color-gray-dark);
+}
+
+.spec-table tr:nth-child(even) {
+  background-color: var(--color-gray-light);
+}
+
+.spec-table tr:hover {
+  background-color: var(--flortek-green-light);
+}

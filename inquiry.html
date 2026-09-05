@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get A Quote &amp; Custom Requirements | FLORTEK INDUSTRIES</title>
+  <meta name="description" content="Submit your custom FRP manhole cover requirements, upload drawings/sketches, and request a detailed price quotation from FLORTEK INDUSTRIES PVT. LTD.">
+  <link rel="stylesheet" href="css/inquiry.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION BAR
+       ========================================== -->
+  <header class="top-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo-link" aria-label="FLORTEK Industries Homepage">
+          <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="brand-logo-img">
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation menu">
+        <label for="nav-toggle" class="nav-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <div class="nav-pill-wrapper">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="products.html" class="nav-link">Prodcut</a></li>
+            <li><a href="gallery.html" class="nav-link">Galary</a></li>
+            <li><a href="contact.html" class="nav-link">Contact us</a></li>
+          </ul>
+        </div>
+
+        <a href="inquiry.html" class="btn-header-quote">Get Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="inquiry-main-section">
+      <div class="container">
+        <div class="rfq-box-container">
+          
+          <!-- Header -->
+          <div class="rfq-header-center">
+            <span class="rfq-tag">INSTANT TECHNICAL ESTIMATE</span>
+            <h1 class="rfq-title">CUSTOM SPECIFICATION &amp; RFQ FORM</h1>
+            <p class="rfq-subtitle">
+              Provide your required product parameters or upload site photos/drawings below. Our technical sales department will review your specifications and furnish an official quotation.
+            </p>
+          </div>
+
+          <!-- RFQ Form (Pure HTML5 + CSS3, No JS, No CSS Variables) -->
+          <form action="inquiry.html" method="GET" enctype="multipart/form-data">
+            
+            <!-- Section 1: Product Specifications -->
+            <div class="form-divider">
+              <h2 class="rfq-section-heading">1. Product &amp; Technical Requirements</h2>
+
+              <div class="form-row-2">
+                <div class="form-group-item">
+                  <label for="prod-type" class="label-text">Product Type *</label>
+                  <select id="prod-type" name="product_type" class="select-control" required>
+                    <option value="">-- Select Product Category --</option>
+                    <option value="square-cover">FRP Square Manhole Cover</option>
+                    <option value="circular-cover">FRP Circular Manhole Cover</option>
+                    <option value="rectangular-cover">FRP Rectangular Manhole Cover</option>
+                    <option value="slotted-drain">FRP Slotted Gully Drain Grating</option>
+                    <option value="recessed-tray">FRP Recessed Paving Tray Cover</option>
+                    <option value="custom">Custom Composite Structure</option>
+                  </select>
+                </div>
+
+                <div class="form-group-item">
+                  <label for="load-rating" class="label-text">Required Load Rating *</label>
+                  <select id="load-rating" name="load_rating" class="select-control" required>
+                    <option value="">-- Select Load Capacity --</option>
+                    <option value="a15">A15 (1.5 - 2.5 Tons) - Pedestrian / Garden</option>
+                    <option value="b125">B125 (12.5 Tons) - Residential Car Park</option>
+                    <option value="c250">C250 (25 Tons) - Commercial / Bus Stand</option>
+                    <option value="d400">D400 (40 Tons) - Highway / Heavy Truck</option>
+                    <option value="e600">E600 (60 Tons) - Airport / Industrial Dock</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group-item">
+                  <label for="clear-opening" class="label-text">Clear Opening Size (mm) *</label>
+                  <input type="text" id="clear-opening" name="clear_opening" class="input-control" placeholder="e.g. 600 x 600 mm or 600 mm dia" required>
+                </div>
+
+                <div class="form-group-item">
+                  <label for="quantity" class="label-text">Estimated Quantity (Units) *</label>
+                  <input type="number" id="quantity" name="quantity" class="input-control" placeholder="e.g. 50" min="1" required>
+                </div>
+              </div>
+
+              <!-- Features Checkbox Options -->
+              <div class="form-group-item">
+                <label class="label-text">Optional Custom Add-ons</label>
+                <div class="checkbox-group-row">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="addon_locking" value="key-lock"> SS Locking Mechanism
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="addon_gasket" value="epdm-gasket"> Airtight EPDM Gasket
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="addon_logo" value="custom-emboss"> Custom Municipal / Brand Logo
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="addon_hinged" value="hinge-frame"> Hinged Frame Assembly
+                  </label>
+                </div>
+              </div>
+
+              <!-- ==========================================
+                   IMAGE UPLOAD UI (EXACT FIGMA SPECIFICATION)
+                   ========================================== -->
+              <div class="form-group-item">
+                <label class="label-text">Upload Site Image / Drawing (Optional)</label>
+                
+                <div class="upload-container">
+                  <input type="file" id="product-image-upload" name="product_image" class="file-input-hidden" accept="image/png, image/jpeg, image/jpg">
+                  <label for="product-image-upload" class="upload-dropzone">
+                    <span class="upload-title">Upload Product Image</span>
+                    <span class="upload-arrow-icon">&uarr;</span>
+                    <span class="upload-main-text">Click to upload</span>
+                    <span class="upload-subtext">PNG, JPG up to 5MB</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group-item">
+                <label for="spec-notes" class="label-text">Project Details / Custom Notes</label>
+                <textarea id="spec-notes" name="project_notes" class="textarea-control" placeholder="Please mention any specific site requirements, color preferences (Grey, Black, Beige), delivery schedule, etc."></textarea>
+              </div>
+            </div>
+
+            <!-- Section 2: Contact Information -->
+            <div style="margin-bottom: 30px;">
+              <h2 class="rfq-section-heading">2. Your Contact Information</h2>
+
+              <div class="form-row-2">
+                <div class="form-group-item">
+                  <label for="q-name" class="label-text">Full Name *</label>
+                  <input type="text" id="q-name" name="contact_name" class="input-control" placeholder="Your Name" required minlength="2">
+                </div>
+
+                <div class="form-group-item">
+                  <label for="q-company" class="label-text">Company / Contractor Name *</label>
+                  <input type="text" id="q-company" name="company_name" class="input-control" placeholder="Firm or Organization Name" required>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group-item">
+                  <label for="q-email" class="label-text">Email Address *</label>
+                  <input type="email" id="q-email" name="contact_email" class="input-control" placeholder="email@company.com" required>
+                </div>
+
+                <div class="form-group-item">
+                  <label for="q-phone" class="label-text">Phone / WhatsApp Number *</label>
+                  <input type="tel" id="q-phone" name="contact_phone" class="input-control" placeholder="+91 8780422315" required pattern="[0-9+ -]{10,15}">
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group-item">
+                  <label for="q-city" class="label-text">Delivery City / State *</label>
+                  <input type="text" id="q-city" name="delivery_location" class="input-control" placeholder="e.g. Rajkot, Gujarat" required>
+                </div>
+
+                <div class="form-group-item">
+                  <label for="q-timeline" class="label-text">Requirement Urgency</label>
+                  <select id="q-timeline" name="timeline" class="select-control">
+                    <option value="immediate">Immediate (Within 1-2 weeks)</option>
+                    <option value="1month">Within 1 Month</option>
+                    <option value="planning">Budgetary / Planning Phase</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit-rfq">
+              SUBMIT QUOTATION REQUEST &gt;
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col">
+          <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="footer-brand-logo">
+          <p class="footer-bio">
+            Leading manufacturer of high-quality FRP, BMC, and Steel covers. Engineering infrastructure solutions for a safer tomorrow.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" class="social-icon-circle" aria-label="Instagram">ig</a>
+            <a href="https://wa.me/918780422315" class="social-icon-circle" aria-label="WhatsApp">wa</a>
+            <a href="https://youtube.com" class="social-icon-circle" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">QUICK LINKS</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="products.html">PRODUCT</a></li>
+            <li><a href="gallery.html">GALARY</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+            <li><a href="inquiry.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">CATEGORY</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html">FRP MANHOLE COVER</a></li>
+            <li><a href="products.html">FRP DRAIN COVER</a></li>
+            <li><a href="products.html">CABLE TRENCH COVER</a></li>
+            <li><a href="products.html">WATER GULLY COVER</a></li>
+            <li><a href="products.html">HEAVY DUTY COVERS</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">CONTACT INFO</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>Radhe Industrial Zone, Survey No.99/1-2, Plot No.4/37, Veraval Shapar, Rajkot - 360024</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>+91 8780422315</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>flortekindustries@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>2026 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="about.html">PRIVACY POLICY</a>
+          <a href="about.html">TERM OF SERVICE</a>
+          <a href="about.html">SITEMAP</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

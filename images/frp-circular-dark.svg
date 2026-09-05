@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="roundBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </radialGradient>
+    <filter id="roundShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="40%" stop-color="#475569"/>
+      <stop offset="80%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <pattern id="dotPattern" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="2.5" fill="#1e293b"/>
+      <circle cx="7" cy="7" r="1.5" fill="#64748b"/>
+    </pattern>
+  </defs>
+  <!-- Base Background -->
+  <rect width="500" height="500" rx="16" fill="url(#roundBg)"/>
+  
+  <!-- Outer Circular Ring / Frame -->
+  <circle cx="250" cy="250" r="190" fill="#334155" stroke="#1e293b" stroke-width="4" filter="url(#roundShadow)"/>
+  <circle cx="250" cy="250" r="172" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+  
+  <!-- Main Circular Cover Body -->
+  <circle cx="250" cy="250" r="158" fill="url(#metalDark)" stroke="#0f172a" stroke-width="2"/>
+  <circle cx="250" cy="250" r="148" fill="url(#dotPattern)" opacity="0.85"/>
+
+  <!-- Concentric Structural Ridges -->
+  <circle cx="250" cy="250" r="120" fill="none" stroke="#1e293b" stroke-width="4"/>
+  <circle cx="250" cy="250" r="85" fill="none" stroke="#1e293b" stroke-width="4"/>
+  <circle cx="250" cy="250" r="45" fill="#334155" stroke="#0f172a" stroke-width="3"/>
+
+  <!-- Radial Spoke Lines -->
+  <line x1="250" y1="92" x2="250" y2="408" stroke="#1e293b" stroke-width="3"/>
+  <line x1="92" y1="250" x2="408" y2="250" stroke="#1e293b" stroke-width="3"/>
+  <line x1="138" y1="138" x2="362" y2="362" stroke="#1e293b" stroke-width="3"/>
+  <line x1="138" y1="362" x2="362" y2="138" stroke="#1e293b" stroke-width="3"/>
+
+  <!-- Center Keyhole -->
+  <circle cx="250" cy="250" r="14" fill="#0f172a" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="246" y="240" width="8" height="20" rx="3" fill="#cbd5e1"/>
+
+  <!-- 2 Lifting slots -->
+  <rect x="235" y="145" width="30" height="14" rx="4" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
+  <rect x="235" y="341" width="30" height="14" rx="4" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
+
+  <!-- Embossed Text -->
+  <text x="250" y="222" font-family="'Montserrat', sans-serif" font-weight="900" font-size="14" fill="#cbd5e1" text-anchor="middle" letter-spacing="2">FLORTEK</text>
+  <text x="250" y="288" font-family="'Montserrat', sans-serif" font-weight="700" font-size="11" fill="#94a3b8" text-anchor="middle" letter-spacing="1.5">EN 124 D400</text>
+</svg>
