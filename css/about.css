@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
-/* ==================================================
-   ABOUT PAGE CSS (NO CSS VARIABLES - DIRECT VALUES)
-   ================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -50,9 +47,6 @@ ul, ol {
   padding-right: 20px;
 }
 
-/* ==================================================
-   HEADER & NAVBAR
-   ================================================== */
 .top-header {
   background-color: #F4B400;
   width: 100%;
@@ -149,9 +143,6 @@ ul, ol {
   border-radius: 2px;
 }
 
-/* ==================================================
-   ABOUT SECTION TOP
-   ================================================== */
 .about-top-section {
   padding: 60px 0 40px;
   background-color: #ffffff;
@@ -174,7 +165,6 @@ ul, ol {
   margin-bottom: 36px;
 }
 
-/* 4 Quick Info Badges */
 .about-badges-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -224,9 +214,6 @@ ul, ol {
   display: block;
 }
 
-/* ==================================================
-   COMPANY PROFILE & WHY CHOOSE FLORTEK (2 COLS)
-   ================================================== */
 .profile-section {
   padding: 40px 0 60px;
   background-color: #ffffff;
@@ -247,7 +234,6 @@ ul, ol {
   margin-bottom: 22px;
 }
 
-/* Company Profile Table */
 .profile-table-wrap {
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -288,7 +274,6 @@ ul, ol {
   background-color: #ffffff;
 }
 
-/* Why Choose Flortek Right Column */
 .why-items-list {
   display: flex;
   flex-direction: column;
@@ -333,7 +318,6 @@ ul, ol {
   display: block;
 }
 
-/* Need a Quote Card */
 .quote-card-green {
   background-color: #2E8B57;
   border-radius: 10px;
@@ -374,9 +358,6 @@ ul, ol {
   background-color: #d9a000;
 }
 
-/* ==================================================
-   LEADERSHIP & OUR TEAM
-   ================================================== */
 .team-section {
   padding: 60px 0 80px;
   background-color: #ffffff;
@@ -461,9 +442,6 @@ ul, ol {
   letter-spacing: 0.5px;
 }
 
-/* ==================================================
-   FOOTER (MATCHING FIGMA)
-   ================================================== */
 .site-footer {
   background-color: #F4B400;
   padding: 60px 0 25px;
@@ -608,7 +586,6 @@ ul, ol {
   text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .navbar {
     flex-wrap: wrap;

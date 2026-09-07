@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
-/* ==================================================
-   INQUIRY & RFQ PAGE CSS (NO CSS VARIABLES - DIRECT VALUES)
-   ================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -50,9 +47,6 @@ ul, ol {
   padding-right: 20px;
 }
 
-/* ==================================================
-   HEADER & NAVBAR
-   ================================================== */
 .top-header {
   background-color: #F4B400;
   width: 100%;
@@ -149,9 +143,6 @@ ul, ol {
   border-radius: 2px;
 }
 
-/* ==================================================
-   INQUIRY / RFQ FORM CONTAINER
-   ================================================== */
 .inquiry-main-section {
   padding: 55px 0 75px;
 }
@@ -274,9 +265,6 @@ ul, ol {
   cursor: pointer;
 }
 
-/* ==================================================
-   IMAGE UPLOAD UI (EXACT FIGMA REQUIREMENT - PURE CSS)
-   ================================================== */
 .upload-container {
   width: 100%;
   margin: 10px 0 20px;
@@ -386,9 +374,6 @@ ul, ol {
   transform: translateY(-2px);
 }
 
-/* ==================================================
-   FOOTER
-   ================================================== */
 .site-footer {
   background-color: #F4B400;
   padding: 60px 0 25px;
@@ -533,7 +518,6 @@ ul, ol {
   text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .navbar {
     flex-wrap: wrap;

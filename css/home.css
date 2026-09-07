@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
-/* ==================================================
-   HOME PAGE CSS (NO CSS VARIABLES - DIRECT VALUES)
-   ================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -50,9 +47,6 @@ ul, ol {
   padding-right: 20px;
 }
 
-/* ==================================================
-   HEADER & NAVBAR
-   ================================================== */
 .top-header {
   background-color: #F4B400;
   width: 100%;
@@ -149,9 +143,6 @@ ul, ol {
   border-radius: 2px;
 }
 
-/* ==================================================
-   HERO SECTION
-   ================================================== */
 .hero-section {
   padding: 65px 0 75px;
   background-color: #ffffff;
@@ -261,9 +252,6 @@ ul, ol {
   filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.08));
 }
 
-/* ==================================================
-   PRODUCT GALLERY SHOWCASE SECTION
-   ================================================== */
 .gallery-section {
   padding: 70px 0 80px;
   background-color: #fcfdfe;
@@ -394,9 +382,6 @@ ul, ol {
   text-align: center;
 }
 
-/* ==================================================
-   OUR PRODUCT RANGE (LOAD RATINGS)
-   ================================================== */
 .range-section {
   padding: 70px 0 80px;
   background-color: #ffffff;
@@ -472,9 +457,6 @@ ul, ol {
   text-decoration: underline;
 }
 
-/* ==================================================
-   MATERIAL SUPERIORITY / WHY CHOOSE FLORTEK
-   ================================================== */
 .superiority-section {
   padding: 75px 0;
   background-color: #f1f5f9;
@@ -555,9 +537,6 @@ ul, ol {
   padding-left: 34px;
 }
 
-/* ==================================================
-   GOOGLE REVIEWS SECTION
-   ================================================== */
 .reviews-section {
   padding: 70px 0 80px;
   background-color: #ffffff;
@@ -713,9 +692,6 @@ ul, ol {
   font-weight: 500;
 }
 
-/* ==================================================
-   READY TO UPGRADE BANNER
-   ================================================== */
 .cta-banner-section {
   background-color: #2E8B57;
   padding: 55px 0;
@@ -760,9 +736,6 @@ ul, ol {
   transform: translateY(-2px);
 }
 
-/* ==================================================
-   FOOTER
-   ================================================== */
 .site-footer {
   background-color: #F4B400;
   padding: 60px 0 25px;
@@ -907,7 +880,6 @@ ul, ol {
   text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;

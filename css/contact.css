@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
-/* ==================================================
-   CONTACT PAGE CSS (NO CSS VARIABLES - DIRECT VALUES)
-   ================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -50,9 +47,6 @@ ul, ol {
   padding-right: 20px;
 }
 
-/* ==================================================
-   HEADER & NAVBAR
-   ================================================== */
 .top-header {
   background-color: #F4B400;
   width: 100%;
@@ -149,9 +143,6 @@ ul, ol {
   border-radius: 2px;
 }
 
-/* ==================================================
-   CONTACT TOP SECTION
-   ================================================== */
 .contact-page-section {
   padding: 55px 0 75px;
   background-color: #ffffff;
@@ -184,9 +175,6 @@ ul, ol {
   margin-bottom: 30px;
 }
 
-/* ==================================================
-   CONTACT SPLIT GRID
-   ================================================== */
 .contact-split-grid {
   display: grid;
   grid-template-columns: 0.95fr 1.25fr;
@@ -194,7 +182,6 @@ ul, ol {
   align-items: start;
 }
 
-/* Left Contact Cards */
 .contact-details-list {
   display: flex;
   flex-direction: column;
@@ -257,7 +244,6 @@ ul, ol {
   display: block;
 }
 
-/* Right Message Form Box */
 .message-form-box {
   background-color: #f3f4f6;
   border: 1px solid #e5e7eb;
@@ -359,9 +345,6 @@ ul, ol {
   transform: translateY(-2px);
 }
 
-/* ==================================================
-   FOOTER
-   ================================================== */
 .site-footer {
   background-color: #F4B400;
   padding: 60px 0 25px;
@@ -506,7 +489,6 @@ ul, ol {
   text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
   .contact-split-grid {
     grid-template-columns: 1fr;

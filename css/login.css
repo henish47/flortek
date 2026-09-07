@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 
-/* ==================================================
-   FLORTEK INDUSTRIES PVT. LTD. - LOGIN PAGE STYLES
-   PURE CSS3 (ZERO JAVASCRIPT, NO CSS VARIABLES)
-   ================================================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -28,16 +23,12 @@ a {
   transition: all 0.2s ease;
 }
 
-/* ==================================================
-   LOGIN PAGE SPLIT LAYOUT
-   ================================================== */
 .login-page-container {
   display: flex;
   min-height: 100vh;
   width: 100%;
 }
 
-/* Left Half - Brand Showcase */
 .brand-side-section {
   flex: 1;
   background-color: #F3F3F3;
@@ -98,7 +89,6 @@ a {
   border-radius: 999px;
 }
 
-/* Right Half - Login Card Area */
 .form-side-section {
   flex: 1;
   background-color: #FFFFFF;
@@ -136,9 +126,6 @@ a {
   line-height: 1.4;
 }
 
-/* ==================================================
-   FORM CONTROLS
-   ================================================== */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -216,7 +203,6 @@ a {
   font-size: 13px;
 }
 
-/* Options Row (Remember Me & Forgot Password) */
 .form-options-row {
   display: flex;
   align-items: center;
@@ -254,7 +240,6 @@ a {
   color: #005730;
 }
 
-/* Sign In Button */
 .btn-submit-signin {
   width: 100%;
   height: 44px;
@@ -281,7 +266,6 @@ a {
   transform: scale(0.99);
 }
 
-/* Card Bottom Footer */
 .card-bottom-footer {
   margin-top: 32px;
   text-align: center;
@@ -296,9 +280,6 @@ a {
   text-transform: uppercase;
 }
 
-/* ==================================================
-   RESPONSIVE DESIGN (FOR MOBILE & TABLETS)
-   ================================================== */
 @media (max-width: 860px) {
   .login-page-container {
     flex-direction: column;

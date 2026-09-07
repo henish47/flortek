@@ -10,12 +10,10 @@
     </radialGradient>
   </defs>
 
-  <!-- Soft Ambient Background Rings -->
   <circle cx="300" cy="300" r="280" fill="url(#ringBg)"/>
   <circle cx="300" cy="300" r="230" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="6 6"/>
   <circle cx="300" cy="300" r="160" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
-  <!-- Top Center: Round Framed Cover -->
   <g transform="translate(245, 30) scale(0.22)" filter="url(#heroGlow)">
     <circle cx="250" cy="250" r="200" fill="#334155" stroke="#1e293b" stroke-width="6"/>
     <circle cx="250" cy="250" r="170" fill="#475569" stroke="#0f172a" stroke-width="4"/>
@@ -23,7 +21,6 @@
     <circle cx="250" cy="250" r="60" fill="#334155"/>
   </g>
 
-  <!-- Top Right: Circular Cover -->
   <g transform="translate(430, 90) scale(0.2)" filter="url(#heroGlow)">
     <circle cx="250" cy="250" r="210" fill="#475569" stroke="#1e293b" stroke-width="6"/>
     <circle cx="250" cy="250" r="170" fill="#64748b"/>
@@ -31,7 +28,6 @@
     <circle cx="250" cy="250" r="20" fill="#1e293b"/>
   </g>
 
-  <!-- Bottom Right: Slotted Drain Cover -->
   <g transform="translate(420, 370) scale(0.22)" filter="url(#heroGlow)">
     <rect x="50" y="50" width="400" height="240" rx="12" fill="#334155" stroke="#1e293b" stroke-width="6"/>
     <rect x="70" y="70" width="360" height="200" rx="8" fill="#475569"/>
@@ -43,7 +39,6 @@
     <rect x="350" y="90" width="24" height="160" rx="8" fill="#1e293b"/>
   </g>
 
-  <!-- Bottom Center: Dark Square Cover -->
   <g transform="translate(245, 440) scale(0.22)" filter="url(#heroGlow)">
     <rect x="60" y="60" width="380" height="380" rx="18" fill="#334155" stroke="#1e293b" stroke-width="6"/>
     <rect x="90" y="90" width="320" height="320" rx="10" fill="#475569"/>
@@ -51,33 +46,28 @@
     <circle cx="250" cy="250" r="30" fill="#1e293b"/>
   </g>
 
-  <!-- Bottom Left: White/Beige Square Cover -->
   <g transform="translate(50, 360) scale(0.22)" filter="url(#heroGlow)">
     <rect x="60" y="60" width="380" height="380" rx="18" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="6"/>
     <rect x="90" y="90" width="320" height="320" rx="10" fill="#f8fafc"/>
     <circle cx="250" cy="250" r="30" fill="#cbd5e1"/>
   </g>
 
-  <!-- Top Left: Light Square Cover -->
   <g transform="translate(50, 90) scale(0.2)" filter="url(#heroGlow)">
     <rect x="60" y="60" width="380" height="380" rx="18" fill="#cbd5e1" stroke="#94a3b8" stroke-width="6"/>
     <rect x="90" y="90" width="320" height="320" rx="10" fill="#f1f5f9"/>
     <circle cx="250" cy="250" r="25" fill="#94a3b8"/>
   </g>
 
-  <!-- Center Focal Product: Large Dark Heavy Duty Square FRP Cover -->
   <g transform="translate(160, 160) scale(0.56)" filter="url(#heroGlow)">
     <rect x="50" y="50" width="400" height="400" rx="16" fill="#334155" stroke="#1e293b" stroke-width="6"/>
     <rect x="75" y="75" width="350" height="350" rx="10" fill="#1e293b" stroke="#0f172a" stroke-width="4"/>
     <rect x="95" y="95" width="310" height="310" rx="8" fill="#475569" stroke="#0f172a" stroke-width="2"/>
     
-    <!-- Rib patterns -->
     <line x1="95" y1="200" x2="405" y2="200" stroke="#1e293b" stroke-width="4"/>
     <line x1="95" y1="300" x2="405" y2="300" stroke="#1e293b" stroke-width="4"/>
     <line x1="200" y1="95" x2="200" y2="405" stroke="#1e293b" stroke-width="4"/>
     <line x1="300" y1="95" x2="300" y2="405" stroke="#1e293b" stroke-width="4"/>
 
-    <!-- Keyhole & details -->
     <rect x="230" y="230" width="40" height="40" rx="6" fill="#0f172a" stroke="#cbd5e1" stroke-width="2"/>
     <circle cx="250" cy="250" r="10" fill="#cbd5e1"/>
     

@@ -19,34 +19,27 @@
       <stop offset="100%" stop-color="#1e293b"/>
     </linearGradient>
   </defs>
-  <!-- Background -->
   <rect width="500" height="500" rx="16" fill="url(#darkBg)"/>
   
-  <!-- Outer Cast Frame -->
   <rect x="60" y="60" width="380" height="380" rx="18" fill="#334155" stroke="#1e293b" stroke-width="4" filter="url(#darkShadow)"/>
   <rect x="80" y="80" width="340" height="340" rx="10" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
   
-  <!-- Main Cover Body -->
   <rect x="95" y="95" width="310" height="310" rx="8" fill="url(#bevelDark)" stroke="#0f172a" stroke-width="2"/>
   <rect x="105" y="105" width="290" height="290" rx="6" fill="url(#checkPatternDark)" opacity="0.85"/>
   
-  <!-- Inner Structural Grid Ribs -->
   <line x1="95" y1="200" x2="405" y2="200" stroke="#1e293b" stroke-width="3"/>
   <line x1="95" y1="300" x2="405" y2="300" stroke="#1e293b" stroke-width="3"/>
   <line x1="200" y1="95" x2="200" y2="405" stroke="#1e293b" stroke-width="3"/>
   <line x1="300" y1="95" x2="300" y2="405" stroke="#1e293b" stroke-width="3"/>
 
-  <!-- Keyhole / Handle Slots -->
   <rect x="235" y="235" width="30" height="30" rx="6" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
   <circle cx="250" cy="250" r="7" fill="#cbd5e1"/>
   
-  <!-- Lifting points -->
   <circle cx="140" cy="140" r="10" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
   <circle cx="360" cy="140" r="10" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
   <circle cx="140" cy="360" r="10" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
   <circle cx="360" cy="360" r="10" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
 
-  <!-- Brand & Class Embossed Text -->
   <text x="250" y="170" font-family="'Montserrat', sans-serif" font-weight="900" font-size="16" fill="#94a3b8" text-anchor="middle" letter-spacing="3">FLORTEK</text>
   <text x="250" y="340" font-family="'Montserrat', sans-serif" font-weight="800" font-size="14" fill="#cbd5e1" text-anchor="middle" letter-spacing="2">D-400 HEAVY DUTY</text>
 </svg>

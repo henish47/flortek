@@ -8,21 +8,16 @@
       <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.25"/>
     </filter>
   </defs>
-  <!-- Background -->
   <rect width="500" height="500" rx="16" fill="url(#recBg)"/>
   
-  <!-- Outer Deep Frame -->
   <rect x="55" y="55" width="390" height="390" rx="16" fill="#334155" stroke="#1e293b" stroke-width="4" filter="url(#recessedShadow)"/>
   <rect x="75" y="75" width="350" height="350" rx="10" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
   
-  <!-- Recessed Inner Tray (Deep Well for Pavers/Tiles) -->
   <rect x="95" y="95" width="310" height="310" rx="6" fill="#475569" stroke="#0f172a" stroke-width="2"/>
   <rect x="110" y="110" width="280" height="280" rx="4" fill="#334155"/>
   
-  <!-- Inlay Base with Structural Texture -->
   <rect x="120" y="120" width="260" height="260" fill="#1e293b" opacity="0.6"/>
   
-  <!-- Lifting Key Locks in Corners -->
   <rect x="125" y="125" width="35" height="35" rx="6" fill="#0f172a" stroke="#cbd5e1" stroke-width="2"/>
   <circle cx="142" cy="142" r="6" fill="#cbd5e1"/>
   
@@ -35,7 +30,6 @@
   <rect x="340" y="340" width="35" height="35" rx="6" fill="#0f172a" stroke="#cbd5e1" stroke-width="2"/>
   <circle cx="357" cy="357" r="6" fill="#cbd5e1"/>
 
-  <!-- Center Branding -->
   <text x="250" y="245" font-family="'Montserrat', sans-serif" font-weight="900" font-size="16" fill="#94a3b8" text-anchor="middle" letter-spacing="3">FLORTEK</text>
   <text x="250" y="275" font-family="'Montserrat', sans-serif" font-weight="700" font-size="13" fill="#cbd5e1" text-anchor="middle" letter-spacing="2">RECESSED TRAY COVER</text>
 </svg>

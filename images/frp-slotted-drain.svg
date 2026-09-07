@@ -13,17 +13,13 @@
       <stop offset="100%" stop-color="#1e293b"/>
     </linearGradient>
   </defs>
-  <!-- Background -->
   <rect width="500" height="500" rx="16" fill="url(#slotBg)"/>
   
-  <!-- Outer Frame -->
   <rect x="55" y="55" width="390" height="390" rx="16" fill="#334155" stroke="#1e293b" stroke-width="4" filter="url(#slotShadow)"/>
   <rect x="75" y="75" width="350" height="350" rx="10" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
   
-  <!-- Inner Grate Slab -->
   <rect x="90" y="90" width="320" height="320" rx="6" fill="url(#metalSlot)" stroke="#0f172a" stroke-width="2"/>
 
-  <!-- Row 1 of Drainage Slots -->
   <rect x="120" y="115" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
   <rect x="160" y="115" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
   <rect x="200" y="115" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
@@ -32,7 +28,6 @@
   <rect x="320" y="115" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
   <rect x="360" y="115" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
 
-  <!-- Row 2 of Drainage Slots -->
   <rect x="120" y="275" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
   <rect x="160" y="275" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
   <rect x="200" y="275" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
@@ -41,7 +36,6 @@
   <rect x="320" y="275" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
   <rect x="360" y="275" width="26" height="110" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.5"/>
 
-  <!-- Center Bridge & Text -->
   <rect x="90" y="235" width="320" height="30" fill="#1e293b"/>
   <text x="250" y="256" font-family="'Montserrat', sans-serif" font-weight="900" font-size="14" fill="#cbd5e1" text-anchor="middle" letter-spacing="3">FLORTEK GULLY DRAIN</text>
 </svg>

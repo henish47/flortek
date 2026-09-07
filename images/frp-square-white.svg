@@ -19,30 +19,23 @@
       <stop offset="100%" stop-color="#cbd5e1"/>
     </linearGradient>
   </defs>
-  <!-- Background plate -->
   <rect width="500" height="500" rx="16" fill="url(#lightBg)"/>
   
-  <!-- Outer Frame -->
   <rect x="60" y="60" width="380" height="380" rx="20" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="4" filter="url(#softShadow)"/>
   <rect x="80" y="80" width="340" height="340" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
   
-  <!-- Main Cover Plate -->
   <rect x="95" y="95" width="310" height="310" rx="8" fill="url(#bevelLight)" stroke="#64748b" stroke-width="2"/>
   <rect x="105" y="105" width="290" height="290" rx="6" fill="url(#checkPatternLight)" opacity="0.6"/>
   
-  <!-- Inner Border Line -->
   <rect x="120" y="120" width="260" height="260" rx="4" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 4"/>
   
-  <!-- Center Keyhole / Lifting Hook -->
   <circle cx="250" cy="250" r="28" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
   <path d="M 235 242 L 265 242 L 250 262 Z" fill="#475569"/>
   <circle cx="250" cy="250" r="6" fill="#334155"/>
   
-  <!-- Brand Emboss -->
   <text x="250" y="180" font-family="'Montserrat', sans-serif" font-weight="800" font-size="16" fill="#64748b" text-anchor="middle" letter-spacing="3">FLORTEK FRP</text>
   <text x="250" y="340" font-family="'Montserrat', sans-serif" font-weight="700" font-size="13" fill="#94a3b8" text-anchor="middle" letter-spacing="2">EN-124 C-250</text>
   
-  <!-- Corner bolts -->
   <circle cx="115" cy="115" r="5" fill="#64748b"/>
   <circle cx="385" cy="115" r="5" fill="#64748b"/>
   <circle cx="115" cy="385" r="5" fill="#64748b"/>
