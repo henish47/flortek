@@ -58,15 +58,12 @@ ul, ol {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
+.top-header .navbar {
   padding: 0;
+  height: 72px;
 }
 
-.navbar-brand {
+.top-header .navbar-brand {
   padding: 0;
   margin: 0;
 }
@@ -85,15 +82,13 @@ ul, ol {
   align-items: center;
 }
 
-.nav-links {
+.navbar-nav.nav-links {
   display: flex;
   align-items: center;
   gap: 4px;
-  margin-bottom: 0;
-  padding-left: 0;
 }
 
-.nav-link {
+.top-header .nav-link {
   padding: 8px 18px !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 13.5px;
@@ -101,22 +96,21 @@ ul, ol {
   color: #111827 !important;
   border-radius: 9999px;
   transition: all 0.2s ease-in-out;
-  display: inline-block;
 }
 
-.nav-link:hover {
+.top-header .nav-link:hover {
   color: #2E8B57 !important;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.nav-link.active {
+.top-header .nav-link.active {
   background-color: #2E8B57 !important;
   color: #ffffff !important;
 }
 
 .btn-header-quote {
   background-color: #2E8B57;
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 13.5px;
   font-weight: 800;
@@ -133,25 +127,13 @@ ul, ol {
   transform: translateY(-1px);
 }
 
-.nav-toggle-checkbox {
-  display: none;
+.navbar-toggler {
+  border: 1px solid #111827;
+  padding: 4px 8px;
 }
 
-.nav-hamburger {
-  display: none;
-  cursor: pointer;
-  width: 28px;
-  height: 22px;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.nav-hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #111827;
-  border-radius: 2px;
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 .about-top-section {
@@ -177,9 +159,7 @@ ul, ol {
 }
 
 .about-badges-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  margin-bottom: 0;
 }
 
 .about-badge-card {
@@ -231,10 +211,7 @@ ul, ol {
 }
 
 .profile-grid {
-  display: grid;
-  grid-template-columns: 1.35fr 0.95fr;
-  gap: 40px;
-  align-items: start;
+  margin-bottom: 0;
 }
 
 .section-sub-heading {
@@ -355,7 +332,7 @@ ul, ol {
 
 .btn-card-yellow {
   background-color: #F4B400;
-  color: #111827;
+  color: #111827 !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: 900;
@@ -405,12 +382,11 @@ ul, ol {
   font-size: 13.5px;
   color: #6b7280;
   max-width: 700px;
+  margin: 0 auto;
 }
 
 .team-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  margin-bottom: 0;
 }
 
 .team-card {
@@ -463,9 +439,6 @@ ul, ol {
 }
 
 .footer-top-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 0.9fr 1.1fr 1.2fr;
-  gap: 40px;
   margin-bottom: 50px;
 }
 
@@ -492,7 +465,7 @@ ul, ol {
   height: 32px;
   border-radius: 50%;
   background-color: #111827;
-  color: #F4B400;
+  color: #F4B400 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -512,7 +485,7 @@ ul, ol {
 
 .social-icon-circle:hover {
   background-color: #2E8B57;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .social-icon-circle:hover i {
@@ -580,10 +553,7 @@ ul, ol {
 .footer-bottom-bar {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   padding-top: 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  margin-top: 50px;
   gap: 16px;
   font-size: 12px;
   font-weight: 700;
@@ -597,63 +567,39 @@ ul, ol {
 }
 
 .footer-bottom-links a:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 @media (max-width: 991.98px) {
   .top-header .navbar {
     height: auto;
-    padding: 12px 0;
+    padding: 10px 0;
   }
-  .top-header .navbar-toggler {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 6px 10px;
-    border-radius: 6px;
-  }
-  .top-header .navbar-toggler:focus {
-    box-shadow: none;
-  }
-  .top-header .navbar-collapse {
-    padding-top: 14px;
-    width: 100%;
-  }
-  .top-header .nav-pill-wrapper {
-    display: flex;
-    width: 100%;
+  .collapse.navbar-collapse {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 12px;
+    margin-top: 10px;
+    width: 100%;
   }
-  .top-header .nav-links {
+  .nav-pill-wrapper {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+  }
+  .navbar-nav.nav-links {
     flex-direction: column;
     width: 100%;
-    gap: 6px;
+    gap: 4px;
   }
   .top-header .nav-link {
     width: 100%;
     text-align: center;
   }
-  .about-badges-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .profile-grid {
-    grid-template-columns: 1fr;
-  }
-  .team-cards-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-top-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media (max-width: 600px) {
-  .about-badges-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-top-grid {
-    grid-template-columns: 1fr;
-  }
   .footer-bottom-bar {
     flex-direction: column;
     text-align: center;
