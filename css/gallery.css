@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
   transition: all 0.25s ease-in-out;
 }
@@ -36,6 +36,8 @@ img, svg {
 
 ul, ol {
   list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
 }
 
 .container {
@@ -56,11 +58,14 @@ ul, ol {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.top-header .navbar {
+  padding: 0;
   height: 72px;
+}
+
+.top-header .navbar-brand {
+  padding: 0;
+  margin-right: 0;
 }
 
 .brand-logo-img {
@@ -77,35 +82,35 @@ ul, ol {
   align-items: center;
 }
 
-.nav-links {
+.navbar-nav.nav-links {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-.nav-link {
-  padding: 8px 18px;
+.top-header .nav-link {
+  padding: 8px 18px !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 13.5px;
   font-weight: 700;
-  color: #111827;
+  color: #111827 !important;
   border-radius: 9999px;
   transition: all 0.2s ease-in-out;
 }
 
-.nav-link:hover {
-  color: #2E8B57;
+.top-header .nav-link:hover {
+  color: #2E8B57 !important;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.nav-link.active {
-  background-color: #2E8B57;
-  color: #ffffff;
+.top-header .nav-link.active {
+  background-color: #2E8B57 !important;
+  color: #ffffff !important;
 }
 
 .btn-header-quote {
   background-color: #2E8B57;
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 13.5px;
   font-weight: 800;
@@ -122,25 +127,13 @@ ul, ol {
   transform: translateY(-1px);
 }
 
-.nav-toggle-checkbox {
-  display: none;
+.navbar-toggler {
+  border: 1px solid #111827;
+  padding: 4px 8px;
 }
 
-.nav-hamburger {
-  display: none;
-  cursor: pointer;
-  width: 28px;
-  height: 22px;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.nav-hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #111827;
-  border-radius: 2px;
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 .factory-gallery-section {
@@ -178,13 +171,6 @@ ul, ol {
   margin-bottom: 35px;
 }
 
-.photos-grid-3x2 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
 .photo-item-card {
   border-radius: 10px;
   overflow: hidden;
@@ -201,22 +187,6 @@ ul, ol {
 .photo-item-card img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-.photo-item-large {
-  max-width: 700px;
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  background-color: #0f172a;
-}
-
-.photo-item-large img {
-  width: 100%;
-  height: 240px;
   object-fit: cover;
   display: block;
 }
@@ -256,13 +226,6 @@ ul, ol {
   font-size: 13.5px;
   color: #6b7280;
   line-height: 1.5;
-}
-
-.product-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 35px;
 }
 
 .product-card {
@@ -335,7 +298,7 @@ ul, ol {
 .btn-get-price {
   width: 100%;
   background-color: #2E8B57;
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: 800;
@@ -354,7 +317,7 @@ ul, ol {
 
 .btn-view-all {
   background-color: #2E8B57;
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 12.5px;
   font-weight: 800;
@@ -400,7 +363,7 @@ ul, ol {
 
 .btn-contact-yellow {
   background-color: #F4B400;
-  color: #111827;
+  color: #111827 !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 12.5px;
   font-weight: 900;
@@ -420,13 +383,6 @@ ul, ol {
   background-color: #F4B400;
   padding: 60px 0 25px;
   color: #111827;
-}
-
-.footer-top-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 0.9fr 1.1fr 1.2fr;
-  gap: 40px;
-  margin-bottom: 50px;
 }
 
 .footer-brand-logo {
@@ -452,7 +408,7 @@ ul, ol {
   height: 32px;
   border-radius: 50%;
   background-color: #111827;
-  color: #F4B400;
+  color: #F4B400 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -472,7 +428,7 @@ ul, ol {
 
 .social-icon-circle:hover {
   background-color: #2E8B57;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .social-icon-circle:hover i {
@@ -540,10 +496,7 @@ ul, ol {
 .footer-bottom-bar {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   padding-top: 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  margin-top: 50px;
   gap: 16px;
   font-size: 12px;
   font-weight: 700;
@@ -557,64 +510,39 @@ ul, ol {
 }
 
 .footer-bottom-links a:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
-@media (max-width: 992px) {
-  .product-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .photos-grid-3x2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .navbar {
-    flex-wrap: wrap;
+@media (max-width: 991.98px) {
+  .top-header .navbar {
     height: auto;
-    padding: 12px 0;
+    padding: 10px 0;
   }
-  .nav-hamburger {
-    display: flex;
-  }
-  .btn-header-quote {
-    display: none;
-  }
-  .nav-pill-wrapper {
-    display: none;
-    width: 100%;
-    margin-top: 14px;
+  .collapse.navbar-collapse {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 12px;
+    margin-top: 10px;
+    width: 100%;
   }
-  .nav-links {
+  .nav-pill-wrapper {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+  }
+  .navbar-nav.nav-links {
     flex-direction: column;
     width: 100%;
+    gap: 4px;
   }
-  .nav-link {
+  .top-header .nav-link {
     width: 100%;
     text-align: center;
-  }
-  .nav-toggle-checkbox:checked ~ .nav-pill-wrapper {
-    display: flex;
-  }
-  .footer-top-grid {
-    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 650px) {
-  .photos-grid-3x2 {
-    grid-template-columns: 1fr;
-  }
-  .product-cards-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-top-grid {
-    grid-template-columns: 1fr;
-  }
   .footer-bottom-bar {
     flex-direction: column;
     text-align: center;

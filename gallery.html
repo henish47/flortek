@@ -6,6 +6,7 @@
   <title>Gallery | FLORTEK INDUSTRIES PVT. LTD.</title>
   <meta name="description" content="Featuring FLORTEK's state-of-the-art manufacturing facility, advanced compression molding equipment, raw material testing lab, and product gallery.">
   <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/gallery.css">
 </head>
@@ -13,29 +14,28 @@
 
   <header class="top-header">
     <div class="container">
-      <nav class="navbar" aria-label="Main Navigation">
-        <a href="index.html" class="brand-logo-link" aria-label="FLORTEK Industries Homepage">
+      <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+        <a href="index.html" class="navbar-brand brand-logo-link" aria-label="FLORTEK Industries Homepage">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="brand-logo-img">
         </a>
 
-        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation menu">
-        <label for="nav-toggle" class="nav-hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#flortekNav" aria-controls="flortekNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="nav-pill-wrapper">
-          <ul class="nav-links">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="products.html" class="nav-link">Prodcut</a></li>
-            <li><a href="gallery.html" class="nav-link active">Galary</a></li>
-            <li><a href="contact.html" class="nav-link">Contact us</a></li>
-          </ul>
+        <div class="collapse navbar-collapse justify-content-center" id="flortekNav">
+          <div class="nav-pill-wrapper">
+            <ul class="navbar-nav nav-links">
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="products.html" class="nav-link">Product</a></li>
+              <li class="nav-item"><a href="gallery.html" class="nav-link active">Galary</a></li>
+              <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
+            </ul>
+          </div>
         </div>
 
-        <a href="inquiry.html" class="btn-header-quote">Get Quote</a>
+        <a href="inquiry.html" class="btn-header-quote d-none d-lg-inline-flex">Get Quote</a>
       </nav>
     </div>
   </header>
@@ -47,24 +47,36 @@
         <p class="gallery-top-sub1">FEATURING OUR STATE-OF-THE-ART MANUFACTURING FACILITY, ADVANCED EQUIPMENT, RAW MATERIAL TESTING</p>
         <p class="gallery-top-sub2">ENGINEERED TO EXTREME DURABILITY</p>
 
-        <div class="photos-grid-3x2">
-          <div class="photo-item-card">
-            <img src="./images/Gallery-1.png" alt="Hydraulic Press Workshop Plant">
+        <div class="row g-3 photos-grid-3x2">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="photo-item-card h-100">
+              <img src="./images/Gallery-1.png" alt="Hydraulic Press Workshop Plant">
+            </div>
           </div>
-          <div class="photo-item-card">
-            <img src="/images/Gallery-2.png" alt="Precision Mold Tooling & Fabrication">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="photo-item-card h-100">
+              <img src="/images/Gallery-2.png" alt="Precision Mold Tooling & Fabrication">
+            </div>
           </div>
-          <div class="photo-item-card">
-            <img src="./images/Gallery-3.png" alt="Raw Material Fiber Resin Bath">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="photo-item-card h-100">
+              <img src="./images/Gallery-3.png" alt="Raw Material Fiber Resin Bath">
+            </div>
           </div>
-          <div class="photo-item-card">
-            <img src="./images/Gallaery-5.png" alt="Molded FRP Walkway Grating Line">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="photo-item-card h-100">
+              <img src="./images/Gallaery-5.png" alt="Molded FRP Walkway Grating Line">
+            </div>
           </div>
-          <div class="photo-item-card">
-            <img src="./images/Gallery-6.png" alt="Finished Product Inspection & Dispatch">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="photo-item-card h-100">
+              <img src="./images/Gallery-6.png" alt="Finished Product Inspection & Dispatch">
+            </div>
           </div>
-          <div class="photo-item-card">
-            <img src="./images/Gallery-7.png" alt="Offshore Petrochemical Walkway Installations">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="photo-item-card h-100">
+              <img src="./images/Gallery-7.png" alt="Offshore Petrochemical Walkway Installations">
+            </div>
           </div>
         </div>
       </div>
@@ -80,93 +92,105 @@
           </p>
         </div>
 
-        <div class="product-cards-grid">
-          <article class="product-card">
-            <div class="product-card-img-wrap">
-              <img src="/images/frp-10x10-white.jpg" alt="FRP Square Manhole Cover Light Beige" class="product-card-img">
-            </div>
-            <div class="product-card-header">
-              <h3 class="product-card-title">FRP SQUARE MANHOLE COVER</h3>
-              <span class="badge-hot">HOT SELL</span>
-            </div>
-            <p class="product-card-desc">
-              Premium grade FRP composite cover engineered for residential &amp; commercial zones. Weather proof, zero maintenance with high impact resistance.
-            </p>
-            <a href="inquiry.html" class="btn-get-price">GET BEST PRICE</a>
-          </article>
+        <div class="row g-4 product-cards-grid">
+          <div class="col-lg-4 col-md-6 col-12">
+            <article class="product-card h-100">
+              <div class="product-card-img-wrap">
+                <img src="/images/frp-10x10-white.jpg" alt="FRP Square Manhole Cover Light Beige" class="product-card-img">
+              </div>
+              <div class="product-card-header">
+                <h3 class="product-card-title">FRP SQUARE MANHOLE COVER</h3>
+                <span class="badge-hot">HOT SELL</span>
+              </div>
+              <p class="product-card-desc">
+                Premium grade FRP composite cover engineered for residential &amp; commercial zones. Weather proof, zero maintenance with high impact resistance.
+              </p>
+              <a href="inquiry.html" class="btn-get-price mt-auto">GET BEST PRICE</a>
+            </article>
+          </div>
 
-          <article class="product-card">
-            <div class="product-card-img-wrap">
-              <img src="./images/frp-600x600-d400.jpg" alt="FRP Square Manhole Cover Dark Grey" class="product-card-img">
-            </div>
-            <div class="product-card-header">
-              <h3 class="product-card-title">FRP SQUARE MANHOLE COVER</h3>
-              <span class="badge-hot">HOT SELL</span>
-            </div>
-            <p class="product-card-desc">
-              Heavy-duty D400 composite cover for highways, industrial parks, and heavy vehicular traffic. Tested to withstand up to 40-ton load capacity.
-            </p>
-            <a href="inquiry.html" class="btn-get-price">GET BEST PRICE</a>
-          </article>
+          <div class="col-lg-4 col-md-6 col-12">
+            <article class="product-card h-100">
+              <div class="product-card-img-wrap">
+                <img src="./images/frp-600x600-d400.jpg" alt="FRP Square Manhole Cover Dark Grey" class="product-card-img">
+              </div>
+              <div class="product-card-header">
+                <h3 class="product-card-title">FRP SQUARE MANHOLE COVER</h3>
+                <span class="badge-hot">HOT SELL</span>
+              </div>
+              <p class="product-card-desc">
+                Heavy-duty D400 composite cover for highways, industrial parks, and heavy vehicular traffic. Tested to withstand up to 40-ton load capacity.
+              </p>
+              <a href="inquiry.html" class="btn-get-price mt-auto">GET BEST PRICE</a>
+            </article>
+          </div>
 
-          <article class="product-card">
-            <div class="product-card-img-wrap">
-              <img src="./images/frp-circular-600-b125.jpg" alt="FRP Circular Manhole Cover" class="product-card-img">
-            </div>
-            <div class="product-card-header">
-              <h3 class="product-card-title">FRP CIRCULAR MANHOLE COVER</h3>
-              <span class="badge-hot">HOT SELL</span>
-            </div>
-            <p class="product-card-desc">
-              Precision molded round composite cover with airtight sealing and lock mechanism. Ideal for sewer systems and municipal drainage networks.
-            </p>
-            <a href="inquiry.html" class="btn-get-price">GET BEST PRICE</a>
-          </article>
+          <div class="col-lg-4 col-md-6 col-12">
+            <article class="product-card h-100">
+              <div class="product-card-img-wrap">
+                <img src="./images/frp-circular-600-b125.jpg" alt="FRP Circular Manhole Cover" class="product-card-img">
+              </div>
+              <div class="product-card-header">
+                <h3 class="product-card-title">FRP CIRCULAR MANHOLE COVER</h3>
+                <span class="badge-hot">HOT SELL</span>
+              </div>
+              <p class="product-card-desc">
+                Precision molded round composite cover with airtight sealing and lock mechanism. Ideal for sewer systems and municipal drainage networks.
+              </p>
+              <a href="inquiry.html" class="btn-get-price mt-auto">GET BEST PRICE</a>
+            </article>
+          </div>
 
-          <article class="product-card">
-            <div class="product-card-img-wrap">
-              <img src="./images/frp-31x42-heavy.jpg" alt="FRP Framed Square Manhole Cover" class="product-card-img">
-            </div>
-            <div class="product-card-header">
-              <h3 class="product-card-title">FRP SQUARE MANHOLE COVER</h3>
-              <span class="badge-hot">HOT SELL</span>
-            </div>
-            <p class="product-card-desc">
-              Reinforced square cover with integrated heavy-duty flanged frame. Engineered for quick roadway installation and perfect flush alignment.
-            </p>
-            <a href="inquiry.html" class="btn-get-price">GET BEST PRICE</a>
-          </article>
+          <div class="col-lg-4 col-md-6 col-12">
+            <article class="product-card h-100">
+              <div class="product-card-img-wrap">
+                <img src="./images/frp-31x42-heavy.jpg" alt="FRP Framed Square Manhole Cover" class="product-card-img">
+              </div>
+              <div class="product-card-header">
+                <h3 class="product-card-title">FRP SQUARE MANHOLE COVER</h3>
+                <span class="badge-hot">HOT SELL</span>
+              </div>
+              <p class="product-card-desc">
+                Reinforced square cover with integrated heavy-duty flanged frame. Engineered for quick roadway installation and perfect flush alignment.
+              </p>
+              <a href="inquiry.html" class="btn-get-price mt-auto">GET BEST PRICE</a>
+            </article>
+          </div>
 
-          <article class="product-card">
-            <div class="product-card-img-wrap">
-              <img src="./images/frp-750x750-d400.jpg" alt="FRP Square Slotted Drain Cover" class="product-card-img">
-            </div>
-            <div class="product-card-header">
-              <h3 class="product-card-title">FRP SQUARE SLOTTED DRAIN COVER</h3>
-              <span class="badge-hot">HOT SELL</span>
-            </div>
-            <p class="product-card-desc">
-              High-flow slotted gully drain grating. Chemically inert against acidic water and chemical runoffs, ensuring maximum water discharge efficiency.
-            </p>
-            <a href="inquiry.html" class="btn-get-price">GET BEST PRICE</a>
-          </article>
+          <div class="col-lg-4 col-md-6 col-12">
+            <article class="product-card h-100">
+              <div class="product-card-img-wrap">
+                <img src="./images/frp-750x750-d400.jpg" alt="FRP Square Slotted Drain Cover" class="product-card-img">
+              </div>
+              <div class="product-card-header">
+                <h3 class="product-card-title">FRP SQUARE SLOTTED DRAIN COVER</h3>
+                <span class="badge-hot">HOT SELL</span>
+              </div>
+              <p class="product-card-desc">
+                High-flow slotted gully drain grating. Chemically inert against acidic water and chemical runoffs, ensuring maximum water discharge efficiency.
+              </p>
+              <a href="inquiry.html" class="btn-get-price mt-auto">GET BEST PRICE</a>
+            </article>
+          </div>
 
-          <article class="product-card">
-            <div class="product-card-img-wrap">
-              <img src="/images/GULLY COVER-5T-500x500-GRAY.png" alt="FRP Square With Hole Cover" class="product-card-img">
-            </div>
-            <div class="product-card-header">
-              <h3 class="product-card-title">FRP SQUARE WITH HOLE COVER</h3>
-              <span class="badge-hot">HOT SELL</span>
-            </div>
-            <p class="product-card-desc">
-              Architectural recessed tray cover designed for seamless tile or paver block infill in high-end pedestrian walkways and building plazas.
-            </p>
-            <a href="inquiry.html" class="btn-get-price">GET BEST PRICE</a>
-          </article>
+          <div class="col-lg-4 col-md-6 col-12">
+            <article class="product-card h-100">
+              <div class="product-card-img-wrap">
+                <img src="/images/GULLY COVER-5T-500x500-GRAY.png" alt="FRP Square With Hole Cover" class="product-card-img">
+              </div>
+              <div class="product-card-header">
+                <h3 class="product-card-title">FRP SQUARE WITH HOLE COVER</h3>
+                <span class="badge-hot">HOT SELL</span>
+              </div>
+              <p class="product-card-desc">
+                Architectural recessed tray cover designed for seamless tile or paver block infill in high-end pedestrian walkways and building plazas.
+              </p>
+              <a href="inquiry.html" class="btn-get-price mt-auto">GET BEST PRICE</a>
+            </article>
+          </div>
         </div>
 
-        <div style="text-align: center;">
+        <div class="text-center">
           <a href="products.html" class="btn-view-all">VIEW ALL PRODUCTS &rarr;</a>
         </div>
       </div>
@@ -183,8 +207,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-top-grid">
-        <div class="footer-col">
+      <div class="row g-4 footer-top-grid">
+        <div class="col-lg-4 col-md-6 col-12 footer-col">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="footer-brand-logo">
           <p class="footer-bio">
             Leading manufacturer of high-quality FRP, BMC, and Steel covers. Engineering infrastructure solutions for a safer tomorrow.
@@ -196,7 +220,7 @@
           </div>
         </div>
 
-        <div class="footer-col">
+        <div class="col-lg-2 col-md-6 col-12 footer-col">
           <h4 class="footer-col-title">QUICK LINKS</h4>
           <ul class="footer-links-list">
             <li><a href="index.html">HOME</a></li>
@@ -208,7 +232,7 @@
           </ul>
         </div>
 
-        <div class="footer-col">
+        <div class="col-lg-3 col-md-6 col-12 footer-col">
           <h4 class="footer-col-title">CATEGORY</h4>
           <ul class="footer-links-list">
             <li><a href="products.html">FRP MANHOLE COVER</a></li>
@@ -219,7 +243,7 @@
           </ul>
         </div>
 
-        <div class="footer-col">
+        <div class="col-lg-3 col-md-6 col-12 footer-col">
           <h4 class="footer-col-title">CONTACT INFO</h4>
           <ul class="footer-contact-list">
             <li class="footer-contact-item">
@@ -238,7 +262,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-bar">
+      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center">
         <span>2026 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</span>
         <div class="footer-bottom-links">
           <a href="about.html">PRIVACY POLICY</a>
@@ -248,6 +272,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>

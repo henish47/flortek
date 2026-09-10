@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
   transition: all 0.25s ease-in-out;
 }
@@ -36,6 +36,8 @@ img, svg {
 
 ul, ol {
   list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
 }
 
 .container {
@@ -61,6 +63,12 @@ ul, ol {
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  padding: 0;
+}
+
+.navbar-brand {
+  padding: 0;
+  margin: 0;
 }
 
 .brand-logo-img {
@@ -81,26 +89,29 @@ ul, ol {
   display: flex;
   align-items: center;
   gap: 4px;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
 .nav-link {
-  padding: 8px 18px;
+  padding: 8px 18px !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 13.5px;
   font-weight: 700;
-  color: #111827;
+  color: #111827 !important;
   border-radius: 9999px;
   transition: all 0.2s ease-in-out;
+  display: inline-block;
 }
 
 .nav-link:hover {
-  color: #2E8B57;
+  color: #2E8B57 !important;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
 .nav-link.active {
-  background-color: #2E8B57;
-  color: #ffffff;
+  background-color: #2E8B57 !important;
+  color: #ffffff !important;
 }
 
 .btn-header-quote {
@@ -573,36 +584,38 @@ ul, ol {
   }
 }
 
-@media (max-width: 900px) {
-  .navbar {
-    flex-wrap: wrap;
+@media (max-width: 991.98px) {
+  .top-header .navbar {
     height: auto;
     padding: 12px 0;
   }
-  .nav-hamburger {
-    display: flex;
+  .top-header .navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 6px 10px;
+    border-radius: 6px;
   }
-  .btn-header-quote {
-    display: none;
+  .top-header .navbar-toggler:focus {
+    box-shadow: none;
   }
-  .nav-pill-wrapper {
-    display: none;
+  .top-header .navbar-collapse {
+    padding-top: 14px;
     width: 100%;
-    margin-top: 14px;
+  }
+  .top-header .nav-pill-wrapper {
+    display: flex;
+    width: 100%;
     background-color: #ffffff;
     border-radius: 8px;
     padding: 12px;
   }
-  .nav-links {
+  .top-header .nav-links {
     flex-direction: column;
     width: 100%;
+    gap: 6px;
   }
-  .nav-link {
+  .top-header .nav-link {
     width: 100%;
     text-align: center;
-  }
-  .nav-toggle-checkbox:checked ~ .nav-pill-wrapper {
-    display: flex;
   }
   .footer-top-grid {
     grid-template-columns: 1fr 1fr;
