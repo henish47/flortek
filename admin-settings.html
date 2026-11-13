@@ -13,6 +13,111 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- External Admin CSS -->
   <link rel="stylesheet" href="css/admin.css">
+
+  <style>
+    /* In-page Form Validation & Alert Styles */
+    .admin-form-input.is-invalid, 
+    .admin-form-textarea.is-invalid {
+      border-color: #dc2626 !important;
+      background-color: #fef2f2 !important;
+    }
+    
+    .admin-form-input.is-valid, 
+    .admin-form-textarea.is-valid {
+      border-color: #16a34a !important;
+    }
+
+    .admin-error-text {
+      color: #dc2626;
+      font-size: 11.5px;
+      font-weight: 500;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .field-shake {
+      animation: fieldShake 0.35s ease-in-out;
+    }
+
+    @keyframes fieldShake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-5px); }
+      40%, 80% { transform: translateX(5px); }
+    }
+
+    .admin-form-alert {
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      display: none;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .admin-form-alert.success {
+      background-color: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      display: flex;
+    }
+
+    .admin-form-alert.danger {
+      background-color: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+      display: flex;
+    }
+
+    .password-strength-meter {
+      height: 4px;
+      border-radius: 2px;
+      background-color: #e5e7eb;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+
+    .password-strength-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease, background-color 0.3s ease;
+    }
+
+    .password-hint {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 4px;
+      min-height: 16px;
+    }
+
+    .toast-pill-notification {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #111827;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      z-index: 99999;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast-pill-notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
 
@@ -116,27 +221,35 @@
               <h2 class="settings-section-title">Company Profile</h2>
               <p class="settings-section-desc">Update the primary organization information displayed on invoices and communications.</p>
               
-              <form action="#" method="GET">
+              <!-- Company Form Alert -->
+              <div id="companyAlert" class="admin-form-alert" role="alert"></div>
+
+              <form id="companyProfileForm" action="#" method="POST" novalidate>
                 <div class="row g-3">
                   <div class="col-md-6 admin-form-group">
-                    <label class="admin-form-label">Company Legal Name</label>
-                    <input type="text" class="admin-form-input" value="FLORTEK INDUSTRIES PVT. LTD.">
+                    <label class="admin-form-label" for="companyLegalName">Company Legal Name *</label>
+                    <input type="text" id="companyLegalName" name="companyLegalName" class="admin-form-input" value="FLORTEK INDUSTRIES PVT. LTD." required>
+                    <div class="admin-error-text" id="companyNameError"></div>
                   </div>
                   <div class="col-md-6 admin-form-group">
-                    <label class="admin-form-label">Support Email</label>
-                    <input type="email" class="admin-form-input" value="info@flortek.in">
+                    <label class="admin-form-label" for="supportEmail">Support Email *</label>
+                    <input type="email" id="supportEmail" name="supportEmail" class="admin-form-input" value="info@flortek.in" required>
+                    <div class="admin-error-text" id="supportEmailError"></div>
                   </div>
                   <div class="col-md-6 admin-form-group">
-                    <label class="admin-form-label">Contact Phone</label>
-                    <input type="text" class="admin-form-input" value="+91 98765 43210">
+                    <label class="admin-form-label" for="contactPhone">Contact Phone *</label>
+                    <input type="text" id="contactPhone" name="contactPhone" class="admin-form-input" value="+91 98765 43210" required>
+                    <div class="admin-error-text" id="contactPhoneError"></div>
                   </div>
                   <div class="col-md-6 admin-form-group">
-                    <label class="admin-form-label">Corporate Website</label>
-                    <input type="url" class="admin-form-input" value="https://flortek.in">
+                    <label class="admin-form-label" for="corporateWebsite">Corporate Website *</label>
+                    <input type="url" id="corporateWebsite" name="corporateWebsite" class="admin-form-input" value="https://flortek.in" required>
+                    <div class="admin-error-text" id="corporateWebsiteError"></div>
                   </div>
                   <div class="col-12 admin-form-group">
-                    <label class="admin-form-label">Manufacturing Plant & Office Address</label>
-                    <textarea class="admin-form-textarea">Plot No. 42-45, GIDC Industrial Estate, Phase II, Vatva, Ahmedabad, Gujarat 382445, India</textarea>
+                    <label class="admin-form-label" for="officeAddress">Manufacturing Plant &amp; Office Address *</label>
+                    <textarea id="officeAddress" name="officeAddress" class="admin-form-textarea" required>Plot No. 42-45, GIDC Industrial Estate, Phase II, Vatva, Ahmedabad, Gujarat 382445, India</textarea>
+                    <div class="admin-error-text" id="officeAddressError"></div>
                   </div>
                 </div>
                 <div class="mt-3 text-end">
@@ -147,22 +260,32 @@
 
             <!-- Security & Password -->
             <div class="settings-section-card">
-              <h2 class="settings-section-title">Security & Password</h2>
+              <h2 class="settings-section-title">Security &amp; Password</h2>
               <p class="settings-section-desc">Ensure your account is using a long, random password to stay secure.</p>
               
-              <form action="#" method="GET">
+              <!-- Password Form Alert -->
+              <div id="passwordAlert" class="admin-form-alert" role="alert"></div>
+
+              <form id="passwordForm" action="#" method="POST" novalidate>
                 <div class="row g-3">
                   <div class="col-md-4 admin-form-group">
-                    <label class="admin-form-label">Current Password</label>
-                    <input type="password" class="admin-form-input" placeholder="••••••••">
+                    <label class="admin-form-label" for="currentPassword">Current Password *</label>
+                    <input type="password" id="currentPassword" name="currentPassword" class="admin-form-input" placeholder="••••••••" required>
+                    <div class="admin-error-text" id="currentPassError"></div>
                   </div>
                   <div class="col-md-4 admin-form-group">
-                    <label class="admin-form-label">New Password</label>
-                    <input type="password" class="admin-form-input" placeholder="••••••••">
+                    <label class="admin-form-label" for="newPassword">New Password *</label>
+                    <input type="password" id="newPassword" name="newPassword" class="admin-form-input" placeholder="••••••••" required>
+                    <div class="password-strength-meter">
+                      <div id="passwordStrengthBar" class="password-strength-bar"></div>
+                    </div>
+                    <div id="passwordStrengthText" class="password-hint"></div>
+                    <div class="admin-error-text" id="newPassError"></div>
                   </div>
                   <div class="col-md-4 admin-form-group">
-                    <label class="admin-form-label">Confirm Password</label>
-                    <input type="password" class="admin-form-input" placeholder="••••••••">
+                    <label class="admin-form-label" for="confirmPassword">Confirm Password *</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="admin-form-input" placeholder="••••••••" required>
+                    <div class="admin-error-text" id="confirmPassError"></div>
                   </div>
                 </div>
                 <div class="mt-3 text-end">
@@ -227,6 +350,411 @@
     </div>
 
   </div>
+
+  <!-- Toast Notification Element -->
+  <div id="toastPill" class="toast-pill-notification" role="status" aria-live="polite"></div>
+
+  <!-- ============================================================
+       INTERNAL FORM VALIDATION SCRIPT
+       ============================================================ -->
+  <script>
+    'use strict';
+
+    /* ─────────────────────────────────────────────
+       UTILITY HELPERS
+    ───────────────────────────────────────────── */
+
+    /** Show a toast pill at the bottom-right corner */
+    function showToast(icon, message, bgColor) {
+      var toast = document.getElementById('toastPill');
+      toast.style.backgroundColor = bgColor || '#111827';
+      toast.innerHTML = '<i class="' + icon + '"></i> ' + message;
+      toast.classList.add('show');
+      setTimeout(function () {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    /** Mark a field as invalid: red border + show error message + shake */
+    function setInvalid(field, errorEl, message) {
+      field.classList.remove('is-valid');
+      field.classList.add('is-invalid');
+      errorEl.textContent = message;
+      errorEl.style.display = 'block';
+
+      // Shake animation – remove and re-add class to restart it
+      field.classList.remove('field-shake');
+      void field.offsetWidth; // reflow to restart animation
+      field.classList.add('field-shake');
+    }
+
+    /** Mark a field as valid: green border + hide error message */
+    function setValid(field, errorEl) {
+      field.classList.remove('is-invalid', 'field-shake');
+      field.classList.add('is-valid');
+      errorEl.style.display = 'none';
+      errorEl.textContent = '';
+    }
+
+    /** Reset a field to neutral state (no colour) */
+    function resetField(field, errorEl) {
+      field.classList.remove('is-invalid', 'is-valid', 'field-shake');
+      errorEl.style.display = 'none';
+      errorEl.textContent = '';
+    }
+
+    /** Show or hide the form-level alert banner */
+    function showAlert(alertEl, type, iconClass, message) {
+      alertEl.className = 'admin-form-alert ' + type;
+      alertEl.innerHTML = '<i class="' + iconClass + '"></i> ' + message;
+      alertEl.style.display = 'flex';
+    }
+
+    function hideAlert(alertEl) {
+      alertEl.style.display = 'none';
+      alertEl.className = 'admin-form-alert';
+      alertEl.innerHTML = '';
+    }
+
+    /* ─────────────────────────────────────────────
+       VALIDATORS
+    ───────────────────────────────────────────── */
+
+    function isValidEmail(val) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val.trim());
+    }
+
+    function isValidPhone(val) {
+      // Accepts: +91 98765 43210 | 9876543210 | +1-800-555-0100 etc.
+      return /^[\+]?[\d\s\-\(\)]{7,16}$/.test(val.trim());
+    }
+
+    function isValidURL(val) {
+      try {
+        var url = new URL(val.trim());
+        return url.protocol === 'http:' || url.protocol === 'https:';
+      } catch (_) {
+        return false;
+      }
+    }
+
+    /* ─────────────────────────────────────────────
+       PASSWORD STRENGTH METER
+    ───────────────────────────────────────────── */
+
+    var STRENGTH_CONFIG = [
+      { label: 'Too short',  color: '#ef4444', width: '15%'  },
+      { label: 'Weak',       color: '#f97316', width: '30%'  },
+      { label: 'Fair',       color: '#eab308', width: '55%'  },
+      { label: 'Good',       color: '#22c55e', width: '75%'  },
+      { label: 'Strong',     color: '#16a34a', width: '100%' }
+    ];
+
+    function calcPasswordStrength(pwd) {
+      if (pwd.length < 6) return 0;
+      var score = 1;
+      if (pwd.length >= 10) score++;
+      if (/[A-Z]/.test(pwd)) score++;
+      if (/[0-9]/.test(pwd)) score++;
+      if (/[^A-Za-z0-9]/.test(pwd)) score++;
+      return Math.min(score, 4); // 1–4
+    }
+
+    function updateStrengthMeter(pwd) {
+      var bar  = document.getElementById('passwordStrengthBar');
+      var hint = document.getElementById('passwordStrengthText');
+
+      if (!pwd) {
+        bar.style.width = '0%';
+        bar.style.backgroundColor = '';
+        hint.textContent = '';
+        return;
+      }
+
+      var level  = calcPasswordStrength(pwd);
+      var config = STRENGTH_CONFIG[level];
+      bar.style.width           = config.width;
+      bar.style.backgroundColor = config.color;
+      hint.textContent          = config.label;
+      hint.style.color          = config.color;
+    }
+
+    /* ─────────────────────────────────────────────
+       COMPANY PROFILE FORM
+    ───────────────────────────────────────────── */
+
+    (function initCompanyForm() {
+
+      var form         = document.getElementById('companyProfileForm');
+      var alertEl      = document.getElementById('companyAlert');
+
+      var nameField    = document.getElementById('companyLegalName');
+      var nameErr      = document.getElementById('companyNameError');
+
+      var emailField   = document.getElementById('supportEmail');
+      var emailErr     = document.getElementById('supportEmailError');
+
+      var phoneField   = document.getElementById('contactPhone');
+      var phoneErr     = document.getElementById('contactPhoneError');
+
+      var websiteField = document.getElementById('corporateWebsite');
+      var websiteErr   = document.getElementById('corporateWebsiteError');
+
+      var addrField    = document.getElementById('officeAddress');
+      var addrErr      = document.getElementById('officeAddressError');
+
+      /* Live validation on blur (after user leaves a field) */
+      nameField.addEventListener('blur',    function () { validateName();    });
+      emailField.addEventListener('blur',   function () { validateEmail();   });
+      phoneField.addEventListener('blur',   function () { validatePhone();   });
+      websiteField.addEventListener('blur', function () { validateWebsite(); });
+      addrField.addEventListener('blur',    function () { validateAddress(); });
+
+      /* Clear error on focus */
+      [nameField, emailField, phoneField, websiteField, addrField].forEach(function (f) {
+        var errEl = document.getElementById(f.id.replace('companyLegalName','companyNameError')
+                                                 .replace('supportEmail','supportEmailError')
+                                                 .replace('contactPhone','contactPhoneError')
+                                                 .replace('corporateWebsite','corporateWebsiteError')
+                                                 .replace('officeAddress','officeAddressError'));
+        f.addEventListener('input', function () {
+          if (f.classList.contains('is-invalid')) {
+            resetField(f, errEl || document.createElement('div'));
+          }
+          hideAlert(alertEl);
+        });
+      });
+
+      /* ── Individual validators ── */
+
+      function validateName() {
+        var v = nameField.value.trim();
+        if (!v) {
+          setInvalid(nameField, nameErr, 'Company legal name is required.');
+          return false;
+        }
+        if (v.length < 3) {
+          setInvalid(nameField, nameErr, 'Name must be at least 3 characters.');
+          return false;
+        }
+        setValid(nameField, nameErr);
+        return true;
+      }
+
+      function validateEmail() {
+        var v = emailField.value.trim();
+        if (!v) {
+          setInvalid(emailField, emailErr, 'Support email is required.');
+          return false;
+        }
+        if (!isValidEmail(v)) {
+          setInvalid(emailField, emailErr, 'Enter a valid email address (e.g. info@example.com).');
+          return false;
+        }
+        setValid(emailField, emailErr);
+        return true;
+      }
+
+      function validatePhone() {
+        var v = phoneField.value.trim();
+        if (!v) {
+          setInvalid(phoneField, phoneErr, 'Contact phone number is required.');
+          return false;
+        }
+        if (!isValidPhone(v)) {
+          setInvalid(phoneField, phoneErr, 'Enter a valid phone number (7–16 digits, may include +, spaces, dashes).');
+          return false;
+        }
+        setValid(phoneField, phoneErr);
+        return true;
+      }
+
+      function validateWebsite() {
+        var v = websiteField.value.trim();
+        if (!v) {
+          setInvalid(websiteField, websiteErr, 'Corporate website URL is required.');
+          return false;
+        }
+        if (!isValidURL(v)) {
+          setInvalid(websiteField, websiteErr, 'Enter a valid URL starting with http:// or https://');
+          return false;
+        }
+        setValid(websiteField, websiteErr);
+        return true;
+      }
+
+      function validateAddress() {
+        var v = addrField.value.trim();
+        if (!v) {
+          setInvalid(addrField, addrErr, 'Office address is required.');
+          return false;
+        }
+        if (v.length < 10) {
+          setInvalid(addrField, addrErr, 'Please enter a complete address (at least 10 characters).');
+          return false;
+        }
+        setValid(addrField, addrErr);
+        return true;
+      }
+
+      /* ── Submit ── */
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideAlert(alertEl);
+
+        var ok = validateName()
+              && validateEmail()
+              && validatePhone()
+              && validateWebsite()
+              && validateAddress();
+
+        if (!ok) {
+          showAlert(alertEl, 'danger',
+            'fa-solid fa-circle-exclamation',
+            'Please fix the highlighted fields before saving.');
+          return;
+        }
+
+        /* All good – simulate save */
+        showAlert(alertEl, 'success',
+          'fa-solid fa-circle-check',
+          'Company details saved successfully.');
+        showToast('fa-solid fa-circle-check', 'Company details saved!', '#065f46');
+      });
+
+    })();
+
+    /* ─────────────────────────────────────────────
+       PASSWORD / SECURITY FORM
+    ───────────────────────────────────────────── */
+
+    (function initPasswordForm() {
+
+      var form        = document.getElementById('passwordForm');
+      var alertEl     = document.getElementById('passwordAlert');
+
+      var curField    = document.getElementById('currentPassword');
+      var curErr      = document.getElementById('currentPassError');
+
+      var newField    = document.getElementById('newPassword');
+      var newErr      = document.getElementById('newPassError');
+
+      var confField   = document.getElementById('confirmPassword');
+      var confErr     = document.getElementById('confirmPassError');
+
+      /* Strength meter updates live as user types */
+      newField.addEventListener('input', function () {
+        updateStrengthMeter(newField.value);
+        if (newField.classList.contains('is-invalid')) resetField(newField, newErr);
+        // If confirm already filled, re-validate match live
+        if (confField.value) validateConfirm();
+        hideAlert(alertEl);
+      });
+
+      /* Live clear on input */
+      curField.addEventListener('input', function () {
+        if (curField.classList.contains('is-invalid')) resetField(curField, curErr);
+        hideAlert(alertEl);
+      });
+
+      confField.addEventListener('input', function () {
+        if (confField.value) validateConfirm();
+        hideAlert(alertEl);
+      });
+
+      /* Blur validators */
+      curField.addEventListener('blur',  function () { validateCurrent(); });
+      newField.addEventListener('blur',  function () { validateNew();     });
+      confField.addEventListener('blur', function () { validateConfirm(); });
+
+      /* ── Individual validators ── */
+
+      function validateCurrent() {
+        var v = curField.value;
+        if (!v) {
+          setInvalid(curField, curErr, 'Current password is required.');
+          return false;
+        }
+        // In a real app you'd verify server-side; here just check not empty
+        setValid(curField, curErr);
+        return true;
+      }
+
+      function validateNew() {
+        var v = newField.value;
+        if (!v) {
+          setInvalid(newField, newErr, 'New password is required.');
+          return false;
+        }
+        if (v.length < 8) {
+          setInvalid(newField, newErr, 'Password must be at least 8 characters long.');
+          return false;
+        }
+        if (!/[A-Z]/.test(v)) {
+          setInvalid(newField, newErr, 'Include at least one uppercase letter (A–Z).');
+          return false;
+        }
+        if (!/[0-9]/.test(v)) {
+          setInvalid(newField, newErr, 'Include at least one number (0–9).');
+          return false;
+        }
+        if (v === curField.value && curField.value !== '') {
+          setInvalid(newField, newErr, 'New password must differ from the current password.');
+          return false;
+        }
+        setValid(newField, newErr);
+        return true;
+      }
+
+      function validateConfirm() {
+        var v    = confField.value;
+        var newV = newField.value;
+        if (!v) {
+          setInvalid(confField, confErr, 'Please confirm your new password.');
+          return false;
+        }
+        if (v !== newV) {
+          setInvalid(confField, confErr, 'Passwords do not match.');
+          return false;
+        }
+        setValid(confField, confErr);
+        return true;
+      }
+
+      /* ── Submit ── */
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideAlert(alertEl);
+
+        var ok = validateCurrent()
+              && validateNew()
+              && validateConfirm();
+
+        if (!ok) {
+          showAlert(alertEl, 'danger',
+            'fa-solid fa-circle-exclamation',
+            'Please fix the errors above before updating your password.');
+          return;
+        }
+
+        /* Success – simulate update & clear fields */
+        form.reset();
+        updateStrengthMeter('');
+        [curField, newField, confField].forEach(function (f) {
+          f.classList.remove('is-valid', 'is-invalid');
+        });
+
+        showAlert(alertEl, 'success',
+          'fa-solid fa-circle-check',
+          'Password updated successfully. Please use your new password on next login.');
+        showToast('fa-solid fa-lock', 'Password updated!', '#065f46');
+      });
+
+    })();
+
+  </script>
 
 </body>
 </html>

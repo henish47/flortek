@@ -106,15 +106,20 @@
             <div class="message-form-box">
               <h3 class="form-box-title">SEND US A MESSAGE</h3>
 
-              <form action="contact.html" method="GET">
+              <!-- Notification Banner -->
+              <div id="formAlert" class="form-alert" style="display: none;" role="alert"></div>
+
+              <form id="contactForm" action="contact.html" method="POST" novalidate>
                 <div class="form-grid-row-2">
                   <div class="form-field-group">
                     <label for="f-name" class="field-label">MY NAME *</label>
                     <input type="text" id="f-name" name="name" class="field-input" placeholder="ENTER YOUR NAME" required>
+                    <span class="field-error-msg" id="nameError"></span>
                   </div>
                   <div class="form-field-group">
                     <label for="f-phone" class="field-label">PHONE NUMBER *</label>
                     <input type="tel" id="f-phone" name="phone" class="field-input" placeholder="ENTER YOUR PHONE NUMBER" required>
+                    <span class="field-error-msg" id="phoneError"></span>
                   </div>
                 </div>
 
@@ -122,10 +127,12 @@
                   <div class="form-field-group">
                     <label for="f-email" class="field-label">EMAIL *</label>
                     <input type="email" id="f-email" name="email" class="field-input" placeholder="you@gmail.com" required>
+                    <span class="field-error-msg" id="emailError"></span>
                   </div>
                   <div class="form-field-group">
                     <label for="f-company" class="field-label">COMPANY NAME</label>
                     <input type="text" id="f-company" name="company" class="field-input" placeholder="YOUR ORGANIZATION">
+                    <span class="field-error-msg" id="companyError"></span>
                   </div>
                   <div class="form-field-group">
                     <label for="f-country" class="field-label">COUNTRY</label>
@@ -136,12 +143,14 @@
                       <option value="uk">UK</option>
                       <option value="other">OTHER</option>
                     </select>
+                    <span class="field-error-msg" id="countryError"></span>
                   </div>
                 </div>
 
                 <div class="form-field-group full-width">
                   <label for="f-message" class="field-label">Message / Requirements *</label>
                   <textarea id="f-message" name="message" class="field-textarea" placeholder="Tell us about your project" required></textarea>
+                  <span class="field-error-msg" id="messageError"></span>
                 </div>
 
                 <button type="submit" class="btn-send-message">
@@ -224,5 +233,6 @@
     </div>
   </footer>
 
+  <script src="js/contact.js"></script>
 </body>
 </html>
