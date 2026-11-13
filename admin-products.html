@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - FLORTEK Admin Panel</title>
+  <meta name="description" content="Manage FLORTEK product catalogue - FRP manhole covers, gully covers, gratings, and industrial composites.">
+  <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- External Admin CSS -->
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="admin-sidebar" aria-label="Sidebar Navigation">
+      <div class="sidebar-brand-wrapper">
+        <a href="admin-dashboard.html" title="FLORTEK Admin Panel">
+          <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="sidebar-brand-logo">
+        </a>
+      </div>
+
+      <div class="sidebar-nav-container">
+        <ul class="sidebar-nav-list">
+          <li class="sidebar-nav-item">
+            <a href="admin-dashboard.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-solid fa-table-cells-large"></i></span>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-products.html" class="sidebar-nav-link active">
+              <span class="nav-icon"><i class="fa-solid fa-box-archive"></i></span>
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-categories.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-solid fa-shapes"></i></span>
+              <span>Categories</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-gallery.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-regular fa-image"></i></span>
+              <span>Gallery</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-inquiries.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-solid fa-circle-question"></i></span>
+              <span>Inquiries</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-settings.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-solid fa-gear"></i></span>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-footer-section">
+          <a href="login.html" class="logout-nav-link" title="Logout of Admin Panel">
+            <span class="nav-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="admin-main-wrapper">
+      
+      <!-- TOP HEADER -->
+      <header class="admin-top-header">
+        <div class="header-search-box">
+          <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
+          <input type="text" class="header-search-input" placeholder="Search..." aria-label="Search catalog">
+        </div>
+
+        <div class="header-right-actions">
+          <a href="#notifications-modal" class="header-notification-btn" title="View Notifications" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="header-notification-dot"></span>
+          </a>
+          <div class="header-user-avatar" title="Administrator">
+            A
+          </div>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT -->
+      <main class="admin-page-container">
+        
+        <!-- Header with Title and Add Button -->
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-main-title">Products</h1>
+            <p class="page-main-subtitle">Manage FLORTEK product catalogue.</p>
+          </div>
+          <div>
+            <a href="#add-product-modal" class="btn-admin-primary">
+              <i class="fa-solid fa-plus"></i>
+              <span>Add Product</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="table-filter-bar">
+          <div class="filter-search-box">
+            <i class="fa-solid fa-magnifying-glass filter-search-icon"></i>
+            <input type="text" class="filter-search-input" placeholder="Search products..." aria-label="Search products">
+          </div>
+          <select class="filter-select" aria-label="Filter by Category">
+            <option>All Categories</option>
+            <option>Manhole Covers</option>
+            <option>Gully Covers</option>
+            <option>Drain Gratings</option>
+          </select>
+          <a href="#" class="filter-btn" title="Apply Filter">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Filter</span>
+          </a>
+        </div>
+
+        <!-- Products Table Card -->
+        <div class="admin-table-card">
+          <div class="table-responsive-wrapper">
+            <table class="admin-data-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th>Shape</th>
+                  <th>Size</th>
+                  <th>Load Cap.</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="images/frp-square-dark.svg" alt="FRP Square Manhole Cover" class="table-img-thumb">
+                  </td>
+                  <td class="cell-bold">FRP Square Manhole Cover</td>
+                  <td>Manhole Covers</td>
+                  <td>Square</td>
+                  <td>24" x 24"</td>
+                  <td>2.5 T</td>
+                  <td><span class="badge-status badge-active">Active</span></td>
+                  <td>
+                    <div class="table-actions">
+                      <a href="#edit-product-modal" class="action-icon-btn action-edit" title="Edit Product">
+                        <i class="fa-solid fa-pencil"></i>
+                      </a>
+                      <a href="#delete-product-modal" class="action-icon-btn action-delete" title="Delete Product">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="images/frp-circular-dark.svg" alt="Heavy Duty Circular Cover" class="table-img-thumb">
+                  </td>
+                  <td class="cell-bold">Heavy Duty Circular Cover</td>
+                  <td>Manhole Covers</td>
+                  <td>Circular</td>
+                  <td>600mm Dia</td>
+                  <td>40 T</td>
+                  <td><span class="badge-status badge-active">Active</span></td>
+                  <td>
+                    <div class="table-actions">
+                      <a href="#edit-product-modal" class="action-icon-btn action-edit" title="Edit Product">
+                        <i class="fa-solid fa-pencil"></i>
+                      </a>
+                      <a href="#delete-product-modal" class="action-icon-btn action-delete" title="Delete Product">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="images/frp-slotted-drain.svg" alt="FRP Drain Gully Grating" class="table-img-thumb">
+                  </td>
+                  <td class="cell-bold">FRP Drain Gully Grating</td>
+                  <td>Gully Covers</td>
+                  <td>Rectangle</td>
+                  <td>12" x 18"</td>
+                  <td>1.5 T</td>
+                  <td><span class="badge-status badge-inactive">Inactive</span></td>
+                  <td>
+                    <div class="table-actions">
+                      <a href="#edit-product-modal" class="action-icon-btn action-edit" title="Edit Product">
+                        <i class="fa-solid fa-pencil"></i>
+                      </a>
+                      <a href="#delete-product-modal" class="action-icon-btn action-delete" title="Delete Product">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- BOTTOM FOOTER -->
+      <footer class="admin-bottom-footer">
+        <div class="footer-brand-title">FLORTEK</div>
+        <div class="footer-copyright">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
+        <div class="footer-links-group">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">System Status</a>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- PURE CSS MODALS (NO JS) -->
+  <div id="add-product-modal" class="css-modal-overlay">
+    <div class="css-modal-dialog">
+      <div class="css-modal-header">
+        <h3 class="css-modal-title">Add New Product</h3>
+        <a href="#" class="css-modal-close" aria-label="Close modal">&times;</a>
+      </div>
+      <form action="#" method="GET">
+        <div class="css-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-form-label">Product Name</label>
+            <input type="text" class="admin-form-input" placeholder="e.g. FRP Square Manhole Cover" required>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Category</label>
+            <select class="admin-form-select">
+              <option>Manhole Covers</option>
+              <option>Gully Covers</option>
+              <option>Drain Gratings</option>
+              <option>Custom Moldings</option>
+            </select>
+          </div>
+          <div class="row g-2">
+            <div class="col-6 admin-form-group">
+              <label class="admin-form-label">Shape</label>
+              <input type="text" class="admin-form-input" placeholder="Square, Circular...">
+            </div>
+            <div class="col-6 admin-form-group">
+              <label class="admin-form-label">Dimensions / Size</label>
+              <input type="text" class="admin-form-input" placeholder="e.g. 600 x 600 mm">
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col-6 admin-form-group">
+              <label class="admin-form-label">Load Capacity</label>
+              <input type="text" class="admin-form-input" placeholder="e.g. 2.5 T / 40 T">
+            </div>
+            <div class="col-6 admin-form-group">
+              <label class="admin-form-label">Status</label>
+              <select class="admin-form-select">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Product Image File</label>
+            <input type="file" class="admin-form-input">
+          </div>
+        </div>
+        <div class="css-modal-footer">
+          <a href="#" class="btn-admin-outline">Cancel</a>
+          <button type="submit" class="btn-admin-primary">Create Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="edit-product-modal" class="css-modal-overlay">
+    <div class="css-modal-dialog">
+      <div class="css-modal-header">
+        <h3 class="css-modal-title">Edit Product Details</h3>
+        <a href="#" class="css-modal-close" aria-label="Close modal">&times;</a>
+      </div>
+      <form action="#" method="GET">
+        <div class="css-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-form-label">Product Name</label>
+            <input type="text" class="admin-form-input" value="FRP Square Manhole Cover" required>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Category</label>
+            <select class="admin-form-select">
+              <option selected>Manhole Covers</option>
+              <option>Gully Covers</option>
+              <option>Drain Gratings</option>
+            </select>
+          </div>
+          <div class="row g-2">
+            <div class="col-6 admin-form-group">
+              <label class="admin-form-label">Shape</label>
+              <input type="text" class="admin-form-input" value="Square">
+            </div>
+            <div class="col-6 admin-form-group">
+              <label class="admin-form-label">Dimensions / Size</label>
+              <input type="text" class="admin-form-input" value="24&quot; x 24&quot;">
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col-6 admin-form-group">
+              <label class="admin-form-label">Load Capacity</label>
+              <input type="text" class="admin-form-input" value="2.5 T">
+            </div>
+            <div class="col-6 admin-form-group">
+              <label class="admin-form-label">Status</label>
+              <select class="admin-form-select">
+                <option selected>Active</option>
+                <option>Inactive</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="css-modal-footer">
+          <a href="#" class="btn-admin-outline">Cancel</a>
+          <button type="submit" class="btn-admin-primary">Update Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="delete-product-modal" class="css-modal-overlay">
+    <div class="css-modal-dialog">
+      <div class="css-modal-header">
+        <h3 class="css-modal-title">Delete Product</h3>
+        <a href="#" class="css-modal-close" aria-label="Close modal">&times;</a>
+      </div>
+      <div class="css-modal-body">
+        <p class="text-secondary mb-0">Are you sure you want to remove this product from the catalogue? This action cannot be undone.</p>
+      </div>
+      <div class="css-modal-footer">
+        <a href="#" class="btn-admin-outline">Cancel</a>
+        <a href="#" class="btn btn-danger btn-sm px-3 fw-semibold">Delete</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -6,26 +6,30 @@
   <title>About Us | FLORTEK INDUSTRIES PVT. LTD.</title>
   <meta name="description" content="Learn about FLORTEK INDUSTRIES PVT. LTD., premier manufacturer of FRP, BMC, and Steel Manhole Covers & Gratings in Rajkot, Gujarat.">
   <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
 
   <header class="top-header">
     <div class="container">
-      <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+      <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-brand brand-logo-link" aria-label="FLORTEK Industries Homepage">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="brand-logo-img">
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#flortekNav" aria-controls="flortekNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Pure CSS Mobile Hamburger Toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation">
+        <label for="nav-toggle" class="navbar-toggler" aria-label="Toggle navigation">
+          <span class="navbar-toggler-line"></span>
+          <span class="navbar-toggler-line"></span>
+          <span class="navbar-toggler-line"></span>
+        </label>
 
-        <div class="collapse navbar-collapse justify-content-center" id="flortekNav">
+        <div class="navbar-collapse" id="flortekNav">
           <div class="nav-pill-wrapper">
-            <ul class="navbar-nav nav-links">
+            <ul class="nav-links">
               <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
               <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
@@ -35,7 +39,7 @@
           </div>
         </div>
 
-        <a href="inquiry.html" class="btn-header-quote d-none d-lg-inline-flex">Get Quote</a>
+        <a href="inquiry.html" class="btn-header-quote header-quote-desktop">Get Quote</a>
       </nav>
     </div>
   </header>
@@ -48,52 +52,44 @@
           FLORTEK INDUSTRIES PVT. LTD. is a premier manufacturer and supplier of high-quality FRP (Fiber Reinforced Plastic), BMC (Bulk Molding Compound), and Steel Manhole Covers. Established in 2017 in Rajkot, Gujarat, we are dedicated to building the backbone of modern infrastructure with products designed for strength, safety, and longevity.
         </p>
 
-        <div class="row g-3 about-badges-grid">
-          <div class="col-lg-3 col-sm-6 col-12">
-            <div class="about-badge-card h-100">
-              <div class="about-badge-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              </div>
-              <div>
-                <span class="about-badge-label">ESTABLISHED</span>
-                <span class="about-badge-value">2017</span>
-              </div>
+        <div class="about-badges-grid">
+          <div class="about-badge-card">
+            <div class="about-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <div>
+              <span class="about-badge-label">ESTABLISHED</span>
+              <span class="about-badge-value">2017</span>
             </div>
           </div>
 
-          <div class="col-lg-3 col-sm-6 col-12">
-            <div class="about-badge-card h-100">
-              <div class="about-badge-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              </div>
-              <div>
-                <span class="about-badge-label">LOCATION</span>
-                <span class="about-badge-value">RAJKOT ,GUJRAT</span>
-              </div>
+          <div class="about-badge-card">
+            <div class="about-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <span class="about-badge-label">LOCATION</span>
+              <span class="about-badge-value">RAJKOT ,GUJRAT</span>
             </div>
           </div>
 
-          <div class="col-lg-3 col-sm-6 col-12">
-            <div class="about-badge-card h-100">
-              <div class="about-badge-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-              </div>
-              <div>
-                <span class="about-badge-label">NATURE</span>
-                <span class="about-badge-value">MANUFACTURE</span>
-              </div>
+          <div class="about-badge-card">
+            <div class="about-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <div>
+              <span class="about-badge-label">NATURE</span>
+              <span class="about-badge-value">MANUFACTURE</span>
             </div>
           </div>
 
-          <div class="col-lg-3 col-sm-6 col-12">
-            <div class="about-badge-card h-100">
-              <div class="about-badge-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              </div>
-              <div>
-                <span class="about-badge-label">QUALITY</span>
-                <span class="about-badge-value">ISO 9001:2015</span>
-              </div>
+          <div class="about-badge-card">
+            <div class="about-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div>
+              <span class="about-badge-label">QUALITY</span>
+              <span class="about-badge-value">ISO 9001:2015</span>
             </div>
           </div>
         </div>
@@ -102,10 +98,10 @@
 
     <section class="profile-section">
       <div class="container">
-        <div class="row g-5 profile-grid align-items-start">
-          <div class="col-lg-7">
+        <div class="profile-grid">
+          <div class="profile-table-col">
             <h2 class="section-sub-heading">COMPANY PROFILE</h2>
-            <div class="profile-table-wrap table-responsive">
+            <div class="profile-table-wrap">
               <table class="profile-table">
                 <tbody>
                   <tr>
@@ -141,14 +137,14 @@
             </div>
           </div>
 
-          <div class="col-lg-5">
+          <div class="profile-why-col">
             <h2 class="section-sub-heading">WHY CHOOSE FLORTEK</h2>
             
             <div class="why-items-list">
               <div class="why-item">
                 <span class="why-check-icon">✓</span>
                 <div>
-                  <span class="why-item-title">PREMIUM QUALATY</span>
+                  <span class="why-item-title">PREMIUM QUALITY</span>
                   <span class="why-item-sub">Manufactured using high-grade raw materials</span>
                 </div>
               </div>
@@ -156,24 +152,24 @@
               <div class="why-item">
                 <span class="why-check-icon">✓</span>
                 <div>
-                  <span class="why-item-title">PREMIUM QUALATY</span>
-                  <span class="why-item-sub">Manufactured using high-grade raw materials</span>
+                  <span class="why-item-title">ADVANCED R&amp;D</span>
+                  <span class="why-item-sub">Tested for extreme durability &amp; load resilience</span>
                 </div>
               </div>
 
               <div class="why-item">
                 <span class="why-check-icon">✓</span>
                 <div>
-                  <span class="why-item-title">PREMIUM QUALATY</span>
-                  <span class="why-item-sub">Manufactured using high-grade raw materials</span>
+                  <span class="why-item-title">COMPETITIVE PRICING</span>
+                  <span class="why-item-sub">Direct factory pricing with zero middleman markups</span>
                 </div>
               </div>
 
               <div class="why-item">
                 <span class="why-check-icon">✓</span>
                 <div>
-                  <span class="why-item-title">PREMIUM QUALATY</span>
-                  <span class="why-item-sub">Manufactured using high-grade raw materials</span>
+                  <span class="why-item-title">PROMPT DELIVERY</span>
+                  <span class="why-item-sub">Reliable dispatch network across India &amp; global ports</span>
                 </div>
               </div>
             </div>
@@ -190,7 +186,7 @@
 
     <section class="team-section">
       <div class="container">
-        <div class="team-header text-center">
+        <div class="team-header">
           <span class="team-tag">LEADERSHIP</span>
           <h2 class="team-title">OUR TEAM</h2>
           <p class="team-subtitle">
@@ -198,29 +194,23 @@
           </p>
         </div>
 
-        <div class="row g-4 team-cards-grid justify-content-center">
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="team-card h-100">
-              <div class="team-avatar-box">NS</div>
-              <h3 class="team-member-name">NIKUNJ SAVALIYA</h3>
-              <span class="team-member-role">CO-FOUNDER &amp; DIRECTOR</span>
-            </div>
+        <div class="team-cards-grid">
+          <div class="team-card">
+            <div class="team-avatar-box">NS</div>
+            <h3 class="team-member-name">NIKUNJ SAVALIYA</h3>
+            <span class="team-member-role">CO-FOUNDER &amp; DIRECTOR</span>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="team-card h-100">
-              <div class="team-avatar-box">NS</div>
-              <h3 class="team-member-name">NARESH SAVALIYA</h3>
-              <span class="team-member-role">CO-FOUNDER &amp; DIRECTOR</span>
-            </div>
+          <div class="team-card">
+            <div class="team-avatar-box">NS</div>
+            <h3 class="team-member-name">NARESH SAVALIYA</h3>
+            <span class="team-member-role">CO-FOUNDER &amp; DIRECTOR</span>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <div class="team-card h-100">
-              <div class="team-avatar-box">NS</div>
-              <h3 class="team-member-name">KETAN PAGHDAR</h3>
-              <span class="team-member-role">TECHNICAL DIRECTOR</span>
-            </div>
+          <div class="team-card">
+            <div class="team-avatar-box">KP</div>
+            <h3 class="team-member-name">KETAN PAGHDAR</h3>
+            <span class="team-member-role">TECHNICAL DIRECTOR</span>
           </div>
         </div>
       </div>
@@ -229,8 +219,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="row g-4 footer-top-grid">
-        <div class="col-lg-4 col-md-6 col-12 footer-col">
+      <div class="footer-top-grid">
+        <div class="footer-col">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="footer-brand-logo">
           <p class="footer-bio">
             Leading manufacturer of high-quality FRP, BMC, and Steel covers. Engineering infrastructure solutions for a safer tomorrow.
@@ -242,7 +232,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-6 col-12 footer-col">
+        <div class="footer-col">
           <h4 class="footer-col-title">QUICK LINKS</h4>
           <ul class="footer-links-list">
             <li><a href="index.html">HOME</a></li>
@@ -254,7 +244,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-12 footer-col">
+        <div class="footer-col">
           <h4 class="footer-col-title">CATEGORY</h4>
           <ul class="footer-links-list">
             <li><a href="products.html">FRP MANHOLE COVER</a></li>
@@ -265,7 +255,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-12 footer-col">
+        <div class="footer-col">
           <h4 class="footer-col-title">CONTACT INFO</h4>
           <ul class="footer-contact-list">
             <li class="footer-contact-item">
@@ -284,7 +274,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center">
+      <div class="footer-bottom-bar">
         <span>2026 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</span>
         <div class="footer-bottom-links">
           <a href="about.html">PRIVACY POLICY</a>
@@ -294,8 +284,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>

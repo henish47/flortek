@@ -3,39 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products | FLORTEK INDUSTRIES PVT. LTD.</title>
-  <meta name="description" content="Explore FLORTEK's full catalog of FRP/GRP composite manhole covers, drain gratings, chamber covers, and recessed covers.">
+  <title>Products Catalog | FLORTEK INDUSTRIES PVT. LTD.</title>
+  <meta name="description" content="Explore FLORTEK's full range of FRP and BMC manhole covers, drain gratings, and gully covers engineered for superior durability.">
   <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
 
   <header class="top-header">
     <div class="container">
-      <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+      <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-brand brand-logo-link" aria-label="FLORTEK Industries Homepage">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="brand-logo-img">
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#flortekNav" aria-controls="flortekNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Pure CSS Mobile Hamburger Toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation">
+        <label for="nav-toggle" class="navbar-toggler" aria-label="Toggle navigation">
+          <span class="navbar-toggler-line"></span>
+          <span class="navbar-toggler-line"></span>
+          <span class="navbar-toggler-line"></span>
+        </label>
 
-        <div class="collapse navbar-collapse justify-content-center" id="flortekNav">
+        <div class="navbar-collapse" id="flortekNav">
           <div class="nav-pill-wrapper">
-            <ul class="navbar-nav nav-links">
+            <ul class="nav-links">
               <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="products.html" class="nav-link active">Product</a></li>
+              <li class="nav-item"><a href="products.html" class="nav-link active">Products</a></li>
               <li class="nav-item"><a href="gallery.html" class="nav-link">Galary</a></li>
               <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
             </ul>
           </div>
         </div>
 
-        <a href="inquiry.html" class="btn-header-quote d-none d-lg-inline-flex">Get Quote</a>
+        <a href="inquiry.html" class="btn-header-quote header-quote-desktop">Get Quote</a>
       </nav>
     </div>
   </header>
@@ -49,8 +53,8 @@
           Explore our premium range of composite solutions, rated by load capacity and engineered for extreme industrial/municipal service.
         </p>
 
-        <div class="filter-search-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
-          <div class="filter-pills-group d-flex flex-wrap gap-2">
+        <div class="filter-search-bar">
+          <div class="filter-pills-group">
             <button type="button" class="filter-pill-btn active">ALL</button>
             <button type="button" class="filter-pill-btn">MANHOLE COVER</button>
             <button type="button" class="filter-pill-btn">GULLY COVER</button>
@@ -58,8 +62,8 @@
             <button type="button" class="filter-pill-btn">RECESSED COVER</button>
           </div>
 
-          <div class="search-info-group d-flex align-items-center gap-3">
-            <span class="items-count-text">SHOWING 12 ITEMS</span>
+          <div class="search-info-group">
+            <span class="items-count-text">SHOWING 6 ITEMS</span>
             <div class="search-input-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -70,179 +74,167 @@
           </div>
         </div>
 
-        <div class="section-category-bar d-flex align-items-center">
+        <div class="section-category-bar">
           <div class="category-bar-line"></div>
           <h2 class="category-bar-title">ALL PRODUCTS</h2>
         </div>
 
-        <div class="row g-4 products-cards-grid">
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="prod-card h-100">
-              <span class="prod-load-badge">2.5 T</span>
-              <div class="prod-img-container">
-                <img src="./images/frp-10x10-white.jpg" alt="FRP Square Manhole Cover 24x36" class="img-fluid">
-              </div>
-              <span class="prod-category-tag">MANHOLE COVERS</span>
-              <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
-              <table class="prod-specs-table">
-                <tbody>
-                  <tr>
-                    <td>Shape:</td>
-                    <td>Rectangle</td>
-                  </tr>
-                  <tr>
-                    <td>Size:</td>
-                    <td>24" x 36"</td>
-                  </tr>
-                  <tr>
-                    <td>Load capacity :</td>
-                    <td>2.5 T</td>
-                  </tr>
-                </tbody>
-              </table>
-              <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
-            </article>
-          </div>
+        <div class="products-cards-grid">
+          <article class="prod-card">
+            <span class="prod-load-badge">2.5 T</span>
+            <div class="prod-img-container">
+              <img src="./images/frp-10x10-white.jpg" alt="FRP Square Manhole Cover 24x36">
+            </div>
+            <span class="prod-category-tag">MANHOLE COVERS</span>
+            <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
+            <table class="prod-specs-table">
+              <tbody>
+                <tr>
+                  <td>Shape:</td>
+                  <td>Rectangle</td>
+                </tr>
+                <tr>
+                  <td>Size:</td>
+                  <td>24" x 36"</td>
+                </tr>
+                <tr>
+                  <td>Load capacity :</td>
+                  <td>2.5 T</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="prod-card h-100">
-              <span class="prod-load-badge">2.5 T</span>
-              <div class="prod-img-container">
-                <img src="./images/frp-31x42-heavy.jpg" alt="FRP Square Manhole Cover 24x36" class="img-fluid">
-              </div>
-              <span class="prod-category-tag">MANHOLE COVERS</span>
-              <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
-              <table class="prod-specs-table">
-                <tbody>
-                  <tr>
-                    <td>Shape:</td>
-                    <td>Rectangle</td>
-                  </tr>
-                  <tr>
-                    <td>Size:</td>
-                    <td>24" x 36"</td>
-                  </tr>
-                  <tr>
-                    <td>Load capacity :</td>
-                    <td>2.5 T</td>
-                  </tr>
-                </tbody>
-              </table>
-              <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
-            </article>
-          </div>
+          <article class="prod-card">
+            <span class="prod-load-badge">2.5 T</span>
+            <div class="prod-img-container">
+              <img src="./images/frp-31x42-heavy.jpg" alt="FRP Square Manhole Cover 24x36">
+            </div>
+            <span class="prod-category-tag">MANHOLE COVERS</span>
+            <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
+            <table class="prod-specs-table">
+              <tbody>
+                <tr>
+                  <td>Shape:</td>
+                  <td>Rectangle</td>
+                </tr>
+                <tr>
+                  <td>Size:</td>
+                  <td>24" x 36"</td>
+                </tr>
+                <tr>
+                  <td>Load capacity :</td>
+                  <td>2.5 T</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="prod-card h-100">
-              <span class="prod-load-badge">2.5 T</span>
-              <div class="prod-img-container">
-                <img src="./images/frp-600x600-d400.jpg" alt="FRP Round Manhole Cover 24x36" class="img-fluid">
-              </div>
-              <span class="prod-category-tag">MANHOLE COVERS</span>
-              <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
-              <table class="prod-specs-table">
-                <tbody>
-                  <tr>
-                    <td>Shape:</td>
-                    <td>Rectangle</td>
-                  </tr>
-                  <tr>
-                    <td>Size:</td>
-                    <td>24" x 36"</td>
-                  </tr>
-                  <tr>
-                    <td>Load capacity :</td>
-                    <td>2.5 T</td>
-                  </tr>
-                </tbody>
-              </table>
-              <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
-            </article>
-          </div>
+          <article class="prod-card">
+            <span class="prod-load-badge">2.5 T</span>
+            <div class="prod-img-container">
+              <img src="./images/frp-600x600-d400.jpg" alt="FRP Round Manhole Cover 24x36">
+            </div>
+            <span class="prod-category-tag">MANHOLE COVERS</span>
+            <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
+            <table class="prod-specs-table">
+              <tbody>
+                <tr>
+                  <td>Shape:</td>
+                  <td>Rectangle</td>
+                </tr>
+                <tr>
+                  <td>Size:</td>
+                  <td>24" x 36"</td>
+                </tr>
+                <tr>
+                  <td>Load capacity :</td>
+                  <td>2.5 T</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="prod-card h-100">
-              <span class="prod-load-badge">2.5 T</span>
-              <div class="prod-img-container">
-                <img src="./images/frp-750x750-d400.jpg" alt="FRP Framed Square Manhole Cover 24x36" class="img-fluid">
-              </div>
-              <span class="prod-category-tag">MANHOLE COVERS</span>
-              <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
-              <table class="prod-specs-table">
-                <tbody>
-                  <tr>
-                    <td>Shape:</td>
-                    <td>Rectangle</td>
-                  </tr>
-                  <tr>
-                    <td>Size:</td>
-                    <td>24" x 36"</td>
-                  </tr>
-                  <tr>
-                    <td>Load capacity :</td>
-                    <td>2.5 T</td>
-                  </tr>
-                </tbody>
-              </table>
-              <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
-            </article>
-          </div>
+          <article class="prod-card">
+            <span class="prod-load-badge">2.5 T</span>
+            <div class="prod-img-container">
+              <img src="./images/frp-750x750-d400.jpg" alt="FRP Framed Square Manhole Cover 24x36">
+            </div>
+            <span class="prod-category-tag">MANHOLE COVERS</span>
+            <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
+            <table class="prod-specs-table">
+              <tbody>
+                <tr>
+                  <td>Shape:</td>
+                  <td>Rectangle</td>
+                </tr>
+                <tr>
+                  <td>Size:</td>
+                  <td>24" x 36"</td>
+                </tr>
+                <tr>
+                  <td>Load capacity :</td>
+                  <td>2.5 T</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="prod-card h-100">
-              <span class="prod-load-badge">2.5 T</span>
-              <div class="prod-img-container">
-                <img src="./images/frp-circular-600-b125.jpg" alt="FRP Slotted Drain Cover 24x36" class="img-fluid">
-              </div>
-              <span class="prod-category-tag">MANHOLE COVERS</span>
-              <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
-              <table class="prod-specs-table">
-                <tbody>
-                  <tr>
-                    <td>Shape:</td>
-                    <td>Rectangle</td>
-                  </tr>
-                  <tr>
-                    <td>Size:</td>
-                    <td>24" x 36"</td>
-                  </tr>
-                  <tr>
-                    <td>Load capacity :</td>
-                    <td>2.5 T</td>
-                  </tr>
-                </tbody>
-              </table>
-              <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
-            </article>
-          </div>
+          <article class="prod-card">
+            <span class="prod-load-badge">2.5 T</span>
+            <div class="prod-img-container">
+              <img src="./images/frp-circular-600-b125.jpg" alt="FRP Slotted Drain Cover 24x36">
+            </div>
+            <span class="prod-category-tag">MANHOLE COVERS</span>
+            <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
+            <table class="prod-specs-table">
+              <tbody>
+                <tr>
+                  <td>Shape:</td>
+                  <td>Rectangle</td>
+                </tr>
+                <tr>
+                  <td>Size:</td>
+                  <td>24" x 36"</td>
+                </tr>
+                <tr>
+                  <td>Load capacity :</td>
+                  <td>2.5 T</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="prod-card h-100">
-              <span class="prod-load-badge">2.5 T</span>
-              <div class="prod-img-container">
-                <img src="./images/GULLY COVER-5T-500x500-GRAY.png" alt="FRP Recessed Manhole Cover 24x36" class="img-fluid">
-              </div>
-              <span class="prod-category-tag">MANHOLE COVERS</span>
-              <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
-              <table class="prod-specs-table">
-                <tbody>
-                  <tr>
-                    <td>Shape:</td>
-                    <td>Rectangle</td>
-                  </tr>
-                  <tr>
-                    <td>Size:</td>
-                    <td>24" x 36"</td>
-                  </tr>
-                  <tr>
-                    <td>Load capacity :</td>
-                    <td>2.5 T</td>
-                  </tr>
-                </tbody>
-              </table>
-              <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
-            </article>
-          </div>
+          <article class="prod-card">
+            <span class="prod-load-badge">2.5 T</span>
+            <div class="prod-img-container">
+              <img src="./images/GULLY COVER-5T-500x500-GRAY.png" alt="FRP Recessed Manhole Cover 24x36">
+            </div>
+            <span class="prod-category-tag">MANHOLE COVERS</span>
+            <h3 class="prod-card-title">SQUARE MANHOLE COVER (24" x 36")</h3>
+            <table class="prod-specs-table">
+              <tbody>
+                <tr>
+                  <td>Shape:</td>
+                  <td>Rectangle</td>
+                </tr>
+                <tr>
+                  <td>Size:</td>
+                  <td>24" x 36"</td>
+                </tr>
+                <tr>
+                  <td>Load capacity :</td>
+                  <td>2.5 T</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="inquiry.html" class="btn-get-quote">GET QUOTE</a>
+          </article>
         </div>
       </div>
     </section>
@@ -250,8 +242,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="row g-4 footer-top-grid">
-        <div class="col-lg-4 col-md-6 col-12 footer-col">
+      <div class="footer-top-grid">
+        <div class="footer-col">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="footer-brand-logo">
           <p class="footer-bio">
             Leading manufacturer of high-quality FRP, BMC, and Steel covers. Engineering infrastructure solutions for a safer tomorrow.
@@ -263,7 +255,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-6 col-12 footer-col">
+        <div class="footer-col">
           <h4 class="footer-col-title">QUICK LINKS</h4>
           <ul class="footer-links-list">
             <li><a href="index.html">HOME</a></li>
@@ -275,7 +267,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-12 footer-col">
+        <div class="footer-col">
           <h4 class="footer-col-title">CATEGORY</h4>
           <ul class="footer-links-list">
             <li><a href="products.html">FRP MANHOLE COVER</a></li>
@@ -286,7 +278,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-12 footer-col">
+        <div class="footer-col">
           <h4 class="footer-col-title">CONTACT INFO</h4>
           <ul class="footer-contact-list">
             <li class="footer-contact-item">
@@ -305,7 +297,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center">
+      <div class="footer-bottom-bar">
         <span>2026 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</span>
         <div class="footer-bottom-links">
           <a href="about.html">PRIVACY POLICY</a>
@@ -315,8 +307,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>

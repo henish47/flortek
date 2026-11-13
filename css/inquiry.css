@@ -1,143 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+@import url('common.css');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  color: #374151;
-  background-color: #f8fafc;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
-  color: #111827;
-  font-weight: 800;
-  line-height: 1.25;
-}
-
-a {
-  text-decoration: none !important;
-  color: inherit;
-  transition: all 0.25s ease-in-out;
-}
-
-img, svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-ul, ol {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.top-header {
-  background-color: #F4B400;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.top-header .navbar {
-  padding: 0;
-  height: 72px;
-}
-
-.top-header .navbar-brand {
-  padding: 0;
-  margin-right: 0;
-}
-
-.brand-logo-img {
-  height: 42px;
-  width: auto;
-}
-
-.nav-pill-wrapper {
-  background-color: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 9999px;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-nav.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.top-header .nav-link {
-  padding: 8px 18px !important;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #111827 !important;
-  border-radius: 9999px;
-  transition: all 0.2s ease-in-out;
-}
-
-.top-header .nav-link:hover {
-  color: #2E8B57 !important;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.top-header .nav-link.active {
-  background-color: #2E8B57 !important;
-  color: #ffffff !important;
-}
-
-.btn-header-quote {
-  background-color: #2E8B57;
-  color: #ffffff !important;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13.5px;
-  font-weight: 800;
-  padding: 10px 22px;
-  border-radius: 6px;
-  transition: all 0.2s ease-in-out;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-header-quote:hover {
-  background-color: #246e45;
-  transform: translateY(-1px);
-}
-
-.navbar-toggler {
-  border: 1px solid #111827;
-  padding: 4px 8px;
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
+/* -------------------------------------------------------------
+   INQUIRY / RFQ CONTAINER SECTION
+------------------------------------------------------------- */
 .inquiry-main-section {
   padding: 55px 0 75px;
+  background-color: #ffffff;
 }
 
 .rfq-box-container {
@@ -197,7 +65,19 @@ ul, ol {
   border-bottom: 1px solid #e5e7eb;
 }
 
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
 .form-group-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-item.full-width {
   margin-bottom: 20px;
 }
 
@@ -222,10 +102,10 @@ ul, ol {
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   transition: all 0.2s ease;
+  outline: none;
 }
 
 .input-control:focus, .select-control:focus, .textarea-control:focus {
-  outline: none;
   border-color: #2E8B57;
   box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.2);
 }
@@ -361,175 +241,19 @@ ul, ol {
   transform: translateY(-2px);
 }
 
-.site-footer {
-  background-color: #F4B400;
-  padding: 60px 0 25px;
-  color: #111827;
-}
-
-.footer-brand-logo {
-  height: 44px;
-  width: auto;
-  margin-bottom: 16px;
-}
-
-.footer-bio {
-  font-size: 13px;
-  color: #111827;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.footer-social-links {
-  display: flex;
-  gap: 12px;
-}
-
-.social-icon-circle {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #111827;
-  color: #F4B400 !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  transition: all 0.2s ease;
-  text-decoration: none;
-}
-
-.social-icon-circle i {
-  font-size: 15px;
-  color: #F4B400;
-  transition: color 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.social-icon-circle:hover {
-  background-color: #2E8B57;
-  color: #ffffff !important;
-}
-
-.social-icon-circle:hover i {
-  color: #ffffff;
-}
-
-.footer-col-title {
-  font-size: 13.5px;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #111827;
-  margin-bottom: 18px;
-  letter-spacing: 0.5px;
-}
-
-.footer-links-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-links-list li a {
-  font-size: 12.5px;
-  color: #111827;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.footer-links-list li a:before {
-  content: "•";
-  color: #2E8B57;
-  font-size: 16px;
-}
-
-.footer-links-list li a:hover {
-  color: #2E8B57;
-}
-
-.footer-contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.footer-contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 12.5px;
-  color: #111827;
-  font-weight: 700;
-}
-
-.footer-contact-item svg {
-  width: 16px;
-  height: 16px;
-  margin-top: 2px;
-  flex-shrink: 0;
-  fill: #111827;
-}
-
-.footer-bottom-bar {
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  padding-top: 22px;
-  margin-top: 50px;
-  gap: 16px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #111827;
-}
-
-.footer-bottom-links {
-  display: flex;
-  gap: 18px;
-  text-transform: uppercase;
-}
-
-.footer-bottom-links a:hover {
-  text-decoration: underline !important;
-}
-
-@media (max-width: 991.98px) {
-  .top-header .navbar {
-    height: auto;
-    padding: 10px 0;
-  }
-  .collapse.navbar-collapse {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 12px;
-    margin-top: 10px;
-    width: 100%;
-  }
-  .nav-pill-wrapper {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    width: 100%;
-  }
-  .navbar-nav.nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 4px;
-  }
-  .top-header .nav-link {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media (max-width: 600px) {
+/* -------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS (INQUIRY PAGE)
+------------------------------------------------------------- */
+@media (max-width: 650px) {
   .rfq-box-container {
-    padding: 26px 18px;
+    padding: 30px 20px;
   }
-  .footer-bottom-bar {
-    flex-direction: column;
-    text-align: center;
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .rfq-title {
+    font-size: 24px;
   }
 }

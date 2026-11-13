@@ -28,9 +28,19 @@ a {
   width: 100%;
 }
 
+.login-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+}
+
 .brand-side-section {
   background-color: #F3F3F3;
   padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .brand-showcase-box {
@@ -87,6 +97,9 @@ a {
 .form-side-section {
   background-color: #FFFFFF;
   padding: 40px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-card {
@@ -120,6 +133,10 @@ a {
 .login-form {
   display: flex;
   flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 16px;
 }
 
 .form-label {
@@ -188,6 +205,13 @@ a {
   font-size: 13px;
 }
 
+.form-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
 .remember-me-label {
   display: inline-flex;
   align-items: center;
@@ -243,6 +267,11 @@ a {
   transform: scale(0.99);
 }
 
+.card-bottom-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
 .footer-company-text {
   font-family: 'Inter', sans-serif;
   font-size: 10.5px;
@@ -253,6 +282,10 @@ a {
 }
 
 @media (max-width: 991.98px) {
+  .login-split-grid {
+    grid-template-columns: 1fr;
+  }
+
   .brand-side-section {
     padding: 40px 20px 28px 20px;
   }

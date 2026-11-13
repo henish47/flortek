@@ -6,26 +6,30 @@
   <title>FLORTEK INDUSTRIES PVT. LTD. | Premium FRP Manhole Covers &amp; Gratings</title>
   <meta name="description" content="Leading manufacturer of high-performance composite FRP manhole covers, drain gratings, and gully covers built for extreme structural strength and zero theft value.">
   <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
   <header class="top-header">
     <div class="container">
-      <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+      <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-brand brand-logo-link" aria-label="FLORTEK Industries Homepage">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="brand-logo-img">
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#flortekNav" aria-controls="flortekNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Pure CSS Mobile Hamburger Toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation">
+        <label for="nav-toggle" class="navbar-toggler" aria-label="Toggle navigation">
+          <span class="navbar-toggler-line"></span>
+          <span class="navbar-toggler-line"></span>
+          <span class="navbar-toggler-line"></span>
+        </label>
 
-        <div class="collapse navbar-collapse justify-content-center" id="flortekNav">
+        <div class="navbar-collapse" id="flortekNav">
           <div class="nav-pill-wrapper">
-            <ul class="navbar-nav nav-links">
+            <ul class="nav-links">
               <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
               <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
               <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
@@ -35,7 +39,7 @@
           </div>
         </div>
 
-        <a href="inquiry.html" class="btn-header-quote d-none d-lg-inline-flex">Get Quote</a>
+        <a href="inquiry.html" class="btn-header-quote header-quote-desktop">Get Quote</a>
       </nav>
     </div>
   </header>
@@ -43,8 +47,8 @@
   <main>
     <section class="hero-section">
       <div class="container">
-        <div class="row align-items-center hero-grid">
-          <div class="col-lg-6 hero-content">
+        <div class="hero-grid">
+          <div class="hero-content">
             <h1 class="hero-title">
               <span class="title-black">ENGINEERING</span>
               <span class="title-green-light">STRUCTURAL</span><br>
@@ -63,8 +67,8 @@
             </div>
           </div>
 
-          <div class="col-lg-6 hero-graphic-col text-center">
-            <img src="./images/hero.png" alt="FLORTEK FRP Manhole Covers &amp; Gratings Ecosystem" class="hero-cluster-img img-fluid">
+          <div class="hero-graphic-col">
+            <img src="./images/hero.png" alt="FLORTEK FRP Manhole Covers &amp; Gratings Ecosystem" class="hero-cluster-img">
           </div>
         </div>
       </div>
@@ -72,7 +76,7 @@
 
     <section class="gallery-section">
       <div class="container">
-        <div class="section-header-center text-center">
+        <div class="section-header-center">
           <span class="section-tag">THROUGH INNOVATIONS</span>
           <h2 class="section-main-title">PRODUCT GALLERY</h2>
           <p class="section-subtitle">
@@ -80,99 +84,87 @@
           </p>
         </div>
 
-        <div class="row g-4 product-cards-grid">
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="product-card h-100">
-              <div class="product-card-img-wrap">
-                <img src="images/frp-10x10-white.jpg" alt="FRP 10x10 Light Duty White Manhole Cover" class="product-card-img img-fluid">
-              </div>
-              <div class="product-card-header">
-                <h3 class="product-card-title">FRP 10" x 10" LIGHT DUTY COVER</h3>
-              </div>
-              <p class="product-card-desc">
-                Light-duty (2.5-T) composite cover engineered for residential inspection chambers, water meters, and gardens. Weatherproof, corrosion-free, with lifting ring.
-              </p>
-              <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
-            </article>
-          </div>
+        <div class="product-cards-grid">
+          <article class="product-card">
+            <div class="product-card-img-wrap">
+              <img src="images/frp-10x10-white.jpg" alt="FRP 10x10 Light Duty White Manhole Cover" class="product-card-img">
+            </div>
+            <div class="product-card-header">
+              <h3 class="product-card-title">FRP 10" x 10" LIGHT DUTY COVER</h3>
+            </div>
+            <p class="product-card-desc">
+              Light-duty (2.5-T) composite cover engineered for residential inspection chambers, water meters, and gardens. Weatherproof, corrosion-free, with lifting ring.
+            </p>
+            <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="product-card h-100">
-              <div class="product-card-img-wrap">
-                <img src="images/frp-750x750-d400.jpg" alt="FRP 750x750 D400 Heavy Duty Square Manhole Cover" class="product-card-img img-fluid">
-              </div>
-              <div class="product-card-header">
-                <h3 class="product-card-title">FRP 750 x 750 D400 COVER</h3>
-              </div>
-              <p class="product-card-desc">
-                Heavy-duty D400 composite cover for highways, industrial parks, and heavy vehicular traffic. Tested to BS EN 124 standards (40-ton load capacity).
-              </p>
-              <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
-            </article>
-          </div>
+          <article class="product-card">
+            <div class="product-card-img-wrap">
+              <img src="images/frp-750x750-d400.jpg" alt="FRP 750x750 D400 Heavy Duty Square Manhole Cover" class="product-card-img">
+            </div>
+            <div class="product-card-header">
+              <h3 class="product-card-title">FRP 750 x 750 D400 COVER</h3>
+            </div>
+            <p class="product-card-desc">
+              Heavy-duty D400 composite cover for highways, industrial parks, and heavy vehicular traffic. Tested to BS EN 124 standards (40-ton load capacity).
+            </p>
+            <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="product-card h-100">
-              <div class="product-card-img-wrap">
-                <img src="images/frp-circular-600-b125.jpg" alt="FRP 600 Circular Manhole Cover B125" class="product-card-img img-fluid">
-              </div>
-              <div class="product-card-header">
-                <h3 class="product-card-title">FRP CIRCULAR COVER (Ø600)</h3>
-              </div>
-              <p class="product-card-desc">
-                Precision molded round composite cover (BS EN 124 / B125) with anti-slip tread pattern and dual keyholes. Ideal for municipal sewer and drainage networks.
-              </p>
-              <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
-            </article>
-          </div>
+          <article class="product-card">
+            <div class="product-card-img-wrap">
+              <img src="images/frp-circular-600-b125.jpg" alt="FRP 600 Circular Manhole Cover B125" class="product-card-img">
+            </div>
+            <div class="product-card-header">
+              <h3 class="product-card-title">FRP CIRCULAR COVER (Ø600)</h3>
+            </div>
+            <p class="product-card-desc">
+              Precision molded round composite cover (BS EN 124 / B125) with anti-slip tread pattern and dual keyholes. Ideal for municipal sewer and drainage networks.
+            </p>
+            <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="product-card h-100">
-              <div class="product-card-img-wrap">
-                <img src="images/frp-600x600-d400.jpg" alt="FRP 600x600 Framed Square Manhole Cover D400" class="product-card-img img-fluid">
-              </div>
-              <div class="product-card-header">
-                <h3 class="product-card-title">FRP 600 x 600 D400 COVER</h3>
-              </div>
-              <p class="product-card-desc">
-                Heavy-duty D400 square cover with integrated flanged frame. Engineered for high-speed carriageways, quick roadway installation, and flush alignment.
-              </p>
-              <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
-            </article>
-          </div>
+          <article class="product-card">
+            <div class="product-card-img-wrap">
+              <img src="images/frp-600x600-d400.jpg" alt="FRP 600x600 Framed Square Manhole Cover D400" class="product-card-img">
+            </div>
+            <div class="product-card-header">
+              <h3 class="product-card-title">FRP 600 x 600 D400 COVER</h3>
+            </div>
+            <p class="product-card-desc">
+              Heavy-duty D400 square cover with integrated flanged frame. Engineered for high-speed carriageways, quick roadway installation, and flush alignment.
+            </p>
+            <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="product-card h-100">
-              <div class="product-card-img-wrap">
-                <img src="images/frp-31x42-heavy.jpg" alt="FRP 31x42 Utility Trench Manhole Cover" class="product-card-img img-fluid">
-              </div>
-              <div class="product-card-header">
-                <h3 class="product-card-title">FRP 31" x 42" TRENCH COVER</h3>
-              </div>
-              <p class="product-card-desc">
-                Large-dimension composite utility cover with built-in stainless steel lifting handles. Perfect for electrical cable trenches, telecom pits, and pump chambers.
-              </p>
-              <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
-            </article>
-          </div>
+          <article class="product-card">
+            <div class="product-card-img-wrap">
+              <img src="images/frp-31x42-heavy.jpg" alt="FRP 31x42 Utility Trench Manhole Cover" class="product-card-img">
+            </div>
+            <div class="product-card-header">
+              <h3 class="product-card-title">FRP 31" x 42" TRENCH COVER</h3>
+            </div>
+            <p class="product-card-desc">
+              Large-dimension composite utility cover with built-in stainless steel lifting handles. Perfect for electrical cable trenches, telecom pits, and pump chambers.
+            </p>
+            <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="product-card h-100">
-              <div class="product-card-img-wrap">
-                <img src="./images/GULLY COVER-5T-500x500-GRAY.png" alt="FRP Square Slotted Drain Cover" class="product-card-img img-fluid">
-              </div>
-              <div class="product-card-header">
-                <h3 class="product-card-title">FRP SQUARE SLOTTED DRAIN COVER</h3>
-              </div>
-              <p class="product-card-desc">
-                High-flow slotted gully drain grating. Chemically inert against acidic water and chemical runoffs, ensuring maximum water discharge efficiency.
-              </p>
-              <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
-            </article>
-          </div>
+          <article class="product-card">
+            <div class="product-card-img-wrap">
+              <img src="./images/GULLY COVER-5T-500x500-GRAY.png" alt="FRP Square Slotted Drain Cover" class="product-card-img">
+            </div>
+            <div class="product-card-header">
+              <h3 class="product-card-title">FRP SQUARE SLOTTED DRAIN COVER</h3>
+            </div>
+            <p class="product-card-desc">
+              High-flow slotted gully drain grating. Chemically inert against acidic water and chemical runoffs, ensuring maximum water discharge efficiency.
+            </p>
+            <a href="inquiry.html" class="btn btn-green">GET BEST PRICE</a>
+          </article>
         </div>
 
-        <div class="gallery-bottom-cta text-center mt-4">
+        <div class="gallery-bottom-cta">
           <a href="products.html" class="btn btn-green">VIEW ALL PRODUCTS &gt;</a>
         </div>
       </div>
@@ -180,73 +172,65 @@
 
     <section class="range-section">
       <div class="container">
-        <div class="section-header-center text-center">
+        <div class="section-header-center">
           <h2 class="section-main-title">OUR PRODUCT RANGE</h2>
           <p class="section-subtitle">
             FRP manhole covers built for diverse load requirements, from residential walkways to heavy duty airport runways.
           </p>
         </div>
 
-        <div class="row g-4 range-grid">
-          <div class="col-lg-3 col-md-6 col-12">
-            <article class="range-card h-100">
-              <div class="range-icon-box">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              </div>
-              <h3 class="range-card-title">LIGHT DUTY (2.5 - 5T)</h3>
-              <p class="range-card-desc">
-                Garden, pedestrian paths, cycle tracks and domestic residential driveways.
-              </p>
-              <a href="products.html" class="range-card-link">View Range &gt;</a>
-            </article>
-          </div>
+        <div class="range-grid">
+          <article class="range-card">
+            <div class="range-icon-box">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 class="range-card-title">LIGHT DUTY (2.5 - 5T)</h3>
+            <p class="range-card-desc">
+              Garden, pedestrian paths, cycle tracks and domestic residential driveways.
+            </p>
+            <a href="products.html" class="range-card-link">View Range &gt;</a>
+          </article>
 
-          <div class="col-lg-3 col-md-6 col-12">
-            <article class="range-card h-100">
-              <div class="range-icon-box">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              </div>
-              <h3 class="range-card-title">LIGHT DUTY (12.5 - 15T)</h3>
-              <p class="range-card-desc">
-                Car parking areas, footways, commercial complexes and light vehicular traffic.
-              </p>
-              <a href="products.html" class="range-card-link">View Range &gt;</a>
-            </article>
-          </div>
+          <article class="range-card">
+            <div class="range-icon-box">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 class="range-card-title">LIGHT DUTY (12.5 - 15T)</h3>
+            <p class="range-card-desc">
+              Car parking areas, footways, commercial complexes and light vehicular traffic.
+            </p>
+            <a href="products.html" class="range-card-link">View Range &gt;</a>
+          </article>
 
-          <div class="col-lg-3 col-md-6 col-12">
-            <article class="range-card h-100">
-              <div class="range-icon-box">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              </div>
-              <h3 class="range-card-title">LIGHT DUTY (20 - 25T)</h3>
-              <p class="range-card-desc">
-                Main carriageways, industrial estates, petrol pumps and commercial bus terminals.
-              </p>
-              <a href="products.html" class="range-card-link">View Range &gt;</a>
-            </article>
-          </div>
+          <article class="range-card">
+            <div class="range-icon-box">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 class="range-card-title">LIGHT DUTY (20 - 25T)</h3>
+            <p class="range-card-desc">
+              Main carriageways, industrial estates, petrol pumps and commercial bus terminals.
+            </p>
+            <a href="products.html" class="range-card-link">View Range &gt;</a>
+          </article>
 
-          <div class="col-lg-3 col-md-6 col-12">
-            <article class="range-card h-100">
-              <div class="range-icon-box">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              </div>
-              <h3 class="range-card-title">LIGHT DUTY (40T+)</h3>
-              <p class="range-card-desc">
-                Heavy container yards, airports, docks, and high-load industrial logistics zones.
-              </p>
-              <a href="products.html" class="range-card-link">View Range &gt;</a>
-            </article>
-          </div>
+          <article class="range-card">
+            <div class="range-icon-box">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 class="range-card-title">LIGHT DUTY (40T+)</h3>
+            <p class="range-card-desc">
+              Heavy container yards, airports, docks, and high-load industrial logistics zones.
+            </p>
+            <a href="products.html" class="range-card-link">View Range &gt;</a>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="superiority-section">
       <div class="container">
-        <div class="row g-5 align-items-center superiority-grid">
-          <div class="col-lg-5 superiority-content">
+        <div class="superiority-grid">
+          <div class="superiority-content">
             <span class="section-tag">MATERIAL SUPERIORITY</span>
             <h2 class="superiority-title">
               WHY<br>
@@ -260,55 +244,45 @@
             <a href="inquiry.html" class="btn btn-green">REQUEST TECHNICAL DATASHEET</a>
           </div>
 
-          <div class="col-lg-7">
-            <div class="row g-3 features-2x2-grid">
-              <div class="col-sm-6 col-12">
-                <div class="feature-card h-100">
-                  <div class="feature-icon-title">
-                    <span class="feature-check-icon">✓</span>
-                    <h3 class="feature-title">ZERO THEFT VALUE</h3>
-                  </div>
-                  <p class="feature-desc">
-                    No scrap resale value eliminates theft risks and prevents hazardous open manholes on roads.
-                  </p>
-                </div>
+          <div class="features-2x2-grid">
+            <div class="feature-card">
+              <div class="feature-icon-title">
+                <span class="feature-check-icon">✓</span>
+                <h3 class="feature-title">ZERO THEFT VALUE</h3>
               </div>
+              <p class="feature-desc">
+                No scrap resale value eliminates theft risks and prevents hazardous open manholes on roads.
+              </p>
+            </div>
 
-              <div class="col-sm-6 col-12">
-                <div class="feature-card h-100">
-                  <div class="feature-icon-title">
-                    <span class="feature-check-icon">✓</span>
-                    <h3 class="feature-title">ZERO THEFT VALUE</h3>
-                  </div>
-                  <p class="feature-desc">
-                    Engineered with high tensile fiber matrix to handle heavy continuous traffic without cracking.
-                  </p>
-                </div>
+            <div class="feature-card">
+              <div class="feature-icon-title">
+                <span class="feature-check-icon">✓</span>
+                <h3 class="feature-title">HIGH LOAD CAPACITY</h3>
               </div>
+              <p class="feature-desc">
+                Engineered with high tensile fiber matrix to handle heavy continuous traffic without cracking.
+              </p>
+            </div>
 
-              <div class="col-sm-6 col-12">
-                <div class="feature-card h-100">
-                  <div class="feature-icon-title">
-                    <span class="feature-check-icon">✓</span>
-                    <h3 class="feature-title">ZERO THEFT VALUE</h3>
-                  </div>
-                  <p class="feature-desc">
-                    Impervious to sewer gases, industrial acids, saline coastal air, and harsh weather conditions.
-                  </p>
-                </div>
+            <div class="feature-card">
+              <div class="feature-icon-title">
+                <span class="feature-check-icon">✓</span>
+                <h3 class="feature-title">CORROSION RESISTANT</h3>
               </div>
+              <p class="feature-desc">
+                Impervious to sewer gases, industrial acids, saline coastal air, and harsh weather conditions.
+              </p>
+            </div>
 
-              <div class="col-sm-6 col-12">
-                <div class="feature-card h-100">
-                  <div class="feature-icon-title">
-                    <span class="feature-check-icon">✓</span>
-                    <h3 class="feature-title">ZERO THEFT VALUE</h3>
-                  </div>
-                  <p class="feature-desc">
-                    50% lighter than cast iron, enabling safe, single-person operation and zero injury incidents.
-                  </p>
-                </div>
+            <div class="feature-card">
+              <div class="feature-icon-title">
+                <span class="feature-check-icon">✓</span>
+                <h3 class="feature-title">LIGHTWEIGHT DESIGN</h3>
               </div>
+              <p class="feature-desc">
+                50% lighter than cast iron, enabling safe, single-person operation and zero injury incidents.
+              </p>
             </div>
           </div>
         </div>
@@ -317,8 +291,8 @@
 
     <section class="reviews-section">
       <div class="container">
-        <div class="row align-items-center reviews-header-bar mb-4">
-          <div class="col-lg-7 reviews-header-left">
+        <div class="reviews-header-bar">
+          <div class="reviews-header-left">
             <div class="google-badge">
               <svg class="google-icon" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
@@ -334,83 +308,77 @@
             </p>
           </div>
 
-          <div class="col-lg-5 text-lg-end mt-3 mt-lg-0 reviews-header-right">
-            <div class="rating-score-box d-inline-flex align-items-center text-start">
+          <div class="reviews-header-right">
+            <div class="rating-score-box">
               <span class="score-num">4.9</span>
               <div>
                 <div class="stars-container">★★★★★</div>
                 <span style="font-size: 11px; font-weight: 800; color: #6b7280;">120+ VERIFIED RATINGS</span>
               </div>
             </div>
-            <a href="contact.html" class="btn btn-green ms-lg-3 mt-2 mt-sm-0">WRITE A REVIEW &gt;</a>
+            <a href="contact.html" class="btn btn-green">WRITE A REVIEW &gt;</a>
           </div>
         </div>
 
-        <div class="row g-4 reviews-cards-grid">
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="review-card h-100">
-              <div class="reviewer-profile">
-                <div class="reviewer-avatar">H</div>
-                <div>
-                  <h3 class="reviewer-name">HARDIK KHAKHKHAR</h3>
-                  <span class="reviewer-role">Project Engineer</span>
-                </div>
+        <div class="reviews-cards-grid">
+          <article class="review-card">
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">H</div>
+              <div>
+                <h3 class="reviewer-name">HARDIK KHAKHKHAR</h3>
+                <span class="reviewer-role">Project Engineer</span>
               </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                "We have installed FLORTEK FRP covers across multiple commercial town projects. The strength and finish are truly top tier. Zero breakage during heavy monsoon traffic and no rust issues."
-              </p>
-              <div class="review-footer">
-                <span>✓ Verified Purchase</span>
-                <span class="review-date">2 weeks ago</span>
-              </div>
-            </article>
-          </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "We have installed FLORTEK FRP covers across multiple commercial town projects. The strength and finish are truly top tier. Zero breakage during heavy monsoon traffic and no rust issues."
+            </p>
+            <div class="review-footer">
+              <span>✓ Verified Purchase</span>
+              <span class="review-date">2 weeks ago</span>
+            </div>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="review-card h-100">
-              <div class="reviewer-profile">
-                <div class="reviewer-avatar">M</div>
-                <div>
-                  <h3 class="reviewer-name">MEET &amp; BRAVE</h3>
-                  <span class="reviewer-role">Civil Contractor</span>
-                </div>
+          <article class="review-card">
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">M</div>
+              <div>
+                <h3 class="reviewer-name">MEET &amp; BRAVE</h3>
+                <span class="reviewer-role">Civil Contractor</span>
               </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                "Outstanding quality manhole covers and gratings. Very lightweight compared to traditional cast iron, making our installation 3x faster without crane equipment."
-              </p>
-              <div class="review-footer">
-                <span>✓ Verified Purchase</span>
-                <span class="review-date">1 month ago</span>
-              </div>
-            </article>
-          </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "Outstanding quality manhole covers and gratings. Very lightweight compared to traditional cast iron, making our installation 3x faster without crane equipment."
+            </p>
+            <div class="review-footer">
+              <span>✓ Verified Purchase</span>
+              <span class="review-date">1 month ago</span>
+            </div>
+          </article>
 
-          <div class="col-lg-4 col-md-6 col-12">
-            <article class="review-card h-100">
-              <div class="reviewer-profile">
-                <div class="reviewer-avatar">M</div>
-                <div>
-                  <h3 class="reviewer-name">MOHN &amp; BATT</h3>
-                  <span class="reviewer-role">Infrastructure Consultant</span>
-                </div>
+          <article class="review-card">
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">M</div>
+              <div>
+                <h3 class="reviewer-name">MOHN &amp; BATT</h3>
+                <span class="reviewer-role">Infrastructure Consultant</span>
               </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                "FLORTEK has been our go-to supplier for D400 heavy duty manhole covers. Their load testing documentation and ISO compliance made municipal approval straightforward."
-              </p>
-              <div class="review-footer">
-                <span>✓ Verified Purchase</span>
-                <span class="review-date">3 months ago</span>
-              </div>
-            </article>
-          </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "FLORTEK has been our go-to supplier for D400 heavy duty manhole covers. Their load testing documentation and ISO compliance made municipal approval straightforward."
+            </p>
+            <div class="review-footer">
+              <span>✓ Verified Purchase</span>
+              <span class="review-date">3 months ago</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="cta-banner-section text-center">
+    <section class="cta-banner-section">
       <div class="container">
         <h2 class="cta-title">READY TO UPGRADE?</h2>
         <p class="cta-subtitle">
@@ -423,8 +391,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="row g-4 footer-top-grid">
-        <div class="col-lg-4 col-md-6 col-12 footer-col">
+      <div class="footer-top-grid">
+        <div class="footer-col">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="footer-brand-logo">
           <p class="footer-bio">
             Leading manufacturer of high-quality FRP, BMC, and Steel covers. Engineering infrastructure solutions for a safer tomorrow.
@@ -436,7 +404,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-6 col-12 footer-col">
+        <div class="footer-col">
           <h4 class="footer-col-title">QUICK LINKS</h4>
           <ul class="footer-links-list">
             <li><a href="index.html">HOME</a></li>
@@ -448,7 +416,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-12 footer-col">
+        <div class="footer-col">
           <h4 class="footer-col-title">CATEGORY</h4>
           <ul class="footer-links-list">
             <li><a href="products.html">FRP MANHOLE COVER</a></li>
@@ -459,7 +427,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-12 footer-col">
+        <div class="footer-col">
           <h4 class="footer-col-title">CONTACT INFO</h4>
           <ul class="footer-contact-list">
             <li class="footer-contact-item">
@@ -478,7 +446,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center">
+      <div class="footer-bottom-bar">
         <span>2026 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</span>
         <div class="footer-bottom-links">
           <a href="about.html">PRIVACY POLICY</a>
@@ -488,8 +456,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>

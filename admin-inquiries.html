@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiries - FLORTEK Admin Panel</title>
+  <meta name="description" content="Manage customer quotation and product enquiries for FLORTEK industrial composite solutions.">
+  <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- External Admin CSS -->
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="admin-sidebar" aria-label="Sidebar Navigation">
+      <div class="sidebar-brand-wrapper">
+        <a href="admin-dashboard.html" title="FLORTEK Admin Panel">
+          <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="sidebar-brand-logo">
+        </a>
+      </div>
+
+      <div class="sidebar-nav-container">
+        <ul class="sidebar-nav-list">
+          <li class="sidebar-nav-item">
+            <a href="admin-dashboard.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-solid fa-table-cells-large"></i></span>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-products.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-solid fa-box-archive"></i></span>
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-categories.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-solid fa-shapes"></i></span>
+              <span>Categories</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-gallery.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-regular fa-image"></i></span>
+              <span>Gallery</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-inquiries.html" class="sidebar-nav-link active">
+              <span class="nav-icon"><i class="fa-solid fa-circle-question"></i></span>
+              <span>Inquiries</span>
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="admin-settings.html" class="sidebar-nav-link">
+              <span class="nav-icon"><i class="fa-solid fa-gear"></i></span>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-footer-section">
+          <a href="login.html" class="logout-nav-link" title="Logout of Admin Panel">
+            <span class="nav-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="admin-main-wrapper">
+      
+      <!-- TOP HEADER -->
+      <header class="admin-top-header">
+        <div class="header-search-box">
+          <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
+          <input type="text" class="header-search-input" placeholder="Search inquiries..." aria-label="Search inquiries">
+        </div>
+
+        <div class="header-right-actions">
+          <a href="#notifications-modal" class="header-notification-btn" title="View Notifications" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="header-notification-dot"></span>
+          </a>
+          <div class="header-user-avatar" title="Administrator">
+            A
+          </div>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT -->
+      <main class="admin-page-container">
+        
+        <!-- Header with Title and Export Button -->
+        <div class="page-title-row">
+          <div>
+            <h1 class="page-main-title">Inquiries</h1>
+            <p class="page-main-subtitle">Manage customer quotation and product enquiries.</p>
+          </div>
+          <div>
+            <a href="#export-modal" class="btn-admin-outline">
+              <i class="fa-solid fa-download"></i>
+              <span>Export CSV</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 Metric Cards with Subtle Curved Watermarks -->
+        <section class="stat-cards-grid" aria-label="Inquiry Metrics">
+          <div class="stat-metric-card with-accent-green">
+            <div class="stat-card-header">
+              <span class="stat-card-title-caps">Total Inquiries</span>
+            </div>
+            <div class="stat-card-value">
+              <span>1,248</span>
+              <span class="stat-trend-badge"><i class="fa-solid fa-arrow-up"></i>12%</span>
+            </div>
+          </div>
+
+          <div class="stat-metric-card with-accent-yellow">
+            <div class="stat-card-header">
+              <span class="stat-card-title-caps">New (Today)</span>
+            </div>
+            <div class="stat-card-value">
+              <span>34</span>
+              <span class="stat-action-badge">Requires Action</span>
+            </div>
+          </div>
+
+          <div class="stat-metric-card with-accent-gray">
+            <div class="stat-card-header">
+              <span class="stat-card-title-caps">Pending Review</span>
+            </div>
+            <div class="stat-card-value">
+              <span>112</span>
+            </div>
+          </div>
+
+          <div class="stat-metric-card with-accent-green">
+            <div class="stat-card-header">
+              <span class="stat-card-title-caps">Completed</span>
+            </div>
+            <div class="stat-card-value">
+              <span>1,102</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <div class="inquiries-filter-bar">
+          <select class="filter-select" aria-label="Filter by Status">
+            <option>All Statuses</option>
+            <option>New</option>
+            <option>Pending</option>
+            <option>Completed</option>
+          </select>
+          <select class="filter-select" aria-label="Filter by Product">
+            <option>All Products</option>
+            <option>Heavy Duty Manhole Covers</option>
+            <option>FRP Drain Covers (Bulk)</option>
+            <option>Cable Trench Covers</option>
+            <option>Custom BMC Moldings</option>
+          </select>
+        </div>
+
+        <!-- Inquiries Table Card -->
+        <div class="admin-table-card">
+          <div class="table-responsive-wrapper">
+            <table class="admin-data-table">
+              <thead>
+                <tr>
+                  <th>Customer Name</th>
+                  <th>Company</th>
+                  <th>Contact Info</th>
+                  <th>Product Interest</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="cell-bold">Rajesh Kumar</td>
+                  <td>BuildTech Infrastructure</td>
+                  <td>
+                    <div class="cell-bold">rajesh@buildtech.in</div>
+                    <div class="cell-muted">+91 98765 43210</div>
+                  </td>
+                  <td>Heavy Duty Manhole Covers</td>
+                  <td>Oct 24, 2024</td>
+                  <td><span class="badge-dot badge-dot-new">New</span></td>
+                </tr>
+                <tr>
+                  <td class="cell-bold">Amit Patel</td>
+                  <td>Gujarat Civil Works</td>
+                  <td>
+                    <div class="cell-bold">amit.p@gujcivil.com</div>
+                    <div class="cell-muted">+91 87654 32109</div>
+                  </td>
+                  <td>FRP Drain Covers (Bulk)</td>
+                  <td>Oct 23, 2024</td>
+                  <td><span class="badge-dot badge-dot-pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td class="cell-bold">Sarah Jenkins</td>
+                  <td>Global Logistics Hub</td>
+                  <td>
+                    <div class="cell-bold">s.jenkins@glhub.com</div>
+                    <div class="cell-muted">+1 415 555 0198</div>
+                  </td>
+                  <td>Cable Trench Covers</td>
+                  <td>Oct 21, 2024</td>
+                  <td><span class="badge-dot badge-dot-completed">Completed</span></td>
+                </tr>
+                <tr>
+                  <td class="cell-bold">Vikram Singh</td>
+                  <td>Metro Dev Corp</td>
+                  <td>
+                    <div class="cell-bold">procurement@metrodev.in</div>
+                    <div class="cell-muted">+91 76543 21098</div>
+                  </td>
+                  <td>Custom BMC Moldings</td>
+                  <td>Oct 20, 2024</td>
+                  <td><span class="badge-dot badge-dot-pending">Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- BOTTOM FOOTER -->
+      <footer class="admin-bottom-footer">
+        <div class="footer-brand-title">FLORTEK</div>
+        <div class="footer-copyright">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
+        <div class="footer-links-group">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">System Status</a>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- PURE CSS MODALS (NO JS) -->
+  <div id="export-modal" class="css-modal-overlay">
+    <div class="css-modal-dialog">
+      <div class="css-modal-header">
+        <h3 class="css-modal-title">Export Inquiries</h3>
+        <a href="#" class="css-modal-close">&times;</a>
+      </div>
+      <div class="css-modal-body">
+        <div class="admin-form-group">
+          <label class="admin-form-label">Date Range</label>
+          <select class="admin-form-select">
+            <option>All Time (1,248 inquiries)</option>
+            <option>Last 30 Days</option>
+            <option>This Quarter</option>
+            <option>This Year</option>
+          </select>
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label">Include Fields</label>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" id="f1" checked>
+            <label class="form-check-label small" for="f1">Customer & Company Details</label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" id="f2" checked>
+            <label class="form-check-label small" for="f2">Product Specifications & Quantities</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="f3" checked>
+            <label class="form-check-label small" for="f3">Status & Timestamp Log</label>
+          </div>
+        </div>
+      </div>
+      <div class="css-modal-footer">
+        <a href="#" class="btn-admin-outline">Cancel</a>
+        <a href="#" class="btn-admin-primary"><i class="fa-solid fa-download me-1"></i> Download CSV</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
