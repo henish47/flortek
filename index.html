@@ -26,6 +26,7 @@
           <span class="navbar-toggler-line"></span>
           <span class="navbar-toggler-line"></span>
         </label>
+        <label for="nav-toggle" class="nav-backdrop" aria-hidden="true"></label>
 
         <div class="navbar-collapse" id="flortekNav">
           <div class="nav-pill-wrapper">
@@ -33,9 +34,12 @@
               <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
               <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
               <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
-              <li class="nav-item"><a href="gallery.html" class="nav-link">Galary</a></li>
+              <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
               <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
             </ul>
+          </div>
+          <div class="mobile-nav-quote">
+            <a href="inquiry.html" class="btn-header-quote-mobile">Get Quote</a>
           </div>
         </div>
 
@@ -456,6 +460,25 @@
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Navigation Helper -->
+  <script>
+    document.addEventListener('click', function (e) {
+      var navToggle = document.getElementById('nav-toggle');
+      if (navToggle && navToggle.checked) {
+        var header = document.querySelector('.top-header');
+        if (header && !header.contains(e.target)) {
+          navToggle.checked = false;
+        }
+      }
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 992) {
+        var navToggle = document.getElementById('nav-toggle');
+        if (navToggle && navToggle.checked) navToggle.checked = false;
+      }
+    });
+  </script>
 
 </body>
 </html>
