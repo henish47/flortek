@@ -17,9 +17,12 @@
 <body>
 
   <div class="admin-layout">
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
     
     <!-- LEFT SIDEBAR -->
-    <aside class="admin-sidebar" aria-label="Sidebar Navigation">
+    <aside class="admin-sidebar" id="adminSidebar" aria-label="Sidebar Navigation">
       <div class="sidebar-brand-wrapper">
         <a href="admin-dashboard.html" title="FLORTEK Admin Panel">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="sidebar-brand-logo">
@@ -29,7 +32,7 @@
       <div class="sidebar-nav-container">
         <ul class="sidebar-nav-list">
           <li class="sidebar-nav-item">
-            <a href="admin-dashboard.html" class="sidebar-nav-link active">
+            <a href="admin-dashboard.html" class="sidebar-nav-link active" aria-current="page">
               <span class="nav-icon"><i class="fa-solid fa-table-cells-large"></i></span>
               <span>Dashboard</span>
             </a>
@@ -80,12 +83,16 @@
       
       <!-- TOP HEADER -->
       <header class="admin-top-header">
+        <button class="btn-sidebar-toggle me-2" id="sidebarToggleBtn" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="adminSidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
         <div class="header-search-box">
           <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
           <input type="text" class="header-search-input" placeholder="Search..." aria-label="Search dashboard">
         </div>
 
-        <div class="header-right-actions">
+        <div class="header-right-actions ms-auto">
           <a href="#notifications-modal" class="header-notification-btn" title="View Notifications" aria-label="Notifications">
             <i class="fa-regular fa-bell"></i>
             <span class="header-notification-dot"></span>
@@ -100,10 +107,10 @@
       <main class="admin-page-container">
         
         <!-- Page Title -->
-        <div class="page-title-row">
+        <div class="page-title-row d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4">
           <div>
-            <h1 class="page-main-title">Dashboard</h1>
-            <p class="page-main-subtitle">Welcome back, Admin</p>
+            <h1 class="page-main-title mb-1">Dashboard</h1>
+            <p class="page-main-subtitle mb-0">Welcome back, Admin</p>
           </div>
         </div>
 
@@ -183,14 +190,14 @@
               <a href="admin-inquiries.html" class="view-all-link">View All</a>
             </div>
 
-            <div class="table-responsive-wrapper">
-              <table class="admin-data-table">
+            <div class="table-responsive">
+              <table class="admin-data-table w-100">
                 <thead>
                   <tr>
                     <th>Customer</th>
-                    <th>Company</th>
+                    <th class="d-none d-sm-table-cell">Company</th>
                     <th>Product</th>
-                    <th>Date</th>
+                    <th class="d-none d-md-table-cell">Date</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
@@ -198,9 +205,9 @@
                 <tbody>
                   <tr>
                     <td class="cell-bold">John Doe</td>
-                    <td>Acme Corp</td>
+                    <td class="d-none d-sm-table-cell">Acme Corp</td>
                     <td>FRP Square Manhole...</td>
-                    <td>Oct 24, 2023</td>
+                    <td class="d-none d-md-table-cell">Oct 24, 2023</td>
                     <td><span class="badge-status badge-new">New</span></td>
                     <td>
                       <a href="#view-inquiry-modal" class="action-icon-btn action-edit" title="Edit Inquiry">
@@ -210,9 +217,9 @@
                   </tr>
                   <tr>
                     <td class="cell-bold">Jane Smith</td>
-                    <td>BuildIt Inc.</td>
+                    <td class="d-none d-sm-table-cell">BuildIt Inc.</td>
                     <td>Light Duty (2.5 - 5T)</td>
-                    <td>Oct 23, 2023</td>
+                    <td class="d-none d-md-table-cell">Oct 23, 2023</td>
                     <td><span class="badge-status badge-pending">Pending</span></td>
                     <td>
                       <a href="#view-inquiry-modal" class="action-icon-btn action-edit" title="Edit Inquiry">
@@ -222,9 +229,9 @@
                   </tr>
                   <tr>
                     <td class="cell-bold">Robert Jones</td>
-                    <td>City Works Dept.</td>
+                    <td class="d-none d-sm-table-cell">City Works Dept.</td>
                     <td>Heavy Duty Covers</td>
-                    <td>Oct 22, 2023</td>
+                    <td class="d-none d-md-table-cell">Oct 22, 2023</td>
                     <td><span class="badge-status badge-contacted">Contacted</span></td>
                     <td>
                       <a href="#view-inquiry-modal" class="action-icon-btn action-edit" title="Edit Inquiry">
@@ -234,9 +241,9 @@
                   </tr>
                   <tr>
                     <td class="cell-bold">Alice Williams</td>
-                    <td>Global Logistics</td>
+                    <td class="d-none d-sm-table-cell">Global Logistics</td>
                     <td>Custom Grating</td>
-                    <td>Oct 20, 2023</td>
+                    <td class="d-none d-md-table-cell">Oct 20, 2023</td>
                     <td><span class="badge-status badge-completed">Completed</span></td>
                     <td>
                       <a href="#view-inquiry-modal" class="action-icon-btn action-edit" title="Edit Inquiry">
@@ -256,7 +263,7 @@
       <!-- BOTTOM FOOTER -->
       <footer class="admin-bottom-footer">
         <div class="footer-brand-title">FLORTEK</div>
-        <div class="footer-copyright">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
+        <div class="footer-copyright d-none d-sm-block">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
         <div class="footer-links-group">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -330,6 +337,47 @@
       </div>
     </div>
   </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Mobile Sidebar Script -->
+  <script>
+    (function () {
+      var toggleBtn  = document.getElementById('sidebarToggleBtn');
+      var sidebar    = document.getElementById('adminSidebar');
+      var backdrop   = document.getElementById('sidebarBackdrop');
+
+      if (!toggleBtn || !sidebar || !backdrop) return;
+
+      function openSidebar() {
+        sidebar.classList.add('sidebar-open');
+        backdrop.classList.add('show');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('sidebar-open');
+        backdrop.classList.remove('show');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      toggleBtn.addEventListener('click', function () {
+        var isOpen = sidebar.classList.contains('sidebar-open');
+        isOpen ? closeSidebar() : openSidebar();
+      });
+
+      backdrop.addEventListener('click', closeSidebar);
+
+      sidebar.querySelectorAll('.sidebar-nav-link, .logout-nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.innerWidth < 900) closeSidebar();
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>

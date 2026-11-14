@@ -122,9 +122,12 @@
 <body>
 
   <div class="admin-layout">
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
     
     <!-- LEFT SIDEBAR -->
-    <aside class="admin-sidebar" aria-label="Sidebar Navigation">
+    <aside class="admin-sidebar" id="adminSidebar" aria-label="Sidebar Navigation">
       <div class="sidebar-brand-wrapper">
         <a href="admin-dashboard.html" title="FLORTEK Admin Panel">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="sidebar-brand-logo">
@@ -185,12 +188,16 @@
       
       <!-- TOP HEADER -->
       <header class="admin-top-header">
+        <button class="btn-sidebar-toggle me-2" id="sidebarToggleBtn" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="adminSidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
         <div class="header-search-box">
           <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
           <input type="text" class="header-search-input" placeholder="Search settings..." aria-label="Search settings">
         </div>
 
-        <div class="header-right-actions">
+        <div class="header-right-actions ms-auto">
           <a href="#notifications-modal" class="header-notification-btn" title="View Notifications" aria-label="Notifications">
             <i class="fa-regular fa-bell"></i>
             <span class="header-notification-dot"></span>
@@ -205,7 +212,7 @@
       <main class="admin-page-container">
         
         <!-- Header with Title -->
-        <div class="page-title-row">
+        <div class="page-title-row d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4">
           <div>
             <h1 class="page-main-title">Settings</h1>
             <p class="page-main-subtitle">Manage company preferences, security, and administrative settings.</p>
@@ -339,7 +346,7 @@
       <!-- BOTTOM FOOTER -->
       <footer class="admin-bottom-footer">
         <div class="footer-brand-title">FLORTEK</div>
-        <div class="footer-copyright">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
+        <div class="footer-copyright d-none d-sm-block">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
         <div class="footer-links-group">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -353,6 +360,47 @@
 
   <!-- Toast Notification Element -->
   <div id="toastPill" class="toast-pill-notification" role="status" aria-live="polite"></div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Mobile Sidebar Script -->
+  <script>
+    (function () {
+      var toggleBtn  = document.getElementById('sidebarToggleBtn');
+      var sidebar    = document.getElementById('adminSidebar');
+      var backdrop   = document.getElementById('sidebarBackdrop');
+
+      if (!toggleBtn || !sidebar || !backdrop) return;
+
+      function openSidebar() {
+        sidebar.classList.add('sidebar-open');
+        backdrop.classList.add('show');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('sidebar-open');
+        backdrop.classList.remove('show');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      toggleBtn.addEventListener('click', function () {
+        var isOpen = sidebar.classList.contains('sidebar-open');
+        isOpen ? closeSidebar() : openSidebar();
+      });
+
+      backdrop.addEventListener('click', closeSidebar);
+
+      sidebar.querySelectorAll('.sidebar-nav-link, .logout-nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.innerWidth < 900) closeSidebar();
+        });
+      });
+    })();
+  </script>
 
   <!-- ============================================================
        INTERNAL FORM VALIDATION SCRIPT

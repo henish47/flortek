@@ -1170,6 +1170,25 @@ a {
 /* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
+.btn-sidebar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--admin-gray-700, #374151);
+  font-size: 20px;
+  padding: 6px 8px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.45);
+  z-index: 1040;
+}
+
 @media (max-width: 1200px) {
   .stat-cards-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1180,59 +1199,43 @@ a {
   }
 }
 
-@media (max-width: 900px) {
-  :root {
-    --admin-sidebar-width: 72px;
+@media (max-width: 899px) {
+  .btn-sidebar-toggle {
+    display: inline-flex;
+    align-items: center;
   }
-  
-  .sidebar-brand-wrapper {
-    padding: 16px 12px;
-    justify-content: center;
+
+  .admin-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+    z-index: 1050;
+    width: 250px !important;
   }
-  
-  .sidebar-brand-logo {
-    width: 36px;
-    overflow: hidden;
+
+  .admin-sidebar.sidebar-open {
+    transform: translateX(0);
   }
-  
-  .sidebar-nav-link {
-    padding: 12px 0;
-    justify-content: center;
+
+  .sidebar-backdrop.show {
+    display: block;
   }
-  
-  .sidebar-nav-link .nav-icon {
-    margin-right: 0;
+
+  .admin-main-wrapper {
+    margin-left: 0 !important;
   }
-  
-  .sidebar-nav-link span {
-    display: none;
-  }
-  
-  .logout-nav-link {
-    padding: 12px 0;
-    justify-content: center;
-  }
-  
-  .logout-nav-link .nav-icon {
-    margin-right: 0;
-  }
-  
-  .logout-nav-link span {
-    display: none;
-  }
-  
+
   .admin-top-header {
     padding: 0 16px;
   }
-  
+
   .header-search-box {
-    width: 240px;
+    width: 220px;
   }
-  
+
   .admin-page-container {
     padding: 20px 16px;
   }
-  
+
   .admin-bottom-footer {
     padding: 14px 16px;
     height: auto;
@@ -1255,5 +1258,25 @@ a {
   .inquiries-filter-bar {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+@media (max-width: 575px) {
+  .header-search-box {
+    width: 160px !important;
+  }
+
+  .page-title-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .page-title-row > div:last-child {
+    align-self: flex-start;
+  }
+
+  .footer-links-group {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

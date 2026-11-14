@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products - FLORTEK Admin Panel</title>
-  <meta name="description" content="Manage FLORTEK product catalogue - FRP manhole covers, gully covers, gratings, and industrial composites.">
+  <meta name="description" content="Manage products catalog for FLORTEK composite industrial catalogue.">
   <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
   
   <!-- Bootstrap 5 CSS -->
@@ -17,9 +17,12 @@
 <body>
 
   <div class="admin-layout">
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
     
     <!-- LEFT SIDEBAR -->
-    <aside class="admin-sidebar" aria-label="Sidebar Navigation">
+    <aside class="admin-sidebar" id="adminSidebar" aria-label="Sidebar Navigation">
       <div class="sidebar-brand-wrapper">
         <a href="admin-dashboard.html" title="FLORTEK Admin Panel">
           <img src="images/flortek-logo.svg" alt="FLORTEK Logo" class="sidebar-brand-logo">
@@ -35,7 +38,7 @@
             </a>
           </li>
           <li class="sidebar-nav-item">
-            <a href="admin-products.html" class="sidebar-nav-link active">
+            <a href="admin-products.html" class="sidebar-nav-link active" aria-current="page">
               <span class="nav-icon"><i class="fa-solid fa-box-archive"></i></span>
               <span>Products</span>
             </a>
@@ -80,12 +83,16 @@
       
       <!-- TOP HEADER -->
       <header class="admin-top-header">
+        <button class="btn-sidebar-toggle me-2" id="sidebarToggleBtn" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="adminSidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
         <div class="header-search-box">
           <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
-          <input type="text" class="header-search-input" placeholder="Search..." aria-label="Search catalog">
+          <input type="text" class="header-search-input" placeholder="Search products..." aria-label="Search catalog">
         </div>
 
-        <div class="header-right-actions">
+        <div class="header-right-actions ms-auto">
           <a href="#notifications-modal" class="header-notification-btn" title="View Notifications" aria-label="Notifications">
             <i class="fa-regular fa-bell"></i>
             <span class="header-notification-dot"></span>
@@ -100,10 +107,10 @@
       <main class="admin-page-container">
         
         <!-- Header with Title and Add Button -->
-        <div class="page-title-row">
+        <div class="page-title-row d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4">
           <div>
-            <h1 class="page-main-title">Products</h1>
-            <p class="page-main-subtitle">Manage FLORTEK product catalogue.</p>
+            <h1 class="page-main-title mb-1">Products</h1>
+            <p class="page-main-subtitle mb-0">Manage FLORTEK product catalogue.</p>
           </div>
           <div>
             <a href="#add-product-modal" class="btn-admin-primary">
@@ -114,8 +121,8 @@
         </div>
 
         <!-- Filter Bar -->
-        <div class="table-filter-bar">
-          <div class="filter-search-box">
+        <div class="table-filter-bar d-flex flex-column flex-sm-row gap-2 gap-sm-3 align-items-stretch align-items-sm-center mb-3">
+          <div class="filter-search-box flex-grow-1">
             <i class="fa-solid fa-magnifying-glass filter-search-icon"></i>
             <input type="text" class="filter-search-input" placeholder="Search products..." aria-label="Search products">
           </div>
@@ -125,7 +132,7 @@
             <option>Gully Covers</option>
             <option>Drain Gratings</option>
           </select>
-          <a href="#" class="filter-btn" title="Apply Filter">
+          <a href="#" class="filter-btn text-center" title="Apply Filter">
             <i class="fa-solid fa-sliders"></i>
             <span>Filter</span>
           </a>
@@ -133,16 +140,16 @@
 
         <!-- Products Table Card -->
         <div class="admin-table-card">
-          <div class="table-responsive-wrapper">
-            <table class="admin-data-table">
+          <div class="table-responsive">
+            <table class="admin-data-table w-100">
               <thead>
                 <tr>
                   <th>Image</th>
                   <th>Product Name</th>
                   <th>Category</th>
-                  <th>Shape</th>
-                  <th>Size</th>
-                  <th>Load Cap.</th>
+                  <th class="d-none d-md-table-cell">Shape</th>
+                  <th class="d-none d-sm-table-cell">Size</th>
+                  <th class="d-none d-lg-table-cell">Load Cap.</th>
                   <th>Status</th>
                   <th>Actions</th>
                 </tr>
@@ -154,9 +161,9 @@
                   </td>
                   <td class="cell-bold">FRP Square Manhole Cover</td>
                   <td>Manhole Covers</td>
-                  <td>Square</td>
-                  <td>24" x 24"</td>
-                  <td>2.5 T</td>
+                  <td class="d-none d-md-table-cell">Square</td>
+                  <td class="d-none d-sm-table-cell">24" x 24"</td>
+                  <td class="d-none d-lg-table-cell">2.5 T</td>
                   <td><span class="badge-status badge-active">Active</span></td>
                   <td>
                     <div class="table-actions">
@@ -175,9 +182,9 @@
                   </td>
                   <td class="cell-bold">Heavy Duty Circular Cover</td>
                   <td>Manhole Covers</td>
-                  <td>Circular</td>
-                  <td>600mm Dia</td>
-                  <td>40 T</td>
+                  <td class="d-none d-md-table-cell">Circular</td>
+                  <td class="d-none d-sm-table-cell">600mm Dia</td>
+                  <td class="d-none d-lg-table-cell">40 T</td>
                   <td><span class="badge-status badge-active">Active</span></td>
                   <td>
                     <div class="table-actions">
@@ -196,9 +203,9 @@
                   </td>
                   <td class="cell-bold">FRP Drain Gully Grating</td>
                   <td>Gully Covers</td>
-                  <td>Rectangle</td>
-                  <td>12" x 18"</td>
-                  <td>1.5 T</td>
+                  <td class="d-none d-md-table-cell">Rectangle</td>
+                  <td class="d-none d-sm-table-cell">12" x 18"</td>
+                  <td class="d-none d-lg-table-cell">1.5 T</td>
                   <td><span class="badge-status badge-inactive">Inactive</span></td>
                   <td>
                     <div class="table-actions">
@@ -221,7 +228,7 @@
       <!-- BOTTOM FOOTER -->
       <footer class="admin-bottom-footer">
         <div class="footer-brand-title">FLORTEK</div>
-        <div class="footer-copyright">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
+        <div class="footer-copyright d-none d-sm-block">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
         <div class="footer-links-group">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -358,6 +365,47 @@
       </div>
     </div>
   </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Mobile Sidebar Script -->
+  <script>
+    (function () {
+      var toggleBtn  = document.getElementById('sidebarToggleBtn');
+      var sidebar    = document.getElementById('adminSidebar');
+      var backdrop   = document.getElementById('sidebarBackdrop');
+
+      if (!toggleBtn || !sidebar || !backdrop) return;
+
+      function openSidebar() {
+        sidebar.classList.add('sidebar-open');
+        backdrop.classList.add('show');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('sidebar-open');
+        backdrop.classList.remove('show');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      toggleBtn.addEventListener('click', function () {
+        var isOpen = sidebar.classList.contains('sidebar-open');
+        isOpen ? closeSidebar() : openSidebar();
+      });
+
+      backdrop.addEventListener('click', closeSidebar);
+
+      sidebar.querySelectorAll('.sidebar-nav-link, .logout-nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.innerWidth < 900) closeSidebar();
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
