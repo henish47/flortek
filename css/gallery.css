@@ -1,8 +1,5 @@
 @import url('common.css');
 
-/* -------------------------------------------------------------
-   FACTORY GALLERY SECTION
-------------------------------------------------------------- */
 .factory-gallery-section {
   padding: 55px 0 60px;
   background-color: #ffffff;
@@ -64,7 +61,6 @@
   object-fit: cover;
   display: block;
 }
-
 
 .prod-gallery-section {
   padding: 60px 0 70px;
@@ -223,9 +219,6 @@
   transform: translateY(-2px);
 }
 
-/* -------------------------------------------------------------
-   PRECISION BANNER
-------------------------------------------------------------- */
 .build-precision-banner {
   background-color: #2E8B57;
   padding: 60px 0;
@@ -270,9 +263,6 @@
   transform: translateY(-2px);
 }
 
-/* -------------------------------------------------------------
-   RESPONSIVE BREAKPOINTS (GALLERY PAGE)
-------------------------------------------------------------- */
 @media (max-width: 991px) {
   .photos-grid-3x2 {
     grid-template-columns: repeat(2, 1fr);

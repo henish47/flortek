@@ -1,8 +1,5 @@
 @import url('common.css');
 
-/* -------------------------------------------------------------
-   CONTACT PAGE & SPLIT GRID
-------------------------------------------------------------- */
 .contact-page-section {
   padding: 55px 0 75px;
   background-color: #ffffff;
@@ -104,9 +101,6 @@
   display: block;
 }
 
-/* -------------------------------------------------------------
-   CONTACT FORM BOX
-------------------------------------------------------------- */
 .message-form-box {
   background-color: #f3f4f6;
   border: 1px solid #e5e7eb;
@@ -217,31 +211,28 @@
   transform: none;
 }
 
-/* -------------------------------------------------------------
-   FORM VALIDATION & ALERTS
-------------------------------------------------------------- */
-.field-input.is-invalid, 
-.field-select.is-invalid, 
+.field-input.is-invalid,
+.field-select.is-invalid,
 .field-textarea.is-invalid {
   border-color: #ef4444;
   background-color: #fef2f2;
 }
 
-.field-input.is-invalid:focus, 
-.field-select.is-invalid:focus, 
+.field-input.is-invalid:focus,
+.field-select.is-invalid:focus,
 .field-textarea.is-invalid:focus {
   border-color: #dc2626;
   box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
 }
 
-.field-input.is-valid, 
-.field-select.is-valid, 
+.field-input.is-valid,
+.field-select.is-valid,
 .field-textarea.is-valid {
   border-color: #10b981;
 }
 
-.field-input.is-valid:focus, 
-.field-select.is-valid:focus, 
+.field-input.is-valid:focus,
+.field-select.is-valid:focus,
 .field-textarea.is-valid:focus {
   border-color: #059669;
   box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
@@ -291,9 +282,6 @@
   border: 1px solid #fecaca;
 }
 
-/* -------------------------------------------------------------
-   RESPONSIVE BREAKPOINTS (CONTACT PAGE)
-------------------------------------------------------------- */
 @media (max-width: 991px) {
   .contact-split-grid {
     grid-template-columns: 1fr;

@@ -6,22 +6,19 @@
   <title>Products - FLORTEK Admin Panel</title>
   <meta name="description" content="Manage products catalog for FLORTEK composite industrial catalogue.">
   <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
-  
-  <!-- Bootstrap 5 CSS -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome 6 Icons -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- External Admin CSS -->
+
   <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
 
   <div class="admin-layout">
 
-    <!-- Mobile Sidebar Backdrop -->
     <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
-    
-    <!-- LEFT SIDEBAR -->
+
     <aside class="admin-sidebar" id="adminSidebar" aria-label="Sidebar Navigation">
       <div class="sidebar-brand-wrapper">
         <a href="admin-dashboard.html" title="FLORTEK Admin Panel">
@@ -70,7 +67,7 @@
         </ul>
 
         <div class="sidebar-footer-section">
-          <a href="login.html" class="logout-nav-link" title="Logout of Admin Panel">
+          <a href="index.html" class="logout-nav-link" title="Logout of Admin Panel">
             <span class="nav-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
             <span>Logout</span>
           </a>
@@ -78,10 +75,8 @@
       </div>
     </aside>
 
-    <!-- MAIN WRAPPER -->
     <div class="admin-main-wrapper">
-      
-      <!-- TOP HEADER -->
+
       <header class="admin-top-header">
         <button class="btn-sidebar-toggle me-2" id="sidebarToggleBtn" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="adminSidebar">
           <i class="fa-solid fa-bars"></i>
@@ -103,10 +98,8 @@
         </div>
       </header>
 
-      <!-- PAGE CONTENT -->
       <main class="admin-page-container">
-        
-        <!-- Header with Title and Add Button -->
+
         <div class="page-title-row d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4">
           <div>
             <h1 class="page-main-title mb-1">Products</h1>
@@ -120,7 +113,6 @@
           </div>
         </div>
 
-        <!-- Filter Bar -->
         <div class="table-filter-bar d-flex flex-column flex-sm-row gap-2 gap-sm-3 align-items-stretch align-items-sm-center mb-3">
           <div class="filter-search-box flex-grow-1">
             <i class="fa-solid fa-magnifying-glass filter-search-icon"></i>
@@ -138,7 +130,6 @@
           </a>
         </div>
 
-        <!-- Products Table Card -->
         <div class="admin-table-card">
           <div class="table-responsive">
             <table class="admin-data-table w-100">
@@ -225,7 +216,6 @@
 
       </main>
 
-      <!-- BOTTOM FOOTER -->
       <footer class="admin-bottom-footer">
         <div class="footer-brand-title">FLORTEK</div>
         <div class="footer-copyright d-none d-sm-block">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
@@ -240,54 +230,67 @@
 
   </div>
 
-  <!-- PURE CSS MODALS (NO JS) -->
   <div id="add-product-modal" class="css-modal-overlay">
     <div class="css-modal-dialog">
       <div class="css-modal-header">
         <h3 class="css-modal-title">Add New Product</h3>
         <a href="#" class="css-modal-close" aria-label="Close modal">&times;</a>
       </div>
-      <form action="#" method="GET">
+      <form id="addProductForm" action="#" method="POST" novalidate>
         <div class="css-modal-body">
+          <div class="admin-form-alert" id="addProductAlert"></div>
+
           <div class="admin-form-group">
-            <label class="admin-form-label">Product Name</label>
-            <input type="text" class="admin-form-input" placeholder="e.g. FRP Square Manhole Cover" required>
+            <label class="admin-form-label" for="addProductName">Product Name *</label>
+            <input type="text" id="addProductName" class="admin-form-input" placeholder="e.g. FRP Square Manhole Cover">
+            <div class="admin-error-text" id="addProductNameError"></div>
           </div>
+
           <div class="admin-form-group">
-            <label class="admin-form-label">Category</label>
-            <select class="admin-form-select">
-              <option>Manhole Covers</option>
-              <option>Gully Covers</option>
-              <option>Drain Gratings</option>
-              <option>Custom Moldings</option>
+            <label class="admin-form-label" for="addProductCategory">Category *</label>
+            <select id="addProductCategory" class="admin-form-select">
+              <option value="">-- Select Category --</option>
+              <option value="Manhole Covers">Manhole Covers</option>
+              <option value="Gully Covers">Gully Covers</option>
+              <option value="Drain Gratings">Drain Gratings</option>
+              <option value="Custom Moldings">Custom Moldings</option>
             </select>
+            <div class="admin-error-text" id="addProductCategoryError"></div>
           </div>
+
           <div class="row g-2">
             <div class="col-6 admin-form-group">
-              <label class="admin-form-label">Shape</label>
-              <input type="text" class="admin-form-input" placeholder="Square, Circular...">
+              <label class="admin-form-label" for="addProductShape">Shape *</label>
+              <input type="text" id="addProductShape" class="admin-form-input" placeholder="e.g. Square, Circular">
+              <div class="admin-error-text" id="addProductShapeError"></div>
             </div>
             <div class="col-6 admin-form-group">
-              <label class="admin-form-label">Dimensions / Size</label>
-              <input type="text" class="admin-form-input" placeholder="e.g. 600 x 600 mm">
+              <label class="admin-form-label" for="addProductDimensions">Dimensions / Size *</label>
+              <input type="text" id="addProductDimensions" class="admin-form-input" placeholder="e.g. 600 x 600 mm">
+              <div class="admin-error-text" id="addProductDimensionsError"></div>
             </div>
           </div>
+
           <div class="row g-2">
             <div class="col-6 admin-form-group">
-              <label class="admin-form-label">Load Capacity</label>
-              <input type="text" class="admin-form-input" placeholder="e.g. 2.5 T / 40 T">
+              <label class="admin-form-label" for="addProductCapacity">Load Capacity *</label>
+              <input type="text" id="addProductCapacity" class="admin-form-input" placeholder="e.g. 2.5 T / 40 T">
+              <div class="admin-error-text" id="addProductCapacityError"></div>
             </div>
             <div class="col-6 admin-form-group">
-              <label class="admin-form-label">Status</label>
-              <select class="admin-form-select">
-                <option>Active</option>
-                <option>Inactive</option>
+              <label class="admin-form-label" for="addProductStatus">Status *</label>
+              <select id="addProductStatus" class="admin-form-select">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
               </select>
+              <div class="admin-error-text" id="addProductStatusError"></div>
             </div>
           </div>
+
           <div class="admin-form-group">
-            <label class="admin-form-label">Product Image File</label>
-            <input type="file" class="admin-form-input">
+            <label class="admin-form-label" for="addProductImage">Product Image File</label>
+            <input type="file" id="addProductImage" class="admin-form-input" accept="image/*">
+            <div class="admin-error-text" id="addProductImageError"></div>
           </div>
         </div>
         <div class="css-modal-footer">
@@ -304,41 +307,53 @@
         <h3 class="css-modal-title">Edit Product Details</h3>
         <a href="#" class="css-modal-close" aria-label="Close modal">&times;</a>
       </div>
-      <form action="#" method="GET">
+      <form id="editProductForm" action="#" method="POST" novalidate>
         <div class="css-modal-body">
+          <div class="admin-form-alert" id="editProductAlert"></div>
+
           <div class="admin-form-group">
-            <label class="admin-form-label">Product Name</label>
-            <input type="text" class="admin-form-input" value="FRP Square Manhole Cover" required>
+            <label class="admin-form-label" for="editProductName">Product Name *</label>
+            <input type="text" id="editProductName" class="admin-form-input" value="FRP Square Manhole Cover">
+            <div class="admin-error-text" id="editProductNameError"></div>
           </div>
+
           <div class="admin-form-group">
-            <label class="admin-form-label">Category</label>
-            <select class="admin-form-select">
-              <option selected>Manhole Covers</option>
-              <option>Gully Covers</option>
-              <option>Drain Gratings</option>
+            <label class="admin-form-label" for="editProductCategory">Category *</label>
+            <select id="editProductCategory" class="admin-form-select">
+              <option value="Manhole Covers" selected>Manhole Covers</option>
+              <option value="Gully Covers">Gully Covers</option>
+              <option value="Drain Gratings">Drain Gratings</option>
+              <option value="Custom Moldings">Custom Moldings</option>
             </select>
+            <div class="admin-error-text" id="editProductCategoryError"></div>
           </div>
+
           <div class="row g-2">
             <div class="col-6 admin-form-group">
-              <label class="admin-form-label">Shape</label>
-              <input type="text" class="admin-form-input" value="Square">
+              <label class="admin-form-label" for="editProductShape">Shape *</label>
+              <input type="text" id="editProductShape" class="admin-form-input" value="Square">
+              <div class="admin-error-text" id="editProductShapeError"></div>
             </div>
             <div class="col-6 admin-form-group">
-              <label class="admin-form-label">Dimensions / Size</label>
-              <input type="text" class="admin-form-input" value="24&quot; x 24&quot;">
+              <label class="admin-form-label" for="editProductDimensions">Dimensions / Size *</label>
+              <input type="text" id="editProductDimensions" class="admin-form-input" value="24&quot; x 24&quot;">
+              <div class="admin-error-text" id="editProductDimensionsError"></div>
             </div>
           </div>
+
           <div class="row g-2">
             <div class="col-6 admin-form-group">
-              <label class="admin-form-label">Load Capacity</label>
-              <input type="text" class="admin-form-input" value="2.5 T">
+              <label class="admin-form-label" for="editProductCapacity">Load Capacity *</label>
+              <input type="text" id="editProductCapacity" class="admin-form-input" value="2.5 T">
+              <div class="admin-error-text" id="editProductCapacityError"></div>
             </div>
             <div class="col-6 admin-form-group">
-              <label class="admin-form-label">Status</label>
-              <select class="admin-form-select">
-                <option selected>Active</option>
-                <option>Inactive</option>
+              <label class="admin-form-label" for="editProductStatus">Status *</label>
+              <select id="editProductStatus" class="admin-form-select">
+                <option value="Active" selected>Active</option>
+                <option value="Inactive">Inactive</option>
               </select>
+              <div class="admin-error-text" id="editProductStatusError"></div>
             </div>
           </div>
         </div>
@@ -361,15 +376,18 @@
       </div>
       <div class="css-modal-footer">
         <a href="#" class="btn-admin-outline">Cancel</a>
-        <a href="#" class="btn btn-danger btn-sm px-3 fw-semibold">Delete</a>
+        <button type="button" id="btnConfirmDeleteProduct" class="btn btn-danger btn-sm px-3 fw-semibold">Delete</button>
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap 5 Bundle JS -->
+  <div id="toastNotification" class="toast-pill-notification">
+    <i class="fa-solid fa-circle-check text-success"></i>
+    <span id="toastMessage">Action completed successfully</span>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Mobile Sidebar Script -->
   <script>
     (function () {
       var toggleBtn  = document.getElementById('sidebarToggleBtn');
@@ -403,6 +421,245 @@
         link.addEventListener('click', function () {
           if (window.innerWidth < 900) closeSidebar();
         });
+      });
+    })();
+  </script>
+
+  <script>
+    function showToast(message) {
+      var toast = document.getElementById('toastNotification');
+      var toastMsg = document.getElementById('toastMessage');
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+      setTimeout(function () {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    function setFieldError(input, errorElem, message) {
+      input.classList.remove('is-valid');
+      input.classList.add('is-invalid');
+      input.classList.remove('field-shake');
+      void input.offsetWidth;
+      input.classList.add('field-shake');
+      if (errorElem) {
+        errorElem.textContent = message;
+        errorElem.style.display = 'block';
+      }
+    }
+
+    function clearFieldError(input, errorElem) {
+      input.classList.remove('is-invalid');
+      input.classList.remove('field-shake');
+      input.classList.add('is-valid');
+      if (errorElem) {
+        errorElem.textContent = '';
+        errorElem.style.display = 'none';
+      }
+    }
+
+    (function () {
+      var form = document.getElementById('addProductForm');
+      if (!form) return;
+
+      var nameInput = document.getElementById('addProductName');
+      var nameError = document.getElementById('addProductNameError');
+      var catSelect = document.getElementById('addProductCategory');
+      var catError = document.getElementById('addProductCategoryError');
+      var shapeInput = document.getElementById('addProductShape');
+      var shapeError = document.getElementById('addProductShapeError');
+      var dimInput = document.getElementById('addProductDimensions');
+      var dimError = document.getElementById('addProductDimensionsError');
+      var capInput = document.getElementById('addProductCapacity');
+      var capError = document.getElementById('addProductCapacityError');
+      var imgInput = document.getElementById('addProductImage');
+      var imgError = document.getElementById('addProductImageError');
+      var alertBox = document.getElementById('addProductAlert');
+
+      nameInput.addEventListener('input', function () { if (nameInput.value.trim().length >= 3) clearFieldError(nameInput, nameError); });
+      catSelect.addEventListener('change', function () { if (catSelect.value !== '') clearFieldError(catSelect, catError); });
+      shapeInput.addEventListener('input', function () { if (shapeInput.value.trim().length >= 2) clearFieldError(shapeInput, shapeError); });
+      dimInput.addEventListener('input', function () { if (dimInput.value.trim().length >= 3) clearFieldError(dimInput, dimError); });
+      capInput.addEventListener('input', function () { if (capInput.value.trim().length >= 2) clearFieldError(capInput, capError); });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var isValid = true;
+
+        if (nameInput.value.trim() === '') {
+          setFieldError(nameInput, nameError, 'Product name is required.');
+          isValid = false;
+        } else if (nameInput.value.trim().length < 3) {
+          setFieldError(nameInput, nameError, 'Product name must be at least 3 characters.');
+          isValid = false;
+        } else {
+          clearFieldError(nameInput, nameError);
+        }
+
+        if (catSelect.value === '') {
+          setFieldError(catSelect, catError, 'Please select a product category.');
+          isValid = false;
+        } else {
+          clearFieldError(catSelect, catError);
+        }
+
+        if (shapeInput.value.trim() === '') {
+          setFieldError(shapeInput, shapeError, 'Shape is required (e.g. Square, Circular).');
+          isValid = false;
+        } else if (shapeInput.value.trim().length < 2) {
+          setFieldError(shapeInput, shapeError, 'Shape must be at least 2 characters.');
+          isValid = false;
+        } else {
+          clearFieldError(shapeInput, shapeError);
+        }
+
+        if (dimInput.value.trim() === '') {
+          setFieldError(dimInput, dimError, 'Dimensions / size are required (e.g. 600 x 600 mm).');
+          isValid = false;
+        } else if (dimInput.value.trim().length < 3) {
+          setFieldError(dimInput, dimError, 'Please enter valid dimensions.');
+          isValid = false;
+        } else {
+          clearFieldError(dimInput, dimError);
+        }
+
+        if (capInput.value.trim() === '') {
+          setFieldError(capInput, capError, 'Load capacity is required (e.g. 2.5 T / 40 T).');
+          isValid = false;
+        } else if (capInput.value.trim().length < 2) {
+          setFieldError(capInput, capError, 'Please enter a valid capacity.');
+          isValid = false;
+        } else {
+          clearFieldError(capInput, capError);
+        }
+
+        if (imgInput.files && imgInput.files.length > 0) {
+          var fileName = imgInput.files[0].name.toLowerCase();
+          var validExts = ['.jpg', '.jpeg', '.png', '.webp', '.svg'];
+          var hasValidExt = validExts.some(function (ext) { return fileName.endsWith(ext); });
+          if (!hasValidExt) {
+            setFieldError(imgInput, imgError, 'Only JPG, PNG, WEBP, or SVG image files are allowed.');
+            isValid = false;
+          } else {
+            clearFieldError(imgInput, imgError);
+          }
+        }
+
+        if (!isValid) {
+          alertBox.className = 'admin-form-alert danger';
+          alertBox.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Please fill in all required fields properly.';
+          alertBox.style.display = 'flex';
+          return;
+        }
+
+        alertBox.className = 'admin-form-alert success';
+        alertBox.innerHTML = '<i class="fa-solid fa-circle-check"></i> Product created successfully!';
+        alertBox.style.display = 'flex';
+        showToast('New product added successfully!');
+
+        setTimeout(function () {
+          form.reset();
+          form.querySelectorAll('.is-valid, .is-invalid').forEach(function (el) {
+            el.classList.remove('is-valid', 'is-invalid');
+          });
+          alertBox.style.display = 'none';
+          window.location.hash = '';
+        }, 1200);
+      });
+    })();
+
+    (function () {
+      var form = document.getElementById('editProductForm');
+      if (!form) return;
+
+      var nameInput = document.getElementById('editProductName');
+      var nameError = document.getElementById('editProductNameError');
+      var catSelect = document.getElementById('editProductCategory');
+      var catError = document.getElementById('editProductCategoryError');
+      var shapeInput = document.getElementById('editProductShape');
+      var shapeError = document.getElementById('editProductShapeError');
+      var dimInput = document.getElementById('editProductDimensions');
+      var dimError = document.getElementById('editProductDimensionsError');
+      var capInput = document.getElementById('editProductCapacity');
+      var capError = document.getElementById('editProductCapacityError');
+      var alertBox = document.getElementById('editProductAlert');
+
+      nameInput.addEventListener('input', function () { if (nameInput.value.trim().length >= 3) clearFieldError(nameInput, nameError); });
+      catSelect.addEventListener('change', function () { if (catSelect.value !== '') clearFieldError(catSelect, catError); });
+      shapeInput.addEventListener('input', function () { if (shapeInput.value.trim().length >= 2) clearFieldError(shapeInput, shapeError); });
+      dimInput.addEventListener('input', function () { if (dimInput.value.trim().length >= 3) clearFieldError(dimInput, dimError); });
+      capInput.addEventListener('input', function () { if (capInput.value.trim().length >= 2) clearFieldError(capInput, capError); });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var isValid = true;
+
+        if (nameInput.value.trim() === '') {
+          setFieldError(nameInput, nameError, 'Product name is required.');
+          isValid = false;
+        } else if (nameInput.value.trim().length < 3) {
+          setFieldError(nameInput, nameError, 'Product name must be at least 3 characters.');
+          isValid = false;
+        } else {
+          clearFieldError(nameInput, nameError);
+        }
+
+        if (catSelect.value === '') {
+          setFieldError(catSelect, catError, 'Please select a valid category.');
+          isValid = false;
+        } else {
+          clearFieldError(catSelect, catError);
+        }
+
+        if (shapeInput.value.trim() === '') {
+          setFieldError(shapeInput, shapeError, 'Shape is required.');
+          isValid = false;
+        } else {
+          clearFieldError(shapeInput, shapeError);
+        }
+
+        if (dimInput.value.trim() === '') {
+          setFieldError(dimInput, dimError, 'Dimensions / size are required.');
+          isValid = false;
+        } else {
+          clearFieldError(dimInput, dimError);
+        }
+
+        if (capInput.value.trim() === '') {
+          setFieldError(capInput, capError, 'Load capacity is required.');
+          isValid = false;
+        } else {
+          clearFieldError(capInput, capError);
+        }
+
+        if (!isValid) {
+          alertBox.className = 'admin-form-alert danger';
+          alertBox.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Please correct the highlighted errors.';
+          alertBox.style.display = 'flex';
+          return;
+        }
+
+        alertBox.className = 'admin-form-alert success';
+        alertBox.innerHTML = '<i class="fa-solid fa-circle-check"></i> Product details updated successfully!';
+        alertBox.style.display = 'flex';
+        showToast('Product updated successfully!');
+
+        setTimeout(function () {
+          alertBox.style.display = 'none';
+          window.location.hash = '';
+        }, 1200);
+      });
+    })();
+
+    (function () {
+      var btn = document.getElementById('btnConfirmDeleteProduct');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        showToast('Product removed from catalog.');
+        setTimeout(function () {
+          window.location.hash = '';
+        }, 600);
       });
     })();
   </script>

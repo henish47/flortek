@@ -6,23 +6,22 @@
   <title>Settings - FLORTEK Admin Panel</title>
   <meta name="description" content="Configure settings, company preferences, and user security for FLORTEK admin panel.">
   <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
-  
-  <!-- Bootstrap 5 CSS -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome 6 Icons -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- External Admin CSS -->
+
   <link rel="stylesheet" href="css/admin.css">
 
   <style>
-    /* In-page Form Validation & Alert Styles */
-    .admin-form-input.is-invalid, 
+
+    .admin-form-input.is-invalid,
     .admin-form-textarea.is-invalid {
       border-color: #dc2626 !important;
       background-color: #fef2f2 !important;
     }
-    
-    .admin-form-input.is-valid, 
+
+    .admin-form-input.is-valid,
     .admin-form-textarea.is-valid {
       border-color: #16a34a !important;
     }
@@ -123,10 +122,8 @@
 
   <div class="admin-layout">
 
-    <!-- Mobile Sidebar Backdrop -->
     <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
-    
-    <!-- LEFT SIDEBAR -->
+
     <aside class="admin-sidebar" id="adminSidebar" aria-label="Sidebar Navigation">
       <div class="sidebar-brand-wrapper">
         <a href="admin-dashboard.html" title="FLORTEK Admin Panel">
@@ -175,7 +172,7 @@
         </ul>
 
         <div class="sidebar-footer-section">
-          <a href="login.html" class="logout-nav-link" title="Logout of Admin Panel">
+          <a href="index.html" class="logout-nav-link" title="Logout of Admin Panel">
             <span class="nav-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
             <span>Logout</span>
           </a>
@@ -183,10 +180,8 @@
       </div>
     </aside>
 
-    <!-- MAIN WRAPPER -->
     <div class="admin-main-wrapper">
-      
-      <!-- TOP HEADER -->
+
       <header class="admin-top-header">
         <button class="btn-sidebar-toggle me-2" id="sidebarToggleBtn" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="adminSidebar">
           <i class="fa-solid fa-bars"></i>
@@ -208,10 +203,8 @@
         </div>
       </header>
 
-      <!-- PAGE CONTENT -->
       <main class="admin-page-container">
-        
-        <!-- Header with Title -->
+
         <div class="page-title-row d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4">
           <div>
             <h1 class="page-main-title">Settings</h1>
@@ -219,16 +212,13 @@
           </div>
         </div>
 
-        <!-- Settings Cards -->
         <div class="row g-4">
           <div class="col-lg-8">
-            
-            <!-- Company Profile Settings -->
+
             <div class="settings-section-card">
               <h2 class="settings-section-title">Company Profile</h2>
               <p class="settings-section-desc">Update the primary organization information displayed on invoices and communications.</p>
-              
-              <!-- Company Form Alert -->
+
               <div id="companyAlert" class="admin-form-alert" role="alert"></div>
 
               <form id="companyProfileForm" action="#" method="POST" novalidate>
@@ -265,12 +255,10 @@
               </form>
             </div>
 
-            <!-- Security & Password -->
             <div class="settings-section-card">
               <h2 class="settings-section-title">Security &amp; Password</h2>
               <p class="settings-section-desc">Ensure your account is using a long, random password to stay secure.</p>
-              
-              <!-- Password Form Alert -->
+
               <div id="passwordAlert" class="admin-form-alert" role="alert"></div>
 
               <form id="passwordForm" action="#" method="POST" novalidate>
@@ -304,12 +292,11 @@
           </div>
 
           <div class="col-lg-4">
-            
-            <!-- Administrator Profile Card -->
+
             <div class="settings-section-card">
               <h2 class="settings-section-title">Admin Account</h2>
               <p class="settings-section-desc">Primary administrator privileges.</p>
-              
+
               <div class="d-flex align-items-center gap-3 mb-4 p-3 bg-light rounded-2 border">
                 <div class="header-user-avatar" style="width: 48px; height: 48px; font-size: 20px;">
                   A
@@ -343,7 +330,6 @@
 
       </main>
 
-      <!-- BOTTOM FOOTER -->
       <footer class="admin-bottom-footer">
         <div class="footer-brand-title">FLORTEK</div>
         <div class="footer-copyright d-none d-sm-block">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
@@ -358,13 +344,10 @@
 
   </div>
 
-  <!-- Toast Notification Element -->
   <div id="toastPill" class="toast-pill-notification" role="status" aria-live="polite"></div>
 
-  <!-- Bootstrap 5 Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Mobile Sidebar Script -->
   <script>
     (function () {
       var toggleBtn  = document.getElementById('sidebarToggleBtn');
@@ -402,17 +385,9 @@
     })();
   </script>
 
-  <!-- ============================================================
-       INTERNAL FORM VALIDATION SCRIPT
-       ============================================================ -->
   <script>
     'use strict';
 
-    /* ─────────────────────────────────────────────
-       UTILITY HELPERS
-    ───────────────────────────────────────────── */
-
-    /** Show a toast pill at the bottom-right corner */
     function showToast(icon, message, bgColor) {
       var toast = document.getElementById('toastPill');
       toast.style.backgroundColor = bgColor || '#111827';
@@ -423,20 +398,17 @@
       }, 3000);
     }
 
-    /** Mark a field as invalid: red border + show error message + shake */
     function setInvalid(field, errorEl, message) {
       field.classList.remove('is-valid');
       field.classList.add('is-invalid');
       errorEl.textContent = message;
       errorEl.style.display = 'block';
 
-      // Shake animation – remove and re-add class to restart it
       field.classList.remove('field-shake');
-      void field.offsetWidth; // reflow to restart animation
+      void field.offsetWidth;
       field.classList.add('field-shake');
     }
 
-    /** Mark a field as valid: green border + hide error message */
     function setValid(field, errorEl) {
       field.classList.remove('is-invalid', 'field-shake');
       field.classList.add('is-valid');
@@ -444,14 +416,12 @@
       errorEl.textContent = '';
     }
 
-    /** Reset a field to neutral state (no colour) */
     function resetField(field, errorEl) {
       field.classList.remove('is-invalid', 'is-valid', 'field-shake');
       errorEl.style.display = 'none';
       errorEl.textContent = '';
     }
 
-    /** Show or hide the form-level alert banner */
     function showAlert(alertEl, type, iconClass, message) {
       alertEl.className = 'admin-form-alert ' + type;
       alertEl.innerHTML = '<i class="' + iconClass + '"></i> ' + message;
@@ -464,16 +434,12 @@
       alertEl.innerHTML = '';
     }
 
-    /* ─────────────────────────────────────────────
-       VALIDATORS
-    ───────────────────────────────────────────── */
-
     function isValidEmail(val) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val.trim());
     }
 
     function isValidPhone(val) {
-      // Accepts: +91 98765 43210 | 9876543210 | +1-800-555-0100 etc.
+
       return /^[\+]?[\d\s\-\(\)]{7,16}$/.test(val.trim());
     }
 
@@ -485,10 +451,6 @@
         return false;
       }
     }
-
-    /* ─────────────────────────────────────────────
-       PASSWORD STRENGTH METER
-    ───────────────────────────────────────────── */
 
     var STRENGTH_CONFIG = [
       { label: 'Too short',  color: '#ef4444', width: '15%'  },
@@ -505,7 +467,7 @@
       if (/[A-Z]/.test(pwd)) score++;
       if (/[0-9]/.test(pwd)) score++;
       if (/[^A-Za-z0-9]/.test(pwd)) score++;
-      return Math.min(score, 4); // 1–4
+      return Math.min(score, 4);
     }
 
     function updateStrengthMeter(pwd) {
@@ -527,10 +489,6 @@
       hint.style.color          = config.color;
     }
 
-    /* ─────────────────────────────────────────────
-       COMPANY PROFILE FORM
-    ───────────────────────────────────────────── */
-
     (function initCompanyForm() {
 
       var form         = document.getElementById('companyProfileForm');
@@ -551,14 +509,12 @@
       var addrField    = document.getElementById('officeAddress');
       var addrErr      = document.getElementById('officeAddressError');
 
-      /* Live validation on blur (after user leaves a field) */
       nameField.addEventListener('blur',    function () { validateName();    });
       emailField.addEventListener('blur',   function () { validateEmail();   });
       phoneField.addEventListener('blur',   function () { validatePhone();   });
       websiteField.addEventListener('blur', function () { validateWebsite(); });
       addrField.addEventListener('blur',    function () { validateAddress(); });
 
-      /* Clear error on focus */
       [nameField, emailField, phoneField, websiteField, addrField].forEach(function (f) {
         var errEl = document.getElementById(f.id.replace('companyLegalName','companyNameError')
                                                  .replace('supportEmail','supportEmailError')
@@ -572,8 +528,6 @@
           hideAlert(alertEl);
         });
       });
-
-      /* ── Individual validators ── */
 
       function validateName() {
         var v = nameField.value.trim();
@@ -645,8 +599,6 @@
         return true;
       }
 
-      /* ── Submit ── */
-
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         hideAlert(alertEl);
@@ -664,7 +616,6 @@
           return;
         }
 
-        /* All good – simulate save */
         showAlert(alertEl, 'success',
           'fa-solid fa-circle-check',
           'Company details saved successfully.');
@@ -672,10 +623,6 @@
       });
 
     })();
-
-    /* ─────────────────────────────────────────────
-       PASSWORD / SECURITY FORM
-    ───────────────────────────────────────────── */
 
     (function initPasswordForm() {
 
@@ -691,16 +638,14 @@
       var confField   = document.getElementById('confirmPassword');
       var confErr     = document.getElementById('confirmPassError');
 
-      /* Strength meter updates live as user types */
       newField.addEventListener('input', function () {
         updateStrengthMeter(newField.value);
         if (newField.classList.contains('is-invalid')) resetField(newField, newErr);
-        // If confirm already filled, re-validate match live
+
         if (confField.value) validateConfirm();
         hideAlert(alertEl);
       });
 
-      /* Live clear on input */
       curField.addEventListener('input', function () {
         if (curField.classList.contains('is-invalid')) resetField(curField, curErr);
         hideAlert(alertEl);
@@ -711,12 +656,9 @@
         hideAlert(alertEl);
       });
 
-      /* Blur validators */
       curField.addEventListener('blur',  function () { validateCurrent(); });
       newField.addEventListener('blur',  function () { validateNew();     });
       confField.addEventListener('blur', function () { validateConfirm(); });
-
-      /* ── Individual validators ── */
 
       function validateCurrent() {
         var v = curField.value;
@@ -724,7 +666,7 @@
           setInvalid(curField, curErr, 'Current password is required.');
           return false;
         }
-        // In a real app you'd verify server-side; here just check not empty
+
         setValid(curField, curErr);
         return true;
       }
@@ -770,8 +712,6 @@
         return true;
       }
 
-      /* ── Submit ── */
-
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         hideAlert(alertEl);
@@ -787,7 +727,6 @@
           return;
         }
 
-        /* Success – simulate update & clear fields */
         form.reset();
         updateStrengthMeter('');
         [curField, newField, confField].forEach(function (f) {

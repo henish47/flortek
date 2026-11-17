@@ -1,9 +1,8 @@
-
 @media (max-width: 1100px) {
   .hero-title {
     font-size: 38px;
   }
-  
+
   .product-cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
@@ -45,7 +44,7 @@
 
   .btn-header-quote {
     order: 3;
-    display: none; 
+    display: none;
   }
 
   .nav-pill-wrapper {

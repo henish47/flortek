@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
-/* -------------------------------------------------------------
-   BASE RESET & GLOBAL TYPOGRAPHY
-------------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -56,9 +53,6 @@ ul, ol {
   text-align: center;
 }
 
-/* -------------------------------------------------------------
-   BUTTON STYLES
-------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -141,7 +135,6 @@ ul, ol {
   width: auto;
 }
 
-/* Pure CSS Checkbox Toggle */
 .nav-toggle-checkbox {
   display: none;
 }
@@ -239,7 +232,6 @@ ul, ol {
   display: none;
 }
 
-/* Mobile Navbar Media Query */
 @media (max-width: 991.98px) {
   .top-header {
     position: sticky;
@@ -306,7 +298,6 @@ ul, ol {
     display: none !important;
   }
 
-  /* Full-width clean mobile dropdown panel */
   .navbar-collapse {
     display: none;
     position: absolute;
@@ -327,7 +318,6 @@ ul, ol {
     flex-direction: column;
   }
 
-  /* When checkbox is checked, show mobile dropdown */
   .nav-toggle-checkbox:checked ~ .navbar-collapse {
     display: flex !important;
     animation: navDropdownFade 0.22s ease-out;
@@ -344,7 +334,6 @@ ul, ol {
     }
   }
 
-  /* Backdrop overlay dimming the rest of the page */
   .nav-backdrop {
     display: none;
     position: fixed;
@@ -363,7 +352,6 @@ ul, ol {
     display: block;
   }
 
-  /* Hamburger icon morphs into crisp X when checked */
   .nav-toggle-checkbox:checked + .navbar-toggler {
     background: rgba(255, 255, 255, 0.5);
     border-color: #111827;
@@ -451,9 +439,6 @@ ul, ol {
   }
 }
 
-/* -------------------------------------------------------------
-   SITE FOOTER
-------------------------------------------------------------- */
 .site-footer {
   background-color: #F4B400;
   padding: 60px 0 25px;

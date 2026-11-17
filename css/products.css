@@ -1,8 +1,5 @@
 @import url('common.css');
 
-/* -------------------------------------------------------------
-   PRODUCTS TOP & SEARCH/FILTER SECTION
-------------------------------------------------------------- */
 .products-top-section {
   padding: 55px 0 25px;
   background-color: #ffffff;
@@ -149,9 +146,6 @@
   letter-spacing: 0.5px;
 }
 
-/* -------------------------------------------------------------
-   PRODUCTS CARDS GRID
-------------------------------------------------------------- */
 .products-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -284,9 +278,6 @@
   transform: translateY(-2px);
 }
 
-/* -------------------------------------------------------------
-   RESPONSIVE BREAKPOINTS (PRODUCTS PAGE)
-------------------------------------------------------------- */
 @media (max-width: 991px) {
   .products-cards-grid {
     grid-template-columns: repeat(2, 1fr);

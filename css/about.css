@@ -72,9 +72,6 @@
   display: block;
 }
 
-/* -------------------------------------------------------------
-   COMPANY PROFILE & WHY CHOOSE FLORTEK
-------------------------------------------------------------- */
 .profile-section {
   padding: 40px 0 60px;
   background-color: #ffffff;
@@ -222,7 +219,6 @@
   background-color: #d9a000;
 }
 
-
 .team-section {
   padding: 60px 0 80px;
   background-color: #ffffff;
@@ -312,9 +308,6 @@
   letter-spacing: 0.5px;
 }
 
-/* -------------------------------------------------------------
-   RESPONSIVE BREAKPOINTS (ABOUT PAGE)
-------------------------------------------------------------- */
 @media (max-width: 991px) {
   .about-badges-grid {
     grid-template-columns: repeat(2, 1fr);

@@ -6,22 +6,19 @@
   <title>Gallery - FLORTEK Admin Panel</title>
   <meta name="description" content="Manage gallery and media assets for FLORTEK admin panel.">
   <link rel="icon" type="image/svg+xml" href="images/flortek-logo.svg">
-  
-  <!-- Bootstrap 5 CSS -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome 6 Icons -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- External Admin CSS -->
+
   <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
 
   <div class="admin-layout">
 
-    <!-- Mobile Sidebar Backdrop -->
     <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
-    
-    <!-- LEFT SIDEBAR -->
+
     <aside class="admin-sidebar" id="adminSidebar" aria-label="Sidebar Navigation">
       <div class="sidebar-brand-wrapper">
         <a href="admin-dashboard.html" title="FLORTEK Admin Panel">
@@ -70,7 +67,7 @@
         </ul>
 
         <div class="sidebar-footer-section">
-          <a href="login.html" class="logout-nav-link" title="Logout of Admin Panel">
+          <a href="index.html" class="logout-nav-link" title="Logout of Admin Panel">
             <span class="nav-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
             <span>Logout</span>
           </a>
@@ -78,10 +75,8 @@
       </div>
     </aside>
 
-    <!-- MAIN WRAPPER -->
     <div class="admin-main-wrapper">
-      
-      <!-- TOP HEADER -->
+
       <header class="admin-top-header">
         <button class="btn-sidebar-toggle me-2" id="sidebarToggleBtn" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="adminSidebar">
           <i class="fa-solid fa-bars"></i>
@@ -103,10 +98,8 @@
         </div>
       </header>
 
-      <!-- PAGE CONTENT -->
       <main class="admin-page-container">
-        
-        <!-- Header with Title and Upload Button -->
+
         <div class="page-title-row d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4">
           <div>
             <h1 class="page-main-title mb-1">Gallery</h1>
@@ -120,7 +113,6 @@
           </div>
         </div>
 
-        <!-- Sort Control Bar -->
         <div class="gallery-controls-header d-flex align-items-center justify-content-end gap-2 mb-3">
           <span class="gallery-sort-label">Sort by:</span>
           <select class="gallery-sort-select" aria-label="Sort images">
@@ -130,7 +122,6 @@
           </select>
         </div>
 
-        <!-- Gallery Table Card -->
         <div class="admin-table-card">
           <div class="table-responsive">
             <table class="admin-data-table w-100">
@@ -235,7 +226,6 @@
 
       </main>
 
-      <!-- BOTTOM FOOTER -->
       <footer class="admin-bottom-footer">
         <div class="footer-brand-title">FLORTEK</div>
         <div class="footer-copyright d-none d-sm-block">&copy; 2024 FLORTEK INDUSTRIES PVT. LTD. All rights reserved.</div>
@@ -250,34 +240,43 @@
 
   </div>
 
-  <!-- PURE CSS MODALS (NO JS) -->
   <div id="upload-image-modal" class="css-modal-overlay">
     <div class="css-modal-dialog">
       <div class="css-modal-header">
         <h3 class="css-modal-title">Upload Gallery Image</h3>
         <a href="#" class="css-modal-close" aria-label="Close modal">&times;</a>
       </div>
-      <form action="#" method="GET">
+      <form id="uploadImageForm" action="#" method="POST" novalidate>
         <div class="css-modal-body">
+          <div class="admin-form-alert" id="uploadImageAlert"></div>
+
           <div class="admin-form-group">
-            <label class="admin-form-label">Image Title</label>
-            <input type="text" class="admin-form-input" placeholder="e.g. Automated SMC Hydraulic Press" required>
+            <label class="admin-form-label" for="galleryImageTitle">Image Title *</label>
+            <input type="text" id="galleryImageTitle" class="admin-form-input" placeholder="e.g. Automated SMC Hydraulic Press">
+            <div class="admin-error-text" id="galleryImageTitleError"></div>
           </div>
+
           <div class="admin-form-group">
-            <label class="admin-form-label">Category</label>
-            <select class="admin-form-select">
-              <option>MANUFACTURING</option>
-              <option>PRODUCTS</option>
-              <option>FACILITIES</option>
+            <label class="admin-form-label" for="galleryCategorySelect">Category *</label>
+            <select id="galleryCategorySelect" class="admin-form-select">
+              <option value="">-- Select Category --</option>
+              <option value="MANUFACTURING">MANUFACTURING</option>
+              <option value="PRODUCTS">PRODUCTS</option>
+              <option value="FACILITIES">FACILITIES</option>
             </select>
+            <div class="admin-error-text" id="galleryCategorySelectError"></div>
           </div>
+
           <div class="admin-form-group">
-            <label class="admin-form-label">Description</label>
-            <textarea class="admin-form-textarea" placeholder="Brief caption or description..."></textarea>
+            <label class="admin-form-label" for="galleryImageDesc">Description</label>
+            <textarea id="galleryImageDesc" class="admin-form-textarea" placeholder="Brief caption or description..."></textarea>
+            <div class="admin-error-text" id="galleryImageDescError"></div>
           </div>
+
           <div class="admin-form-group">
-            <label class="admin-form-label">Select Image File</label>
-            <input type="file" class="admin-form-input" required>
+            <label class="admin-form-label" for="galleryImageFile">Select Image File *</label>
+            <input type="file" id="galleryImageFile" class="admin-form-input" accept="image/*">
+            <div class="admin-error-text" id="galleryImageFileError"></div>
           </div>
         </div>
         <div class="css-modal-footer">
@@ -359,15 +358,18 @@
       </div>
       <div class="css-modal-footer">
         <a href="#" class="btn-admin-outline">Cancel</a>
-        <a href="#" class="btn btn-danger btn-sm px-3 fw-semibold">Delete</a>
+        <button type="button" id="btnConfirmDeleteGallery" class="btn btn-danger btn-sm px-3 fw-semibold">Delete</button>
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap 5 Bundle JS -->
+  <div id="toastNotification" class="toast-pill-notification">
+    <i class="fa-solid fa-circle-check text-success"></i>
+    <span id="toastMessage">Action completed successfully</span>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Mobile Sidebar Script -->
   <script>
     (function () {
       var toggleBtn  = document.getElementById('sidebarToggleBtn');
@@ -401,6 +403,149 @@
         link.addEventListener('click', function () {
           if (window.innerWidth < 900) closeSidebar();
         });
+      });
+    })();
+  </script>
+
+  <script>
+    function showToast(message) {
+      var toast = document.getElementById('toastNotification');
+      var toastMsg = document.getElementById('toastMessage');
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+      setTimeout(function () {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    function setFieldError(input, errorElem, message) {
+      input.classList.remove('is-valid');
+      input.classList.add('is-invalid');
+      input.classList.remove('field-shake');
+      void input.offsetWidth;
+      input.classList.add('field-shake');
+      if (errorElem) {
+        errorElem.textContent = message;
+        errorElem.style.display = 'block';
+      }
+    }
+
+    function clearFieldError(input, errorElem) {
+      input.classList.remove('is-invalid');
+      input.classList.remove('field-shake');
+      input.classList.add('is-valid');
+      if (errorElem) {
+        errorElem.textContent = '';
+        errorElem.style.display = 'none';
+      }
+    }
+
+    (function () {
+      var form = document.getElementById('uploadImageForm');
+      if (!form) return;
+
+      var titleInput = document.getElementById('galleryImageTitle');
+      var titleError = document.getElementById('galleryImageTitleError');
+      var catSelect  = document.getElementById('galleryCategorySelect');
+      var catError   = document.getElementById('galleryCategorySelectError');
+      var descInput  = document.getElementById('galleryImageDesc');
+      var descError  = document.getElementById('galleryImageDescError');
+      var fileInput  = document.getElementById('galleryImageFile');
+      var fileError  = document.getElementById('galleryImageFileError');
+      var alertBox   = document.getElementById('uploadImageAlert');
+
+      titleInput.addEventListener('input', function () {
+        if (titleInput.value.trim().length >= 3) clearFieldError(titleInput, titleError);
+      });
+
+      catSelect.addEventListener('change', function () {
+        if (catSelect.value !== '') clearFieldError(catSelect, catError);
+      });
+
+      fileInput.addEventListener('change', function () {
+        if (fileInput.files && fileInput.files.length > 0) clearFieldError(fileInput, fileError);
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var isValid = true;
+
+        if (titleInput.value.trim() === '') {
+          setFieldError(titleInput, titleError, 'Image title is required.');
+          isValid = false;
+        } else if (titleInput.value.trim().length < 3) {
+          setFieldError(titleInput, titleError, 'Title must be at least 3 characters.');
+          isValid = false;
+        } else {
+          clearFieldError(titleInput, titleError);
+        }
+
+        if (catSelect.value === '') {
+          setFieldError(catSelect, catError, 'Please select a category tag.');
+          isValid = false;
+        } else {
+          clearFieldError(catSelect, catError);
+        }
+
+        if (descInput.value.trim() !== '' && descInput.value.trim().length < 5) {
+          setFieldError(descInput, descError, 'Description should be at least 5 characters if provided.');
+          isValid = false;
+        } else if (descInput.value.trim() !== '') {
+          clearFieldError(descInput, descError);
+        }
+
+        if (!fileInput.files || fileInput.files.length === 0) {
+          setFieldError(fileInput, fileError, 'Please select an image file to upload.');
+          isValid = false;
+        } else {
+          var file = fileInput.files[0];
+          var fileName = file.name.toLowerCase();
+          var validExts = ['.jpg', '.jpeg', '.png', '.webp', '.svg'];
+          var hasValidExt = validExts.some(function (ext) { return fileName.endsWith(ext); });
+
+          if (!hasValidExt) {
+            setFieldError(fileInput, fileError, 'Invalid file format. Only JPG, PNG, WEBP, or SVG are allowed.');
+            isValid = false;
+          } else if (file.size > 10 * 1024 * 1024) {
+            setFieldError(fileInput, fileError, 'File size exceeds maximum limit of 10MB.');
+            isValid = false;
+          } else {
+            clearFieldError(fileInput, fileError);
+          }
+        }
+
+        if (!isValid) {
+          alertBox.className = 'admin-form-alert danger';
+          alertBox.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Please fix the highlighted errors before uploading.';
+          alertBox.style.display = 'flex';
+          return;
+        }
+
+        alertBox.className = 'admin-form-alert success';
+        alertBox.innerHTML = '<i class="fa-solid fa-circle-check"></i> Image uploaded successfully!';
+        alertBox.style.display = 'flex';
+        showToast('Gallery image uploaded successfully!');
+
+        setTimeout(function () {
+          form.reset();
+          form.querySelectorAll('.is-valid, .is-invalid').forEach(function (el) {
+            el.classList.remove('is-valid', 'is-invalid');
+          });
+          alertBox.style.display = 'none';
+          window.location.hash = '';
+        }, 1200);
+      });
+    })();
+
+    (function () {
+      var btn = document.getElementById('btnConfirmDeleteGallery');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        showToast('Image removed from gallery.');
+        setTimeout(function () {
+          window.location.hash = '';
+        }, 600);
       });
     })();
   </script>
